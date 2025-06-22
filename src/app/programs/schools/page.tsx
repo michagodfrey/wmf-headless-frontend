@@ -1,269 +1,289 @@
+import { Newsletter } from "@/components/sections";
+
 export default function SchoolsPage() {
   return (
     <div className="container mx-auto px-4 py-12">
       {/* Hero Section */}
       <section className="max-w-4xl mx-auto mb-16 text-center">
-        <h1 className="text-4xl font-bold mb-6">Programs for Schools</h1>
-        <p className="text-xl text-gray-600 mb-8">
-          Supporting young women&apos;s mental health and well-being through
-          age-appropriate programs and comprehensive support for parents and
-          educators.
+        <div className="inline-block bg-gradient-to-r from-[#DE5762] to-[#E66772] text-white px-6 py-2 rounded-full text-sm font-semibold mb-4">
+          For Schools
+        </div>
+        <h1 className="text-4xl font-bold mb-6 text-[#374151]">
+          Programs for Schools
+        </h1>
+        <h2 className="text-2xl font-bold mb-6 text-[#374151]">
+          Navigating Mental Health Challenges with Effective Solutions
+        </h2>
+
+        {/* Image Placeholder - Landscape Orientation */}
+        <div className="bg-gradient-to-br from-[#F9FAFB] to-[#F3F4F6] rounded-xl p-6 border border-[#E5E7EB] mb-8">
+          <div className="aspect-[16/9] bg-gradient-to-br from-[#DE5762] to-[#E66772] rounded-lg flex items-center justify-center">
+            <div className="text-center text-white">
+              <svg
+                className="w-16 h-16 mx-auto mb-4 opacity-80"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={1.5}
+                  d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.746 0 3.332.477 4.5 1.253v13C19.832 18.477 18.246 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"
+                />
+              </svg>
+              <p className="text-lg font-semibold">School Programs</p>
+              <p className="text-sm opacity-80">
+                Student Development & Support
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <p className="text-xl text-[#6B7280] mb-8">
+          Welcome to our comprehensive workshop offerings tailored for schools.
+          We&apos;re here to assist you in finding the perfect fit for your
+          needs. Should you have any inquiries or require guidance, feel free to
+          reach out. Once you&apos;ve identified the program or workshop of
+          interest, simply submit an enquiry form, and we&apos;ll promptly
+          respond to your request or you can contact Pushpa directly to arrange
+          a one-on-one meeting at pushpa@womensmentoringfoundation.com.
         </p>
       </section>
 
       {/* Student Wellness Programs */}
       <section className="max-w-6xl mx-auto mb-16">
-        <h2 className="text-3xl font-bold mb-8 text-center">
-          Student Wellness Programs
+        <h2 className="text-3xl font-bold mb-8 text-center text-[#374151]">
+          Nurturing Wellbeing: A Path to Self-Leadership & Self-Confidence
         </h2>
-        <div className="grid md:grid-cols-2 gap-8">
-          <div className="bg-white rounded-lg shadow-md p-8">
-            <h3 className="text-xl font-semibold mb-4">
-              Elementary School Programs
-            </h3>
-            <p className="text-gray-600 mb-4">
-              Age-appropriate programs designed to help young girls develop
-              emotional intelligence, self-esteem, and healthy coping
-              mechanisms. We use creative, engaging activities to teach
-              important life skills.
-            </p>
-            <ul className="text-gray-600 space-y-2 mb-6">
-              <li>• Emotional awareness and expression</li>
-              <li>• Building self-confidence</li>
-              <li>• Healthy friendship skills</li>
-              <li>• Stress management for children</li>
-            </ul>
-            <button className="bg-blue-600 text-white px-6 py-2 rounded hover:bg-blue-700 transition-colors">
-              Learn More
-            </button>
-          </div>
-          <div className="bg-white rounded-lg shadow-md p-8">
-            <h3 className="text-xl font-semibold mb-4">High School Programs</h3>
-            <p className="text-gray-600 mb-4">
-              Comprehensive programs addressing the unique challenges faced by
-              teenage girls, including academic pressure, social media impact,
-              body image, and preparing for adulthood.
-            </p>
-            <ul className="text-gray-600 space-y-2 mb-6">
-              <li>• Academic stress management</li>
-              <li>• Social media and mental health</li>
-              <li>• Body positivity and self-acceptance</li>
-              <li>• Future planning and goal setting</li>
-            </ul>
-            <button className="bg-blue-600 text-white px-6 py-2 rounded hover:bg-blue-700 transition-colors">
-              Learn More
-            </button>
-          </div>
-        </div>
-      </section>
 
-      {/* Middle School Programs */}
-      <section className="max-w-6xl mx-auto mb-16">
-        <h2 className="text-3xl font-bold mb-8 text-center">
-          Middle School Programs
-        </h2>
-        <div className="bg-gradient-to-r from-purple-50 to-pink-50 rounded-lg p-8">
-          <div className="grid md:grid-cols-2 gap-8">
-            <div>
-              <h3 className="text-xl font-semibold mb-4">
-                Adolescent Development Support
-              </h3>
-              <p className="text-gray-600 mb-4">
-                Specialized programs for middle school girls navigating the
-                challenging transition from childhood to adolescence. We address
-                identity formation, peer relationships, and emotional
-                regulation.
-              </p>
-              <ul className="text-gray-600 space-y-2 mb-6">
-                <li>• Identity and self-discovery</li>
-                <li>• Peer pressure and decision-making</li>
-                <li>• Emotional regulation skills</li>
-                <li>• Healthy communication</li>
-              </ul>
-            </div>
-            <div>
-              <h3 className="text-xl font-semibold mb-4">
-                Bullying Prevention
-              </h3>
-              <p className="text-gray-600 mb-4">
-                Programs focused on preventing bullying, supporting victims, and
-                empowering bystanders to create positive school environments
-                where all students feel safe and valued.
-              </p>
-              <ul className="text-gray-600 space-y-2 mb-6">
-                <li>• Recognizing and responding to bullying</li>
-                <li>• Building resilience and self-advocacy</li>
-                <li>• Creating inclusive environments</li>
-                <li>• Digital citizenship and online safety</li>
-              </ul>
-            </div>
-          </div>
-          <div className="text-center mt-8">
-            <button className="bg-purple-600 text-white px-8 py-3 rounded hover:bg-purple-700 transition-colors">
-              Request School Program
-            </button>
-          </div>
-        </div>
-      </section>
-
-      {/* Parent & Teacher Support */}
-      <section className="max-w-6xl mx-auto mb-16">
-        <h2 className="text-3xl font-bold mb-8 text-center">
-          Parent & Teacher Support
-        </h2>
-        <div className="grid md:grid-cols-2 gap-8">
-          <div className="bg-white rounded-lg shadow-md p-8">
-            <h3 className="text-xl font-semibold mb-4">
-              Parent Education Workshops
-            </h3>
-            <p className="text-gray-600 mb-4">
-              Educational workshops for parents on supporting their
-              daughters&apos; mental health, recognizing signs of distress, and
-              creating supportive home environments that promote well-being.
-            </p>
-            <ul className="text-gray-600 space-y-2 mb-6">
-              <li>• Understanding adolescent development</li>
-              <li>• Communication strategies</li>
-              <li>• Setting healthy boundaries</li>
-              <li>• Supporting academic and social success</li>
-            </ul>
-            <button className="bg-green-600 text-white px-6 py-2 rounded hover:bg-green-700 transition-colors">
-              Register for Workshop
-            </button>
-          </div>
-          <div className="bg-white rounded-lg shadow-md p-8">
-            <h3 className="text-xl font-semibold mb-4">Teacher Training</h3>
-            <p className="text-gray-600 mb-4">
-              Professional development for educators on creating supportive
-              classroom environments, recognizing mental health concerns, and
-              implementing trauma-informed teaching practices.
-            </p>
-            <ul className="text-gray-600 space-y-2 mb-6">
-              <li>• Trauma-informed classroom practices</li>
-              <li>• Mental health awareness and intervention</li>
-              <li>• Creating inclusive learning environments</li>
-              <li>• Supporting students with diverse needs</li>
-            </ul>
-            <button className="bg-green-600 text-white px-6 py-2 rounded hover:bg-green-700 transition-colors">
-              Book Training
-            </button>
-          </div>
-        </div>
-      </section>
-
-      {/* School Resources */}
-      <section className="max-w-6xl mx-auto mb-16">
-        <h2 className="text-3xl font-bold mb-8 text-center">
-          School Resources
-        </h2>
-        <div className="grid md:grid-cols-3 gap-6">
-          <div className="bg-white rounded-lg shadow-md p-6">
-            <h3 className="text-lg font-semibold mb-3">Curriculum Materials</h3>
-            <p className="text-gray-600 mb-4 text-sm">
-              Age-appropriate lesson plans and activities that teachers can
-              integrate into their existing curriculum to promote mental health
-              and well-being.
-            </p>
-            <button className="bg-blue-600 text-white px-4 py-2 rounded text-sm hover:bg-blue-700 transition-colors">
-              Download Resources
-            </button>
-          </div>
-          <div className="bg-white rounded-lg shadow-md p-6">
-            <h3 className="text-lg font-semibold mb-3">Parent Resources</h3>
-            <p className="text-gray-600 mb-4 text-sm">
-              Guides, tip sheets, and resources for parents to support their
-              daughters&apos; mental health and academic success.
-            </p>
-            <button className="bg-blue-600 text-white px-4 py-2 rounded text-sm hover:bg-blue-700 transition-colors">
-              Access Resources
-            </button>
-          </div>
-          <div className="bg-white rounded-lg shadow-md p-6">
-            <h3 className="text-lg font-semibold mb-3">Crisis Support</h3>
-            <p className="text-gray-600 mb-4 text-sm">
-              Protocols and resources for schools to respond to mental health
-              crises and provide appropriate support to students in need.
-            </p>
-            <button className="bg-blue-600 text-white px-4 py-2 rounded text-sm hover:bg-blue-700 transition-colors">
-              Get Support
-            </button>
-          </div>
-        </div>
-      </section>
-
-      {/* School Partnerships */}
-      <section className="max-w-4xl mx-auto mb-16">
-        <h2 className="text-3xl font-bold mb-8 text-center">
-          School Partnerships
-        </h2>
-        <div className="bg-white rounded-lg shadow-md p-8">
-          <p className="text-gray-600 mb-6">
-            We work closely with schools to develop comprehensive mental health
-            and wellness programs that align with educational goals and support
-            student success.
-          </p>
-          <div className="grid md:grid-cols-2 gap-6">
-            <div>
-              <h3 className="text-lg font-semibold mb-3">
-                Program Implementation
-              </h3>
-              <ul className="text-gray-600 space-y-1 text-sm">
-                <li>• Customized program development</li>
-                <li>• Staff training and support</li>
-                <li>• Ongoing consultation and evaluation</li>
-                <li>• Resource provision and coordination</li>
-              </ul>
-            </div>
-            <div>
-              <h3 className="text-lg font-semibold mb-3">
-                Collaboration Benefits
-              </h3>
-              <ul className="text-gray-600 space-y-1 text-sm">
-                <li>• Improved student mental health outcomes</li>
-                <li>• Enhanced school climate and culture</li>
-                <li>• Reduced behavioral issues</li>
-                <li>• Increased academic engagement</li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Success Stories */}
-      <section className="max-w-4xl mx-auto mb-16">
-        <h2 className="text-3xl font-bold mb-8 text-center">School Impact</h2>
-        <div className="bg-white rounded-lg shadow-md p-8">
-          <blockquote className="text-lg text-gray-600 italic mb-4">
-            &quot;The WMF programs have transformed our school culture. Our
-            students are more confident, our teachers feel better equipped to
-            support them, and we&apos;ve seen a significant decrease in bullying
-            incidents.&quot;
-          </blockquote>
-          <p className="text-gray-800 font-semibold">
-            — Principal Jennifer Rodriguez, Lincoln Middle School
+        {/* Mission Statement */}
+        <div className="bg-gradient-to-r from-[#DE5762] to-[#E66772] rounded-xl p-8 text-white mb-12">
+          <h3 className="text-xl font-semibold mb-4">Our Mission</h3>
+          <p className="text-white/90 leading-relaxed">
+            Boosting youth into leadership roles can transform their lives and
+            communities, helping them recover from various forms of abuse,
+            including mental, emotional, physical, and silent abuse. Our mission
+            is to empower children, often overlooked, to make a significant
+            difference in the lives of these children and others. We are
+            committed to fostering positive changes in the lives of young people
+            who need support in envisioning a happier and more fulfilling life.
+            Our dedicated facilitators provide the vision, inspiration, and
+            resources necessary to empower these future leaders of society.
           </p>
         </div>
-      </section>
 
-      {/* Call to Action */}
-      <section className="bg-blue-50 rounded-xl p-8 text-center">
-        <h2 className="text-2xl font-bold mb-4">Partner with WMF</h2>
-        <p className="text-gray-600 mb-6">
-          Ready to bring our programs to your school? Contact us to discuss how
-          we can support your students&apos; mental health and well-being.
-        </p>
-        <div className="flex flex-col sm:flex-row gap-4 justify-center">
-          <button className="bg-blue-600 text-white px-6 py-3 rounded hover:bg-blue-700 transition-colors">
-            Schedule Consultation
-          </button>
-          <button className="bg-green-600 text-white px-6 py-3 rounded hover:bg-green-700 transition-colors">
-            Download Program Guide
-          </button>
-          <button className="bg-purple-600 text-white px-6 py-3 rounded hover:bg-purple-700 transition-colors">
-            Request Information
-          </button>
+        {/* Common Concerns */}
+        <div className="grid md:grid-cols-2 gap-8 mb-12">
+          <div className="bg-white rounded-xl shadow-lg p-8 border border-[#E5E7EB]">
+            <h3 className="text-xl font-semibold mb-6 text-[#374151]">
+              Common Concerns Among Young People
+            </h3>
+            <ul className="space-y-3 text-[#6B7280]">
+              <li className="flex items-start">
+                <span className="text-[#DE5762] mr-3 text-lg font-bold">•</span>
+                <span>
+                  Finding school or work difficult, especially when others are
+                  disruptive
+                </span>
+              </li>
+              <li className="flex items-start">
+                <span className="text-[#DE5762] mr-3 text-lg font-bold">•</span>
+                <span>
+                  Lack of confidence, motivation to learn, and fear of the
+                  unknown
+                </span>
+              </li>
+              <li className="flex items-start">
+                <span className="text-[#DE5762] mr-3 text-lg font-bold">•</span>
+                <span>Feeling misunderstood</span>
+              </li>
+              <li className="flex items-start">
+                <span className="text-[#DE5762] mr-3 text-lg font-bold">•</span>
+                <span>Stress related to exams</span>
+              </li>
+              <li className="flex items-start">
+                <span className="text-[#DE5762] mr-3 text-lg font-bold">•</span>
+                <span>
+                  Challenges in relationships with friends and peer groups
+                </span>
+              </li>
+              <li className="flex items-start">
+                <span className="text-[#DE5762] mr-3 text-lg font-bold">•</span>
+                <span>
+                  Experience of bullying from peers, teachers, family members,
+                  or oneself
+                </span>
+              </li>
+              <li className="flex items-start">
+                <span className="text-[#DE5762] mr-3 text-lg font-bold">•</span>
+                <span>
+                  Difficulty during lunchtime, particularly for those with
+                  eating disorders
+                </span>
+              </li>
+              <li className="flex items-start">
+                <span className="text-[#DE5762] mr-3 text-lg font-bold">•</span>
+                <span>
+                  Difficulty relating to or understanding their own emotions and
+                  experiences
+                </span>
+              </li>
+            </ul>
+          </div>
+
+          <div className="bg-white rounded-xl shadow-lg p-8 border border-[#E5E7EB]">
+            <h3 className="text-xl font-semibold mb-6 text-[#374151]">
+              Program Activities
+            </h3>
+            <ul className="space-y-3 text-[#6B7280] mb-6">
+              <li className="flex items-start">
+                <span className="text-[#DE5762] mr-3 text-lg font-bold">✓</span>
+                <span>Small group discussions</span>
+              </li>
+              <li className="flex items-start">
+                <span className="text-[#DE5762] mr-3 text-lg font-bold">✓</span>
+                <span>Hands-on service learning experiences</span>
+              </li>
+              <li className="flex items-start">
+                <span className="text-[#DE5762] mr-3 text-lg font-bold">✓</span>
+                <span>Leadership simulation games</span>
+              </li>
+              <li className="flex items-start">
+                <span className="text-[#DE5762] mr-3 text-lg font-bold">✓</span>
+                <span>Exercises to identify core leadership strengths</span>
+              </li>
+              <li className="flex items-start">
+                <span className="text-[#DE5762] mr-3 text-lg font-bold">✓</span>
+                <span>Guest experts from diverse professions</span>
+              </li>
+            </ul>
+
+            <div className="bg-gradient-to-br from-[#F9FAFB] to-[#F3F4F6] rounded-lg p-4 border border-[#E5E7EB]">
+              <h4 className="font-semibold text-[#374151] mb-2">
+                Program Outcomes
+              </h4>
+              <p className="text-[#6B7280] text-sm">
+                Students develop an action plan to pursue their educational and
+                career goals, overcome fears, achieve goals, and realize their
+                true desires while supporting their academic curriculum.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        {/* Program Benefits */}
+        <div className="bg-gradient-to-br from-[#F9FAFB] to-[#F3F4F6] rounded-xl p-8 border border-[#E5E7EB] mb-12">
+          <h3 className="text-2xl font-bold mb-6 text-center text-[#374151]">
+            What Students Learn
+          </h3>
+          <div className="grid md:grid-cols-4 gap-6 text-center">
+            <div className="bg-white rounded-lg p-6 shadow-sm">
+              <div className="w-12 h-12 bg-gradient-to-r from-[#A5375C] to-[#C84862] rounded-lg flex items-center justify-center mx-auto mb-4">
+                <svg
+                  className="w-6 h-6 text-white"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.746 0 3.332.477 4.5 1.253v13C19.832 18.477 18.246 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"
+                  />
+                </svg>
+              </div>
+              <h4 className="font-semibold text-[#374151] mb-2">Education</h4>
+              <p className="text-[#6B7280] text-sm">
+                Importance of academic achievement
+              </p>
+            </div>
+            <div className="bg-white rounded-lg p-6 shadow-sm">
+              <div className="w-12 h-12 bg-gradient-to-r from-[#3C6A72] to-[#4A7A82] rounded-lg flex items-center justify-center mx-auto mb-4">
+                <svg
+                  className="w-6 h-6 text-white"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2-2v2m8 0V6a2 2 0 012 2v6a2 2 0 01-2 2H8a2 2 0 01-2-2V8a2 2 0 012-2V6"
+                  />
+                </svg>
+              </div>
+              <h4 className="font-semibold text-[#374151] mb-2">
+                Career Planning
+              </h4>
+              <p className="text-[#6B7280] text-sm">
+                Strategic goal setting and planning
+              </p>
+            </div>
+            <div className="bg-white rounded-lg p-6 shadow-sm">
+              <div className="w-12 h-12 bg-gradient-to-r from-[#DE5762] to-[#E66772] rounded-lg flex items-center justify-center mx-auto mb-4">
+                <svg
+                  className="w-6 h-6 text-white"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"
+                  />
+                </svg>
+              </div>
+              <h4 className="font-semibold text-[#374151] mb-2">
+                Interpersonal Skills
+              </h4>
+              <p className="text-[#6B7280] text-sm">
+                Building relationships and communication
+              </p>
+            </div>
+            <div className="bg-white rounded-lg p-6 shadow-sm">
+              <div className="w-12 h-12 bg-gradient-to-r from-[#A5375C] to-[#C84862] rounded-lg flex items-center justify-center mx-auto mb-4">
+                <svg
+                  className="w-6 h-6 text-white"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M13 10V3L4 14h7v7l9-11h-7z"
+                  />
+                </svg>
+              </div>
+              <h4 className="font-semibold text-[#374151] mb-2">
+                Self-Leadership
+              </h4>
+              <p className="text-[#6B7280] text-sm">
+                Navigating life effectively
+              </p>
+            </div>
+          </div>
+        </div>
+
+        {/* Call to Action */}
+        <div className="text-center">
+          <a
+            href="/contact"
+            className="bg-gradient-to-r from-[#DE5762] to-[#E66772] text-white px-8 py-4 rounded-lg hover:from-[#E66772] hover:to-[#F27782] transition-all duration-300 font-semibold text-lg shadow-lg hover:shadow-xl inline-block"
+          >
+            Learn More
+          </a>
         </div>
       </section>
+
+      {/* Newsletter */}
+      <Newsletter />
     </div>
   );
 }

@@ -1,26 +1,172 @@
 @import "tailwindcss";
 
+/* WMF Brand Fonts - TODO: Add actual font files to /public/fonts/ */
+/* Currently using fallback fonts until brand fonts are available */
+
+@font-face {
+  font-family: "Hurme Geometric Sans 4";
+  src: url("/fonts/HurmeGeometricSans4-Regular.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Hurme Geometric Sans 4";
+  src: url("/fonts/HurmeGeometricSans4-SemiBold.woff2") format("woff2");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+
 :root {
+  /* WMF Brand Colors */
+  --wmf-rose-deep: #a5375c;
+  --wmf-rose: #c84862;
+  --wmf-rose-light: #de5762;
+  --wmf-teal: #3c6a72;
+
+  /* WMF Brand Gradient */
+  --wmf-gradient: linear-gradient(
+    135deg,
+    #6b0e51 0%,
+    #a71466 33%,
+    #c91e5f 66%,
+    #1d4c4c 100%
+  );
+
+  /* Typography - Using fallback fonts until brand fonts are available */
+  --font-primary: "Inter", "Helvetica Neue", Arial, sans-serif;
+
+  /* Base Colors */
   --background: #ffffff;
   --foreground: #171717;
+
+  /* WMF Theme Colors */
+  --wmf-primary: var(--wmf-rose-deep);
+  --wmf-primary-hover: var(--wmf-rose);
+  --wmf-accent: var(--wmf-teal);
+  --wmf-light: var(--wmf-rose-light);
+
+  /* Semantic Colors */
+  --wmf-text-primary: #171717;
+  --wmf-text-secondary: #6b7280;
+  --wmf-text-muted: #9ca3af;
+  --wmf-border: #e5e7eb;
+  --wmf-border-light: #f3f4f6;
+  --wmf-background-light: #f9fafb;
+  --wmf-background-white: #ffffff;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
+  --font-sans: var(--font-primary);
   --font-mono: var(--font-geist-mono);
+
+  /* WMF Brand Colors */
+  --color-wmf-rose-deep: var(--wmf-rose-deep);
+  --color-wmf-rose: var(--wmf-rose);
+  --color-wmf-rose-light: var(--wmf-rose-light);
+  --color-wmf-teal: var(--wmf-teal);
+
+  /* Semantic Colors */
+  --color-wmf-text-primary: var(--wmf-text-primary);
+  --color-wmf-text-secondary: var(--wmf-text-secondary);
+  --color-wmf-text-muted: var(--wmf-text-muted);
+  --color-wmf-border: var(--wmf-border);
+  --color-wmf-border-light: var(--wmf-border-light);
+  --color-wmf-background-light: var(--wmf-background-light);
+  --color-wmf-background-white: var(--wmf-background-white);
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
     --background: #0a0a0a;
     --foreground: #ededed;
+    --wmf-text-primary: #f9fafb;
+    --wmf-text-secondary: #d1d5db;
+    --wmf-text-muted: #9ca3af;
+    --wmf-border: #374151;
+    --wmf-border-light: #1f2937;
+    --wmf-background-light: #111827;
+    --wmf-background-white: #1f2937;
   }
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-primary);
+  font-weight: 400;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* WMF Utility Classes */
+.wmf-gradient {
+  background: var(--wmf-gradient);
+}
+
+.wmf-gradient-text {
+  background: var(--wmf-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.wmf-button-primary {
+  background-color: var(--wmf-rose-deep);
+  color: white;
+  transition: background-color 0.2s ease;
+}
+
+.wmf-button-primary:hover {
+  background-color: var(--wmf-rose);
+}
+
+.wmf-button-secondary {
+  background-color: transparent;
+  color: var(--wmf-rose-deep);
+  border: 2px solid var(--wmf-rose-deep);
+  transition: all 0.2s ease;
+}
+
+.wmf-button-secondary:hover {
+  background-color: var(--wmf-rose-light);
+  background-color: rgba(222, 87, 98, 0.1);
+}
+
+.wmf-text-accent {
+  color: var(--wmf-teal);
+}
+
+.wmf-text-primary {
+  color: var(--wmf-rose-deep);
+}
+
+/* Focus styles for accessibility */
+.wmf-focus-ring:focus {
+  outline: 2px solid var(--wmf-rose-deep);
+  outline-offset: 2px;
+}
+
+/* Smooth transitions for interactive elements */
+.wmf-transition {
+  transition: all 0.2s ease;
+}
+
+/* Typography utilities */
+.wmf-heading {
+  font-family: var(--font-primary);
+  font-weight: 600;
+  line-height: 1.2;
+}
+
+.wmf-body {
+  font-family: var(--font-primary);
+  font-weight: 400;
+  line-height: 1.6;
 }

@@ -36,13 +36,13 @@ export default function BlogPage() {
 
   return (
     <div className="container mx-auto px-4 py-12">
-      <h1 className="text-4xl font-bold mb-8">Blog</h1>
+      <h1 className="text-4xl font-bold mb-8 text-[#374151]">Blog</h1>
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
         {posts.map((post) => (
           <article
             key={post.id}
-            className="bg-white rounded-lg shadow-md overflow-hidden"
+            className="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-all duration-300 border border-[#E5E7EB]"
           >
             <div className="aspect-w-16 aspect-h-9">
               <img
@@ -52,18 +52,18 @@ export default function BlogPage() {
               />
             </div>
             <div className="p-6">
-              <h2 className="text-xl font-semibold mb-4">
+              <h2 className="text-xl font-semibold mb-4 text-[#374151]">
                 <Link
                   href={`/blog/${post.slug}`}
-                  className="hover:text-blue-600"
+                  className="hover:text-[#A5375C] transition-colors"
                 >
                   {post.title}
                 </Link>
               </h2>
-              <div className="text-gray-600 mb-4 line-clamp-3">
+              <div className="text-[#6B7280] mb-4 line-clamp-3">
                 {post.excerpt}
               </div>
-              <div className="text-sm text-gray-500 mb-4">
+              <div className="text-sm text-[#6B7280] mb-4">
                 {new Date(post.date).toLocaleDateString("en-US", {
                   year: "numeric",
                   month: "long",
@@ -72,7 +72,7 @@ export default function BlogPage() {
               </div>
               <Link
                 href={`/blog/${post.slug}`}
-                className="text-blue-600 hover:text-blue-800"
+                className="text-[#A5375C] hover:text-[#C84862] font-semibold transition-colors"
               >
                 Read More →
               </Link>

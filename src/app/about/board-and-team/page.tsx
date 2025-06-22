@@ -1,3 +1,5 @@
+import { Recruit } from "@/components/sections";
+
 export default function OurBoardTeamPage() {
   const boardMembers = [
     {
@@ -51,9 +53,11 @@ export default function OurBoardTeamPage() {
     <div className="container mx-auto px-4 py-12">
       {/* Hero Section */}
       <section className="max-w-4xl mx-auto mb-16 text-center">
-        <h1 className="text-4xl font-bold mb-6">Our Board & Team</h1>
-        <p className="text-xl text-gray-600 mb-8">
-          Meet the dedicated individuals who lead and support the Women's
+        <h1 className="text-4xl font-semibold mb-6 wmf-heading text-wmf-text-primary">
+          Our Board & Team
+        </h1>
+        <p className="text-xl text-wmf-text-secondary mb-8 wmf-body">
+          Meet the dedicated individuals who lead and support the Women&apos;s
           Mentoring Foundation in our mission to empower and heal women from all
           walks of life.
         </p>
@@ -61,24 +65,28 @@ export default function OurBoardTeamPage() {
 
       {/* Board Members Section */}
       <section className="max-w-6xl mx-auto mb-20">
-        <h2 className="text-3xl font-bold mb-12 text-center">
+        <h2 className="text-3xl font-semibold mb-12 text-center wmf-heading text-wmf-text-primary">
           Board of Directors
         </h2>
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {boardMembers.map((member, index) => (
             <div
               key={index}
-              className="bg-white rounded-lg shadow-lg overflow-hidden"
+              className="bg-wmf-background-white rounded-lg shadow-lg overflow-hidden border border-wmf-border-light"
             >
-              <div className="h-64 bg-gray-200 flex items-center justify-center">
-                <span className="text-gray-500 text-lg">Photo Placeholder</span>
+              <div className="h-64 bg-wmf-background-light flex items-center justify-center">
+                <span className="text-wmf-text-muted text-lg">
+                  Photo Placeholder
+                </span>
               </div>
               <div className="p-6">
-                <h3 className="text-xl font-bold mb-2">{member.name}</h3>
-                <p className="text-blue-600 font-semibold mb-4">
+                <h3 className="text-xl font-semibold mb-2 wmf-heading text-wmf-text-primary">
+                  {member.name}
+                </h3>
+                <p className="wmf-text-primary font-semibold mb-4">
                   {member.role}
                 </p>
-                <p className="text-gray-600 text-sm leading-relaxed">
+                <p className="text-wmf-text-secondary text-sm leading-relaxed wmf-body">
                   {member.bio}
                 </p>
               </div>
@@ -89,25 +97,29 @@ export default function OurBoardTeamPage() {
 
       {/* Team Members Section */}
       <section className="max-w-6xl mx-auto mb-16">
-        <h2 className="text-3xl font-bold mb-12 text-center">Our Team</h2>
+        <h2 className="text-3xl font-semibold mb-12 text-center wmf-heading text-wmf-text-primary">
+          Our Team
+        </h2>
         <div className="grid md:grid-cols-2 gap-8">
           {teamMembers.map((member, index) => (
             <div
               key={index}
-              className="bg-white rounded-lg shadow-lg overflow-hidden"
+              className="bg-wmf-background-white rounded-lg shadow-lg overflow-hidden border border-wmf-border-light"
             >
               <div className="flex">
-                <div className="w-32 h-32 bg-gray-200 flex items-center justify-center flex-shrink-0">
-                  <span className="text-gray-500 text-sm text-center">
+                <div className="w-32 h-32 bg-wmf-background-light flex items-center justify-center flex-shrink-0">
+                  <span className="text-wmf-text-muted text-sm text-center">
                     Photo
                   </span>
                 </div>
                 <div className="p-6 flex-1">
-                  <h3 className="text-xl font-bold mb-2">{member.name}</h3>
-                  <p className="text-blue-600 font-semibold mb-4">
+                  <h3 className="text-xl font-semibold mb-2 wmf-heading text-wmf-text-primary">
+                    {member.name}
+                  </h3>
+                  <p className="wmf-text-primary font-semibold mb-4">
                     {member.role}
                   </p>
-                  <p className="text-gray-600 text-sm leading-relaxed">
+                  <p className="text-wmf-text-secondary text-sm leading-relaxed wmf-body">
                     {member.bio}
                   </p>
                 </div>
@@ -118,27 +130,11 @@ export default function OurBoardTeamPage() {
       </section>
 
       {/* Call to Action Section */}
-      <section className="bg-blue-50 rounded-xl p-8 mb-16">
-        <div className="max-w-2xl mx-auto text-center">
-          <h2 className="text-2xl font-bold mb-4">Join Our Mission</h2>
-          <p className="text-gray-600 mb-6">
-            Interested in supporting our work? We're always looking for
-            dedicated volunteers, mentors, and partners to help us make a
-            difference in women's lives.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <button className="bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition-colors">
-              Volunteer with Us
-            </button>
-            <button className="bg-green-600 text-white px-6 py-3 rounded-lg hover:bg-green-700 transition-colors">
-              Make a Donation
-            </button>
-            <button className="bg-purple-600 text-white px-6 py-3 rounded-lg hover:bg-purple-700 transition-colors">
-              Partner with Us
-            </button>
-          </div>
-        </div>
-      </section>
+      <Recruit
+        title="Get Involved Today"
+        description="Join our community of supporters making a difference."
+        className="my-8"
+      />
     </div>
   );
 }

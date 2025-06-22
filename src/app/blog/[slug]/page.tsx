@@ -85,9 +85,9 @@ export default function BlogPostPage({ params }: { params: { slug: string } }) {
         />
       </div>
 
-      <h1 className="text-4xl font-bold mb-6">{post.title}</h1>
+      <h1 className="text-4xl font-bold mb-6 text-[#374151]">{post.title}</h1>
 
-      <div className="text-gray-600 mb-8">
+      <div className="text-[#6B7280] mb-8">
         {new Date(post.date).toLocaleDateString("en-US", {
           year: "numeric",
           month: "long",
@@ -96,7 +96,7 @@ export default function BlogPostPage({ params }: { params: { slug: string } }) {
       </div>
 
       <div
-        className="prose prose-lg max-w-none"
+        className="prose prose-lg max-w-none prose-headings:text-[#374151] prose-p:text-[#6B7280] prose-strong:text-[#374151] prose-a:text-[#A5375C] prose-a:hover:text-[#C84862]"
         dangerouslySetInnerHTML={{ __html: post.content }}
       />
     </article>

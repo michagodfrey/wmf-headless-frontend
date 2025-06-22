@@ -1,3 +1,5 @@
+import { Newsletter } from "@/components/sections";
+
 export default function GalleryPage() {
   const gallerySections = [
     {
@@ -136,73 +138,8 @@ export default function GalleryPage() {
         </section>
       ))}
 
-      {/* Featured Section */}
-      <section className="max-w-6xl mx-auto mb-16">
-        <h2 className="text-3xl font-bold mb-8 text-center">
-          Featured Moments
-        </h2>
-        <div className="grid md:grid-cols-2 gap-8">
-          <div className="bg-gradient-to-br from-blue-50 to-purple-50 rounded-lg p-8">
-            <h3 className="text-xl font-semibold mb-4">Community Impact</h3>
-            <p className="text-gray-600 mb-6">
-              Our programs have touched the lives of thousands of women across
-              diverse communities, creating lasting positive change and building
-              stronger, more supportive networks.
-            </p>
-            <div className="grid grid-cols-2 gap-4">
-              <div className="text-center">
-                <div className="text-2xl font-bold text-blue-600">500+</div>
-                <div className="text-sm text-gray-600">Women Supported</div>
-              </div>
-              <div className="text-center">
-                <div className="text-2xl font-bold text-purple-600">50+</div>
-                <div className="text-sm text-gray-600">Events Hosted</div>
-              </div>
-            </div>
-          </div>
-          <div className="bg-gradient-to-br from-green-50 to-blue-50 rounded-lg p-8">
-            <h3 className="text-xl font-semibold mb-4">
-              Our Mission in Action
-            </h3>
-            <p className="text-gray-600 mb-6">
-              Every image in our gallery represents a step toward our mission of
-              supporting women&apos;s mental health, building community
-              connections, and creating positive change.
-            </p>
-            <div className="grid grid-cols-2 gap-4">
-              <div className="text-center">
-                <div className="text-2xl font-bold text-green-600">25+</div>
-                <div className="text-sm text-gray-600">Communities Reached</div>
-              </div>
-              <div className="text-center">
-                <div className="text-2xl font-bold text-blue-600">100%</div>
-                <div className="text-sm text-gray-600">Dedicated to Women</div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Call to Action */}
-      <section className="bg-blue-50 rounded-xl p-8 text-center">
-        <h2 className="text-2xl font-bold mb-4">Join Our Journey</h2>
-        <p className="text-gray-600 mb-6">
-          Be part of our mission to support women&apos;s mental health and build
-          stronger communities. Your participation helps us create more moments
-          worth capturing.
-        </p>
-        <div className="flex flex-col sm:flex-row gap-4 justify-center">
-          <button className="bg-blue-600 text-white px-6 py-3 rounded hover:bg-blue-700 transition-colors">
-            Get Involved
-          </button>
-          <button className="bg-green-600 text-white px-6 py-3 rounded hover:bg-green-700 transition-colors">
-            Donate
-          </button>
-          <button className="bg-purple-600 text-white px-6 py-3 rounded hover:bg-purple-700 transition-colors">
-            Contact Us
-          </button>
-        </div>
-      </section>
+      {/* Newsletter Section */}
+      <Newsletter />
     </div>
   );
 }

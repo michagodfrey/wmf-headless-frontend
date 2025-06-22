@@ -1,10 +1,149 @@
+"use client";
+
+import { useState } from "react";
+import { Newsletter } from "@/components/sections";
+
 export default function WorkshopsPage() {
+  const [showAllWorkshops, setShowAllWorkshops] = useState(false);
+
+  const allWorkshops = [
+    {
+      title: "Emotional Flooding Awareness",
+      description:
+        "This session helps individuals understand emotional flooding—a state of overwhelming emotional intensity. Attendees learn techniques to recognize, manage, and navigate intense emotions, especially during conflicts, using stress-management tools and mindfulness.",
+      gradient: "from-[#A5375C] to-[#C84862]",
+      buttonClass: "wmf-button-primary",
+    },
+    {
+      title: "Mood Swing Management",
+      description:
+        'Introducing the Mood Swing, this session guides participants on using an evidence-based tool to manage symptoms of anxiety and depression. Participants learn how to engage in "missions" that encourage positive behavior changes and improve emotional resilience.',
+      gradient: "from-[#3C6A72] to-[#4A7A82]",
+      buttonClass:
+        "bg-[#3C6A72] text-white px-4 py-2 rounded-lg hover:bg-[#4A7A82] transition-colors font-semibold inline-block",
+    },
+    {
+      title: "Boost Self-Esteem",
+      description:
+        "Aimed at strengthening self-esteem, this workshop includes daily practices like self-acceptance, positive affirmations, and self-care routines. Participants leave with actionable steps to build self-confidence and foster a more positive self-image.",
+      gradient: "from-[#DE5762] to-[#E66772]",
+      buttonClass:
+        "bg-[#DE5762] text-white px-4 py-2 rounded-lg hover:bg-[#E66772] transition-colors font-semibold inline-block",
+    },
+    {
+      title: "Mindful Breathing",
+      description:
+        "This mindfulness session focuses on breath awareness, helping participants develop relaxation skills and improve mental clarity. Although not directly aimed at stress reduction, the techniques often lead to a sense of calm and focus.",
+      gradient: "from-[#A5375C] to-[#C84862]",
+      buttonClass: "wmf-button-primary",
+    },
+    {
+      title: "Managing Anger",
+      description:
+        "This workshop explores techniques for handling anger constructively. Attendees learn methods to express emotions healthily and recognize triggers that lead to frustration, enhancing their ability to respond rather than react in tense situations.",
+      gradient: "from-[#3C6A72] to-[#4A7A82]",
+      buttonClass:
+        "bg-[#3C6A72] text-white px-4 py-2 rounded-lg hover:bg-[#4A7A82] transition-colors font-semibold inline-block",
+    },
+    {
+      title: "Conflict Resolution",
+      description:
+        "This session promotes conflict resolution through active listening, empathy, and collaborative problem-solving. Participants learn how to address disagreements constructively, strengthening personal and professional relationships.",
+      gradient: "from-[#DE5762] to-[#E66772]",
+      buttonClass:
+        "bg-[#DE5762] text-white px-4 py-2 rounded-lg hover:bg-[#E66772] transition-colors font-semibold inline-block",
+    },
+    {
+      title: "Healing from Deep Wounds",
+      description:
+        "Addressing emotional wounds, this workshop helps participants identify and heal from past traumas. It teaches that while personal challenges can shape one's view of the world, healing can lead to growth and self-compassion.",
+      gradient: "from-[#A5375C] to-[#C84862]",
+      buttonClass: "wmf-button-primary",
+    },
+    {
+      title: "Menopause Support",
+      description:
+        "Focused on the mental and emotional shifts during menopause, this session provides support for women experiencing mood changes and emotional sensitivity. It includes coping strategies to improve mental wellbeing and addresses the social impact of menopause.",
+      gradient: "from-[#3C6A72] to-[#4A7A82]",
+      buttonClass:
+        "bg-[#3C6A72] text-white px-4 py-2 rounded-lg hover:bg-[#4A7A82] transition-colors font-semibold inline-block",
+    },
+    {
+      title: "Cognitive Reframing",
+      description:
+        "This cognitive reframing workshop guides participants in shifting perspectives on challenges. Attendees learn to approach stressful situations with a positive outlook, which can enhance emotional resilience and reduce negative thinking.",
+      gradient: "from-[#DE5762] to-[#E66772]",
+      buttonClass:
+        "bg-[#DE5762] text-white px-4 py-2 rounded-lg hover:bg-[#E66772] transition-colors font-semibold inline-block",
+    },
+    {
+      title: "Self-Care Priority",
+      description:
+        "This session encourages participants to prioritise self-care by addressing common barriers such as guilt, ingrained habits, or self-doubt. It offers strategies to build a consistent self-care routine, promoting mental and physical wellbeing.",
+      gradient: "from-[#A5375C] to-[#C84862]",
+      buttonClass: "wmf-button-primary",
+    },
+    {
+      title: "Stress Management",
+      description:
+        "Offering practical stress-reduction techniques, this workshop includes identifying personal stressors, setting realistic goals, and adopting healthy lifestyle habits. Techniques like time management, meditation, and journaling are also discussed.",
+      gradient: "from-[#3C6A72] to-[#4A7A82]",
+      buttonClass:
+        "bg-[#3C6A72] text-white px-4 py-2 rounded-lg hover:bg-[#4A7A82] transition-colors font-semibold inline-block",
+    },
+    {
+      title: "Personal Needs",
+      description:
+        "This session emphasises the importance of recognizing and honouring personal needs without guilt. Participants learn self-reflection and self-advocacy techniques, empowering them to set boundaries and pursue balanced, fulfilling lives.",
+      gradient: "from-[#DE5762] to-[#E66772]",
+      buttonClass:
+        "bg-[#DE5762] text-white px-4 py-2 rounded-lg hover:bg-[#E66772] transition-colors font-semibold inline-block",
+    },
+    {
+      title: "Problem Solving",
+      description:
+        "Participants learn structured problem-solving skills, including critical thinking, creative brainstorming, and goal-setting. The session teaches that a positive mindset can turn challenges into opportunities for growth and innovation.",
+      gradient: "from-[#A5375C] to-[#C84862]",
+      buttonClass: "wmf-button-primary",
+    },
+    {
+      title: "Workplace Health",
+      description:
+        "Focused on sedentary workplace behaviors, this session highlights the health risks of prolonged sitting. Participants learn about posture, regular movement, and exercises to prevent health issues associated with long hours of sitting.",
+      gradient: "from-[#3C6A72] to-[#4A7A82]",
+      buttonClass:
+        "bg-[#3C6A72] text-white px-4 py-2 rounded-lg hover:bg-[#4A7A82] transition-colors font-semibold inline-block",
+    },
+    {
+      title: "Self-Care Pathways",
+      description:
+        "Covering essential self-care practices like sleep, nutrition, and relaxation, this workshop provides a framework for building a holistic self-care routine. Attendees learn how self-care can positively impact both emotional and physical health.",
+      gradient: "from-[#DE5762] to-[#E66772]",
+      buttonClass:
+        "bg-[#DE5762] text-white px-4 py-2 rounded-lg hover:bg-[#E66772] transition-colors font-semibold inline-block",
+    },
+    {
+      title: "Job Transitions",
+      description:
+        "This workshop provides guidance on dealing with job changes, whether voluntary or involuntary. It covers emotional resilience, rebranding, and exploring new career opportunities, helping participants manage career shifts positively.",
+      gradient: "from-[#A5375C] to-[#C84862]",
+      buttonClass: "wmf-button-primary",
+    },
+  ];
+
+  const displayedWorkshops = showAllWorkshops
+    ? allWorkshops
+    : allWorkshops.slice(0, 3);
+
   return (
     <div className="container mx-auto px-4 py-12">
       {/* Hero Section */}
       <section className="max-w-4xl mx-auto mb-16 text-center">
-        <h1 className="text-4xl font-bold mb-6">Workshops</h1>
-        <p className="text-xl text-gray-600 mb-8">
+        <div className="inline-block bg-gradient-to-r from-[#A5375C] to-[#C84862] text-white px-6 py-2 rounded-full text-sm font-semibold mb-4">
+          Workshops
+        </div>
+        <h1 className="text-4xl font-bold mb-6 text-[#374151]">Workshops</h1>
+        <p className="text-xl text-[#6B7280] mb-8">
           Interactive, skill-building workshops designed to equip women with
           practical tools for managing stress, practicing self-care, and
           building emotional resilience.
@@ -13,254 +152,191 @@ export default function WorkshopsPage() {
 
       {/* Featured Workshops */}
       <section className="max-w-6xl mx-auto mb-16">
-        <h2 className="text-3xl font-bold mb-8 text-center">
+        <h2 className="text-3xl font-bold mb-8 text-center text-[#374151]">
           Featured Workshops
         </h2>
         <div className="grid md:grid-cols-3 gap-8">
-          <div className="bg-white rounded-lg shadow-md overflow-hidden">
-            <div className="h-48 bg-gradient-to-br from-blue-400 to-blue-600 flex items-center justify-center">
-              <span className="text-white text-2xl font-bold">
-                Stress Management
+          <div className="bg-white rounded-xl shadow-lg overflow-hidden border border-[#E5E7EB] hover:shadow-xl transition-all duration-300">
+            <div className="h-48 bg-gradient-to-br from-[#A5375C] to-[#C84862] flex items-center justify-center">
+              <span className="text-white text-2xl font-bold text-center px-4">
+                Financial Wellbeing
               </span>
             </div>
             <div className="p-6">
-              <h3 className="text-xl font-semibold mb-3">
-                Managing Stress & Anxiety
+              <h3 className="text-xl font-semibold mb-3 text-[#374151]">
+                Financial Wellbeing Webinar
               </h3>
-              <p className="text-gray-600 mb-4">
-                Learn practical techniques for managing stress, anxiety, and
-                overwhelm in daily life. This workshop provides evidence-based
-                strategies for maintaining mental well-being.
+              <p className="text-[#6B7280] mb-4 leading-relaxed">
+                This session addresses the impact of rising living costs on
+                financial and mental wellbeing. It offers insights into managing
+                financial stress and provides practical budgeting and savings
+                strategies to help individuals gain financial stability and
+                alleviate financial stress.
               </p>
-              <ul className="text-gray-600 space-y-1 mb-6 text-sm">
-                <li>• Mindfulness and meditation techniques</li>
-                <li>• Breathing exercises and relaxation methods</li>
-                <li>• Time management strategies</li>
-                <li>• Cognitive behavioral techniques</li>
-              </ul>
-              <div className="flex justify-between items-center">
-                <span className="text-green-600 font-semibold">$45</span>
-                <button className="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 transition-colors">
-                  Register Now
-                </button>
-              </div>
+              <a
+                href="/contact"
+                className="wmf-button-primary px-4 py-2 rounded-lg font-semibold inline-block"
+              >
+                Enquire Now
+              </a>
             </div>
           </div>
 
-          <div className="bg-white rounded-lg shadow-md overflow-hidden">
-            <div className="h-48 bg-gradient-to-br from-green-400 to-green-600 flex items-center justify-center">
-              <span className="text-white text-2xl font-bold">
-                Self-Care & Wellness
+          <div className="bg-white rounded-xl shadow-lg overflow-hidden border border-[#E5E7EB] hover:shadow-xl transition-all duration-300">
+            <div className="h-48 bg-gradient-to-br from-[#3C6A72] to-[#4A7A82] flex items-center justify-center">
+              <span className="text-white text-2xl font-bold text-center px-4">
+                Mental Health Conversations
               </span>
             </div>
             <div className="p-6">
-              <h3 className="text-xl font-semibold mb-3">
-                Holistic Self-Care Practices
+              <h3 className="text-xl font-semibold mb-3 text-[#374151]">
+                How to Talk about Mental Health
               </h3>
-              <p className="text-gray-600 mb-4">
-                Discover personalized self-care strategies and wellness
-                practices for holistic well-being. Learn to prioritize your
-                needs and create sustainable self-care routines.
+              <p className="text-[#6B7280] mb-4 leading-relaxed">
+                Designed to guide participants in approaching mental health
+                conversations with empathy and understanding, this workshop
+                covers strategies for initiating discussions on mental
+                well-being. It emphasizes active listening, selecting the right
+                setting, and creating a safe, non-judgmental environment.
               </p>
-              <ul className="text-gray-600 space-y-1 mb-6 text-sm">
-                <li>• Creating personalized self-care plans</li>
-                <li>• Physical wellness practices</li>
-                <li>• Emotional self-care techniques</li>
-                <li>• Building sustainable routines</li>
-              </ul>
-              <div className="flex justify-between items-center">
-                <span className="text-green-600 font-semibold">$45</span>
-                <button className="bg-green-600 text-white px-4 py-2 rounded hover:bg-green-700 transition-colors">
-                  Register Now
-                </button>
-              </div>
+              <a
+                href="/contact"
+                className="bg-[#3C6A72] text-white px-4 py-2 rounded-lg hover:bg-[#4A7A82] transition-colors font-semibold inline-block"
+              >
+                Enquire Now
+              </a>
             </div>
           </div>
 
-          <div className="bg-white rounded-lg shadow-md overflow-hidden">
-            <div className="h-48 bg-gradient-to-br from-purple-400 to-purple-600 flex items-center justify-center">
-              <span className="text-white text-2xl font-bold">
-                Building Resilience
+          <div className="bg-white rounded-xl shadow-lg overflow-hidden border border-[#E5E7EB] hover:shadow-xl transition-all duration-300">
+            <div className="h-48 bg-gradient-to-br from-[#DE5762] to-[#E66772] flex items-center justify-center">
+              <span className="text-white text-2xl font-bold text-center px-4">
+                Workplace Safety
               </span>
             </div>
             <div className="p-6">
-              <h3 className="text-xl font-semibold mb-3">
-                Emotional Resilience Skills
+              <h3 className="text-xl font-semibold mb-3 text-[#374151]">
+                Safe Work Australia (Work-Related Injury & Illness Awareness)
               </h3>
-              <p className="text-gray-600 mb-4">
-                Develop emotional resilience and coping skills to navigate
-                life&apos;s challenges with strength. Learn to bounce back from
-                setbacks and build lasting emotional strength.
+              <p className="text-[#6B7280] mb-4 leading-relaxed">
+                Focusing on occupational safety, this workshop discusses
+                work-related injuries and illnesses. Participants learn about
+                the compensation process, preventive practices, and strategies
+                to minimize work-related health risks, especially in high-risk
+                environments.
               </p>
-              <ul className="text-gray-600 space-y-1 mb-6 text-sm">
-                <li>• Understanding resilience factors</li>
-                <li>• Coping with adversity</li>
-                <li>• Building emotional strength</li>
-                <li>• Growth mindset development</li>
-              </ul>
               <div className="flex justify-between items-center">
-                <span className="text-green-600 font-semibold">$45</span>
-                <button className="bg-purple-600 text-white px-4 py-2 rounded hover:bg-purple-700 transition-colors">
-                  Register Now
-                </button>
+                <a
+                  href="/contact"
+                  className="bg-[#DE5762] text-white px-4 py-2 rounded-lg hover:bg-[#E66772] transition-colors font-semibold inline-block"
+                >
+                  Enquire Now
+                </a>
               </div>
             </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Workshop Schedule */}
-      <section className="max-w-6xl mx-auto mb-16">
-        <h2 className="text-3xl font-bold mb-8 text-center">
-          Upcoming Workshops
-        </h2>
-        <div className="bg-white rounded-lg shadow-md p-8">
-          <div className="space-y-6">
-            <div className="flex flex-col md:flex-row md:items-center justify-between p-4 bg-gray-50 rounded-lg">
-              <div>
-                <h3 className="text-lg font-semibold">
-                  Stress Management Workshop
-                </h3>
-                <p className="text-gray-600">
-                  Learn practical techniques for managing daily stress and
-                  anxiety
-                </p>
-                <p className="text-sm text-gray-500">Duration: 3 hours</p>
-              </div>
-              <div className="flex flex-col items-end mt-4 md:mt-0">
-                <p className="text-gray-600 font-semibold">March 15, 2024</p>
-                <p className="text-gray-500 text-sm">10:00 AM - 1:00 PM</p>
-                <button className="bg-blue-600 text-white px-4 py-2 rounded mt-2 hover:bg-blue-700 transition-colors">
-                  Register
-                </button>
-              </div>
-            </div>
-
-            <div className="flex flex-col md:flex-row md:items-center justify-between p-4 bg-gray-50 rounded-lg">
-              <div>
-                <h3 className="text-lg font-semibold">
-                  Self-Care & Wellness Workshop
-                </h3>
-                <p className="text-gray-600">
-                  Discover personalized self-care strategies for holistic
-                  well-being
-                </p>
-                <p className="text-sm text-gray-500">Duration: 3 hours</p>
-              </div>
-              <div className="flex flex-col items-end mt-4 md:mt-0">
-                <p className="text-gray-600 font-semibold">March 22, 2024</p>
-                <p className="text-gray-500 text-sm">2:00 PM - 5:00 PM</p>
-                <button className="bg-green-600 text-white px-4 py-2 rounded mt-2 hover:bg-green-700 transition-colors">
-                  Register
-                </button>
-              </div>
-            </div>
-
-            <div className="flex flex-col md:flex-row md:items-center justify-between p-4 bg-gray-50 rounded-lg">
-              <div>
-                <h3 className="text-lg font-semibold">
-                  Building Resilience Workshop
-                </h3>
-                <p className="text-gray-600">
-                  Develop emotional resilience and coping skills for life&apos;s
-                  challenges
-                </p>
-                <p className="text-sm text-gray-500">Duration: 3 hours</p>
-              </div>
-              <div className="flex flex-col items-end mt-4 md:mt-0">
-                <p className="text-gray-600 font-semibold">March 29, 2024</p>
-                <p className="text-gray-500 text-sm">10:00 AM - 1:00 PM</p>
-                <button className="bg-purple-600 text-white px-4 py-2 rounded mt-2 hover:bg-purple-700 transition-colors">
-                  Register
-                </button>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Workshop Formats */}
-      <section className="max-w-6xl mx-auto mb-16">
-        <h2 className="text-3xl font-bold mb-8 text-center">
-          Workshop Formats
-        </h2>
-        <div className="grid md:grid-cols-2 gap-8">
-          <div className="bg-white rounded-lg shadow-md p-8">
-            <h3 className="text-xl font-semibold mb-4">In-Person Workshops</h3>
-            <p className="text-gray-600 mb-4">
-              Join us for interactive, hands-on workshops in a supportive group
-              environment. Connect with other women while learning practical
-              skills for your well-being.
-            </p>
-            <ul className="text-gray-600 space-y-2 mb-6">
-              <li>• Small group settings (max 15 participants)</li>
-              <li>• Interactive exercises and activities</li>
-              <li>• Take-home materials and resources</li>
-              <li>• Follow-up support and community access</li>
-            </ul>
-            <button className="bg-blue-600 text-white px-6 py-2 rounded hover:bg-blue-700 transition-colors">
-              View In-Person Schedule
-            </button>
-          </div>
-          <div className="bg-white rounded-lg shadow-md p-8">
-            <h3 className="text-xl font-semibold mb-4">Virtual Workshops</h3>
-            <p className="text-gray-600 mb-4">
-              Participate in our workshops from the comfort of your home. Our
-              virtual sessions provide the same high-quality content and
-              interactive experience as in-person workshops.
-            </p>
-            <ul className="text-gray-600 space-y-2 mb-6">
-              <li>• Live interactive sessions via Zoom</li>
-              <li>• Digital resources and materials</li>
-              <li>• Flexible scheduling options</li>
-              <li>• Recording access for 30 days</li>
-            </ul>
-            <button className="bg-green-600 text-white px-6 py-2 rounded hover:bg-green-700 transition-colors">
-              View Virtual Schedule
-            </button>
           </div>
         </div>
       </section>
 
       {/* Workshop Benefits */}
       <section className="max-w-4xl mx-auto mb-16">
-        <h2 className="text-3xl font-bold mb-8 text-center">
+        <h2 className="text-3xl font-bold mb-8 text-center text-[#374151]">
           Why Choose Our Workshops?
         </h2>
         <div className="grid md:grid-cols-2 gap-6">
-          <div className="bg-white rounded-lg shadow-md p-6">
-            <h3 className="text-lg font-semibold mb-3">
+          <div className="bg-white rounded-xl shadow-lg p-6 border border-[#E5E7EB] hover:shadow-xl transition-all duration-300">
+            <div className="w-12 h-12 bg-gradient-to-r from-[#A5375C] to-[#C84862] rounded-lg flex items-center justify-center mb-4">
+              <svg
+                className="w-6 h-6 text-white"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
+                />
+              </svg>
+            </div>
+            <h3 className="text-lg font-semibold mb-3 text-[#374151]">
               Evidence-Based Approach
             </h3>
-            <p className="text-gray-600 text-sm">
+            <p className="text-[#6B7280] text-sm leading-relaxed">
               All our workshops are based on proven psychological techniques and
               research-backed strategies for mental health and well-being.
             </p>
           </div>
-          <div className="bg-white rounded-lg shadow-md p-6">
-            <h3 className="text-lg font-semibold mb-3">
+          <div className="bg-white rounded-xl shadow-lg p-6 border border-[#E5E7EB] hover:shadow-xl transition-all duration-300">
+            <div className="w-12 h-12 bg-gradient-to-r from-[#3C6A72] to-[#4A7A82] rounded-lg flex items-center justify-center mb-4">
+              <svg
+                className="w-6 h-6 text-white"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"
+                />
+              </svg>
+            </div>
+            <h3 className="text-lg font-semibold mb-3 text-[#374151]">
               Experienced Facilitators
             </h3>
-            <p className="text-gray-600 text-sm">
+            <p className="text-[#6B7280] text-sm leading-relaxed">
               Our workshops are led by qualified mental health professionals
               with extensive experience in women&apos;s mental health and
               well-being.
             </p>
           </div>
-          <div className="bg-white rounded-lg shadow-md p-6">
-            <h3 className="text-lg font-semibold mb-3">
+          <div className="bg-white rounded-xl shadow-lg p-6 border border-[#E5E7EB] hover:shadow-xl transition-all duration-300">
+            <div className="w-12 h-12 bg-gradient-to-r from-[#DE5762] to-[#E66772] rounded-lg flex items-center justify-center mb-4">
+              <svg
+                className="w-6 h-6 text-white"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"
+                />
+              </svg>
+            </div>
+            <h3 className="text-lg font-semibold mb-3 text-[#374151]">
               Supportive Environment
             </h3>
-            <p className="text-gray-600 text-sm">
+            <p className="text-[#6B7280] text-sm leading-relaxed">
               Create a safe, non-judgmental space where women can learn, share,
               and grow together in a supportive community setting.
             </p>
           </div>
-          <div className="bg-white rounded-lg shadow-md p-6">
-            <h3 className="text-lg font-semibold mb-3">
+          <div className="bg-white rounded-xl shadow-lg p-6 border border-[#E5E7EB] hover:shadow-xl transition-all duration-300">
+            <div className="w-12 h-12 bg-gradient-to-r from-[#A5375C] to-[#C84862] rounded-lg flex items-center justify-center mb-4">
+              <svg
+                className="w-6 h-6 text-white"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M13 10V3L4 14h7v7l9-11h-7z"
+                />
+              </svg>
+            </div>
+            <h3 className="text-lg font-semibold mb-3 text-[#374151]">
               Practical Application
             </h3>
-            <p className="text-gray-600 text-sm">
+            <p className="text-[#6B7280] text-sm leading-relaxed">
               Learn skills and strategies that you can immediately apply to your
               daily life for lasting positive change.
             </p>
@@ -268,44 +344,54 @@ export default function WorkshopsPage() {
         </div>
       </section>
 
-      {/* Testimonials */}
-      <section className="max-w-4xl mx-auto mb-16">
-        <h2 className="text-3xl font-bold mb-8 text-center">
-          Workshop Testimonials
+      {/* All Workshops Grid */}
+      <section className="max-w-6xl mx-auto mb-16">
+        <h2 className="text-3xl font-bold mb-8 text-center text-[#374151]">
+          All Workshops
         </h2>
-        <div className="bg-white rounded-lg shadow-md p-8">
-          <blockquote className="text-lg text-gray-600 italic mb-4">
-            &quot;The stress management workshop gave me practical tools I use
-            every day. I finally feel like I have control over my anxiety and
-            can manage my stress levels effectively.&quot;
-          </blockquote>
-          <p className="text-gray-800 font-semibold">
-            — Lisa Chen, Workshop Participant
-          </p>
+        <div className="grid md:grid-cols-3 gap-8">
+          {displayedWorkshops.map((workshop, index) => (
+            <div
+              key={index}
+              className="bg-white rounded-xl shadow-lg overflow-hidden border border-[#E5E7EB] hover:shadow-xl transition-all duration-300"
+            >
+              <div
+                className={`h-48 bg-gradient-to-br ${workshop.gradient} flex items-center justify-center`}
+              >
+                <span className="text-white text-xl font-bold text-center px-4">
+                  {workshop.title}
+                </span>
+              </div>
+              <div className="p-6">
+                <p className="text-[#6B7280] mb-4 leading-relaxed">
+                  {workshop.description}
+                </p>
+                <a
+                  href="/contact"
+                  className={`${workshop.buttonClass} px-4 py-2 rounded-lg font-semibold inline-block`}
+                >
+                  Enquire Now
+                </a>
+              </div>
+            </div>
+          ))}
+        </div>
+
+        {/* Show More/Less Button */}
+        <div className="text-center mt-12">
+          <button
+            onClick={() => setShowAllWorkshops(!showAllWorkshops)}
+            className="bg-gradient-to-r from-[#A5375C] to-[#C84862] text-white px-8 py-3 rounded-lg font-semibold hover:shadow-lg transition-all duration-300 transform hover:scale-105"
+          >
+            {showAllWorkshops
+              ? "Show Less"
+              : `Show More Workshops (${allWorkshops.length - 3} more)`}
+          </button>
         </div>
       </section>
 
-      {/* Call to Action */}
-      <section className="bg-blue-50 rounded-xl p-8 text-center">
-        <h2 className="text-2xl font-bold mb-4">
-          Ready to Invest in Your Well-Being?
-        </h2>
-        <p className="text-gray-600 mb-6">
-          Join our workshops and start building the skills you need for better
-          mental health and emotional resilience.
-        </p>
-        <div className="flex flex-col sm:flex-row gap-4 justify-center">
-          <button className="bg-blue-600 text-white px-6 py-3 rounded hover:bg-blue-700 transition-colors">
-            View All Workshops
-          </button>
-          <button className="bg-green-600 text-white px-6 py-3 rounded hover:bg-green-700 transition-colors">
-            Contact Us
-          </button>
-          <button className="bg-purple-600 text-white px-6 py-3 rounded hover:bg-purple-700 transition-colors">
-            Download Workshop Guide
-          </button>
-        </div>
-      </section>
+      {/* Newsletter */}
+      <Newsletter />
     </div>
   );
 }
