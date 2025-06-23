@@ -3,10 +3,10 @@ export default function LoginPage() {
     <div className="min-h-screen bg-gray-50 flex flex-col justify-center py-12 sm:px-6 lg:px-8">
       <div className="sm:mx-auto sm:w-full sm:max-w-md">
         <div className="text-center">
-          <h1 className="text-3xl font-bold text-gray-900 mb-2">
+          <h1 className="text-3xl font-bold text-[#374151] mb-2">
             Welcome Back
           </h1>
-          <p className="text-gray-600">Sign in to your WMF member account</p>
+          <p className="text-[#6B7280]">Sign in to your WMF member account</p>
         </div>
       </div>
 
@@ -16,7 +16,7 @@ export default function LoginPage() {
             <div>
               <label
                 htmlFor="email"
-                className="block text-sm font-medium text-gray-700"
+                className="block text-sm font-medium text-[#374151]"
               >
                 Email Address
               </label>
@@ -27,7 +27,7 @@ export default function LoginPage() {
                   type="email"
                   autoComplete="email"
                   required
-                  className="appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md placeholder-gray-400 focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
+                  className="appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md placeholder-gray-400 focus:outline-none focus:ring-[#A5375C] focus:border-[#A5375C] sm:text-sm"
                   placeholder="Enter your email address"
                 />
               </div>
@@ -36,7 +36,7 @@ export default function LoginPage() {
             <div>
               <label
                 htmlFor="password"
-                className="block text-sm font-medium text-gray-700"
+                className="block text-sm font-medium text-[#374151]"
               >
                 Password
               </label>
@@ -47,7 +47,7 @@ export default function LoginPage() {
                   type="password"
                   autoComplete="current-password"
                   required
-                  className="appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md placeholder-gray-400 focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
+                  className="appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md placeholder-gray-400 focus:outline-none focus:ring-[#A5375C] focus:border-[#A5375C] sm:text-sm"
                   placeholder="Enter your password"
                 />
               </div>
@@ -59,11 +59,11 @@ export default function LoginPage() {
                   id="remember-me"
                   name="remember-me"
                   type="checkbox"
-                  className="h-4 w-4 text-blue-600 focus:ring-blue-500 border-gray-300 rounded"
+                  className="h-4 w-4 text-[#A5375C] focus:ring-[#A5375C] border-gray-300 rounded"
                 />
                 <label
                   htmlFor="remember-me"
-                  className="ml-2 block text-sm text-gray-900"
+                  className="ml-2 block text-sm text-[#374151]"
                 >
                   Remember me
                 </label>
@@ -72,7 +72,7 @@ export default function LoginPage() {
               <div className="text-sm">
                 <a
                   href="#"
-                  className="font-medium text-blue-600 hover:text-blue-500"
+                  className="font-medium text-[#A5375C] hover:text-[#C84862]"
                 >
                   Forgot your password?
                 </a>
@@ -82,7 +82,7 @@ export default function LoginPage() {
             <div>
               <button
                 type="submit"
-                className="w-full flex justify-center py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500"
+                className="w-full flex justify-center py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-[#A5375C] hover:bg-[#C84862] focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#A5375C]"
               >
                 Sign In
               </button>
@@ -95,7 +95,7 @@ export default function LoginPage() {
                 <div className="w-full border-t border-gray-300" />
               </div>
               <div className="relative flex justify-center text-sm">
-                <span className="px-2 bg-white text-gray-500">
+                <span className="px-2 bg-white text-[#6B7280]">
                   Or continue with
                 </span>
               </div>
@@ -105,7 +105,7 @@ export default function LoginPage() {
               <div>
                 <button
                   type="button"
-                  className="w-full inline-flex justify-center py-2 px-4 border border-gray-300 rounded-md shadow-sm bg-white text-sm font-medium text-gray-500 hover:bg-gray-50"
+                  className="w-full inline-flex justify-center py-2 px-4 border border-gray-300 rounded-md shadow-sm bg-white text-sm font-medium text-[#6B7280] hover:bg-gray-50"
                 >
                   <svg className="w-5 h-5" viewBox="0 0 24 24">
                     <path
@@ -132,7 +132,7 @@ export default function LoginPage() {
               <div>
                 <button
                   type="button"
-                  className="w-full inline-flex justify-center py-2 px-4 border border-gray-300 rounded-md shadow-sm bg-white text-sm font-medium text-gray-500 hover:bg-gray-50"
+                  className="w-full inline-flex justify-center py-2 px-4 border border-gray-300 rounded-md shadow-sm bg-white text-sm font-medium text-[#6B7280] hover:bg-gray-50"
                 >
                   <svg
                     className="w-5 h-5"
@@ -148,11 +148,11 @@ export default function LoginPage() {
           </div>
 
           <div className="mt-6 text-center">
-            <p className="text-sm text-gray-600">
+            <p className="text-sm text-[#6B7280]">
               Don&apos;t have an account?{" "}
               <a
                 href="/members/register"
-                className="font-medium text-blue-600 hover:text-blue-500"
+                className="font-medium text-[#A5375C] hover:text-[#C84862]"
               >
                 Sign up here
               </a>
@@ -163,11 +163,11 @@ export default function LoginPage() {
 
       {/* Additional Information */}
       <div className="mt-8 sm:mx-auto sm:w-full sm:max-w-md">
-        <div className="bg-blue-50 rounded-lg p-4">
+        <div className="bg-gradient-to-r from-[#A5375C]/10 to-[#C84862]/10 rounded-lg p-4">
           <div className="flex">
             <div className="flex-shrink-0">
               <svg
-                className="h-5 w-5 text-blue-400"
+                className="h-5 w-5 text-[#A5375C]"
                 fill="none"
                 stroke="currentColor"
                 viewBox="0 0 24 24"
@@ -181,10 +181,10 @@ export default function LoginPage() {
               </svg>
             </div>
             <div className="ml-3">
-              <h3 className="text-sm font-medium text-blue-800">
+              <h3 className="text-sm font-medium text-[#374151]">
                 Member Benefits
               </h3>
-              <div className="mt-2 text-sm text-blue-700">
+              <div className="mt-2 text-sm text-[#6B7280]">
                 <p>
                   Access exclusive resources, join support groups, and connect
                   with our community of women.

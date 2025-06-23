@@ -1,65 +1,133 @@
 # Women's Mentoring Foundation Website
 
-A modern Next.js frontend for the Women's Mentoring Foundation website, integrating with WordPress as a headless CMS.
+A modern, responsive website built with Next.js 14, TypeScript, and Tailwind CSS. This is a headless frontend that integrates with an existing WordPress CMS to display dynamic content.
 
-<https://womensmentoringfoundation.com/>
+## Features
 
-## Tech Stack
+- **Modern Design**: Clean, professional design with accessibility in mind
+- **WordPress Integration**: Dynamic content from WordPress CMS (blog posts, pages, media)
+- **Responsive**: Mobile-first design that works on all devices
+- **Performance**: Optimized with Next.js 14 App Router and static generation
+- **SEO Friendly**: Built with search engine optimization in mind
 
-- Next.js 14 (App Router)
-- TypeScript
-- Tailwind CSS
-- WordPress REST API
+## WordPress Integration
+
+This frontend connects to your existing WordPress site via the WordPress REST API to display:
+
+- **Blog Posts**: Dynamic blog listing and individual post pages
+- **Featured Images**: Automatic display of WordPress featured images
+- **Content**: Real-time content from your WordPress CMS
+- **Media**: Integration with WordPress media library
+
+### Setup WordPress Integration
+
+1. Create a `.env.local` file in the root directory:
+
+```bash
+NEXT_PUBLIC_WORDPRESS_API_URL=https://your-wordpress-site.com/wp-json/wp/v2
+```
+
+2. Replace `your-wordpress-site.com` with your actual WordPress site URL
+
+3. Ensure your WordPress site has the REST API enabled (enabled by default in modern WordPress)
 
 ## Getting Started
 
-1. Install dependencies:
+### Prerequisites
+
+- Node.js 18+
+- npm or yarn
+
+### Installation
+
+1. Clone the repository:
+
+```bash
+git clone <repository-url>
+cd website
+```
+
+2. Install dependencies:
 
 ```bash
 npm install
 ```
 
-2. Create a `.env.local` file with your WordPress API configuration:
+3. Set up environment variables:
 
-```env
-NEXT_PUBLIC_WORDPRESS_API_URL=https://womensmentoringfoundation.com/wp-json/wp/v2
+```bash
+cp .env.local.example .env.local
+# Edit .env.local with your WordPress API URL
 ```
 
-3. Run the development server:
+4. Run the development server:
 
 ```bash
 npm run dev
 ```
 
-4. Open [http://localhost:3000](http://localhost:3000) to view the site.
+5. Open [http://localhost:3000](http://localhost:3000) in your browser
 
 ## Project Structure
 
-- `src/app/` - Next.js app router pages and layouts
-- `src/components/` - Reusable React components
-- `src/lib/` - Utility functions and WordPress API integration
-- `src/types/` - TypeScript type definitions
-- `public/` - Static assets
+```
+src/
+├── app/                    # Next.js 14 App Router pages
+│   ├── blog/              # Blog listing and individual posts
+│   ├── about/             # About pages
+│   ├── programs/          # Program pages
+│   └── ...
+├── components/            # Reusable React components
+│   ├── layout/           # Header, Footer, etc.
+│   ├── sections/         # Page sections
+│   └── ui/              # UI components
+├── lib/                  # Utility functions
+│   └── wordpress.ts     # WordPress API integration
+└── types/               # TypeScript type definitions
+    └── wordpress.ts     # WordPress API types
+```
 
-## Features
+## WordPress API Integration
 
-- Modern, responsive design
-- Server-side rendering for better SEO
-- WordPress integration for content management
-- Optimized performance
-- TypeScript for type safety
+The site uses the WordPress REST API to fetch content:
 
-## Learn More
+- **Posts**: `getPosts()` - Fetch blog posts with pagination
+- **Individual Post**: `getPost(slug)` - Fetch specific post by slug
+- **Pages**: `getPages()` - Fetch WordPress pages
+- **Categories**: `getCategories()` - Fetch post categories
 
-To learn more about Next.js, take a look at the following resources:
+All API calls include:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- Automatic revalidation (1 hour cache)
+- Featured media embedding
+- Error handling
+- TypeScript support
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Demo Features
 
-## Deploy on Vercel
+To demonstrate the WordPress integration to decision makers:
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+1. **Dynamic Blog**: Shows real posts from your WordPress site
+2. **Featured Posts**: Homepage displays latest blog posts
+3. **Real Content**: All content comes from your existing WordPress CMS
+4. **Media Integration**: Featured images from WordPress media library
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Deployment
+
+The site can be deployed to any platform that supports Next.js:
+
+- Vercel (recommended)
+- Netlify
+- AWS Amplify
+- Self-hosted
+
+## Contributing
+
+1. Fork the repository
+2. Create a feature branch
+3. Make your changes
+4. Submit a pull request
+
+## License
+
+[Add your license information here]

@@ -5,14 +5,14 @@ const API_URL = process.env.NEXT_PUBLIC_WORDPRESS_API_URL;
 export async function getPosts(page = 1, perPage = 10): Promise<WPPost[]> {
   const res = await fetch(
     `${API_URL}/posts?page=${page}&per_page=${perPage}&_embed`,
-    { next: { revalidate: 3600 } }
+    { next: { revalidate: 60 } }
   );
   return res.json();
 }
 
 export async function getPost(slug: string): Promise<WPPost> {
   const res = await fetch(`${API_URL}/posts?slug=${slug}&_embed`, {
-    next: { revalidate: 3600 },
+    next: { revalidate: 60 },
   });
   const posts = await res.json();
   return posts[0];

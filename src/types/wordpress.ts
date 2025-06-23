@@ -11,6 +11,8 @@ export interface WPPost {
     rendered: string;
   };
   slug: string;
+  status?: string;
+  categories?: number[];
   _embedded?: {
     "wp:featuredmedia"?: Array<{
       source_url: string;

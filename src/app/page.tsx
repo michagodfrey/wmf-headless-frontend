@@ -1,6 +1,11 @@
 import Newsletter from "@/components/sections/Newsletter";
+import { getPosts } from "@/lib/wordpress";
+import Link from "next/link";
 
-export default function Home() {
+export default async function Home() {
+  // Fetch featured blog posts from WordPress
+  const featuredPosts = await getPosts(1, 3); // Get first 3 posts
+
   return (
     <div>
       {/* Hero Section */}
@@ -562,15 +567,78 @@ export default function Home() {
       <section className="py-16 bg-gray-50">
         <div className="container mx-auto px-4">
           <div className="max-w-3xl mx-auto text-center mb-12">
-            <h2 className="text-3xl font-bold mb-4">Explore Our Blog</h2>
+            <h2 className="text-3xl font-bold mb-4">Latest from Our Blog</h2>
             <p className="text-gray-600">
               Stay updated with our latest articles, success stories, and
-              resources.
+              resources from our WordPress CMS.
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {/* Blog post carousel will go here */}
+          {featuredPosts.length > 0 ? (
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+              {featuredPosts.map((post) => (
+                <article
+                  key={post.id}
+                  className="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-all duration-300 border border-[#E5E7EB]"
+                >
+                  <div className="aspect-w-16 aspect-h-9">
+                    <img
+                      src={
+                        post._embedded?.["wp:featuredmedia"]?.[0]?.source_url ||
+                        "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1471&q=80"
+                      }
+                      alt={post.title.rendered}
+                      className="w-full h-48 object-cover"
+                    />
+                  </div>
+                  <div className="p-6">
+                    <h3 className="text-xl font-semibold mb-4 text-[#374151]">
+                      <Link
+                        href={`/blog/${post.slug}`}
+                        className="hover:text-[#A5375C] transition-colors"
+                        dangerouslySetInnerHTML={{
+                          __html: post.title.rendered,
+                        }}
+                      />
+                    </h3>
+                    <div
+                      className="text-[#6B7280] mb-4 line-clamp-3"
+                      dangerouslySetInnerHTML={{
+                        __html: post.excerpt.rendered,
+                      }}
+                    />
+                    <div className="text-sm text-[#6B7280] mb-4">
+                      {new Date(post.date).toLocaleDateString("en-US", {
+                        year: "numeric",
+                        month: "long",
+                        day: "numeric",
+                      })}
+                    </div>
+                    <Link
+                      href={`/blog/${post.slug}`}
+                      className="text-[#A5375C] hover:text-[#C84862] font-semibold transition-colors"
+                    >
+                      Read More →
+                    </Link>
+                  </div>
+                </article>
+              ))}
+            </div>
+          ) : (
+            <div className="text-center py-12">
+              <p className="text-[#6B7280] text-lg">
+                No blog posts available yet.
+              </p>
+            </div>
+          )}
+
+          <div className="text-center mt-8">
+            <Link
+              href="/blog"
+              className="bg-[#A5375C] text-white px-8 py-3 rounded-lg hover:bg-[#C84862] transition-colors font-semibold shadow-lg hover:shadow-xl"
+            >
+              View All Posts
+            </Link>
           </div>
         </div>
       </section>

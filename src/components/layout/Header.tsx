@@ -1,7 +1,6 @@
 "use client";
 
 import Link from "next/link";
-import { useState, useEffect, useRef } from "react";
 
 const navigation = [
   { name: "Home", href: "/" },
@@ -49,51 +48,29 @@ const navigation = [
 ];
 
 const socialMedia = [
-  { name: "Facebook", href: "#", icon: "facebook" },
-  { name: "Instagram", href: "#", icon: "instagram" },
-  { name: "LinkedIn", href: "#", icon: "linkedin" },
-  { name: "YouTube", href: "#", icon: "youtube" },
+  {
+    name: "Facebook",
+    href: "https://www.facebook.com/womensmentoringfoundation",
+    icon: "facebook",
+  },
+  {
+    name: "Instagram",
+    href: "https://www.instagram.com/womensmentoringfoundation/",
+    icon: "instagram",
+  },
+  {
+    name: "LinkedIn",
+    href: "https://www.linkedin.com/company/womens-mentoring-foundation-ltd/%20",
+    icon: "linkedin",
+  },
+  {
+    name: "YouTube",
+    href: "https://www.youtube.com/@womensmentoringfoundation",
+    icon: "youtube",
+  },
 ];
 
 export default function Header() {
-  const [openDropdown, setOpenDropdown] = useState<string | null>(null);
-  const dropdownRef = useRef<HTMLDivElement>(null);
-
-  // Close dropdown when clicking outside
-  useEffect(() => {
-    function handleClickOutside(event: MouseEvent) {
-      if (
-        dropdownRef.current &&
-        !dropdownRef.current.contains(event.target as Node)
-      ) {
-        setOpenDropdown(null);
-      }
-    }
-
-    document.addEventListener("mousedown", handleClickOutside);
-    return () => {
-      document.removeEventListener("mousedown", handleClickOutside);
-    };
-  }, []);
-
-  // Close dropdown when pressing Escape key
-  useEffect(() => {
-    function handleEscapeKey(event: KeyboardEvent) {
-      if (event.key === "Escape") {
-        setOpenDropdown(null);
-      }
-    }
-
-    document.addEventListener("keydown", handleEscapeKey);
-    return () => {
-      document.removeEventListener("keydown", handleEscapeKey);
-    };
-  }, []);
-
-  const toggleDropdown = (itemName: string) => {
-    setOpenDropdown(openDropdown === itemName ? null : itemName);
-  };
-
   const getSocialIcon = (icon: string) => {
     switch (icon) {
       case "facebook":
@@ -193,12 +170,9 @@ export default function Header() {
           </div>
 
           {/* Desktop Navigation - Centered */}
-          <div
-            className="hidden lg:flex items-center space-x-8"
-            ref={dropdownRef}
-          >
+          <div className="hidden lg:flex items-center space-x-8">
             {navigation.map((item) => (
-              <div key={item.name} className="relative">
+              <div key={item.name} className="relative group">
                 {item.dropdown ? (
                   <div className="relative">
                     <div className="flex items-center">
@@ -208,46 +182,35 @@ export default function Header() {
                       >
                         {item.name}
                       </Link>
-                      <button
-                        className="ml-1 text-[#6B7280] hover:text-[#A5375C] transition-colors p-1"
-                        onClick={() => toggleDropdown(item.name)}
-                        aria-label={`Toggle ${item.name} dropdown menu`}
+                      <svg
+                        className="ml-1 h-4 w-4 text-[#6B7280] transition-colors"
+                        fill="none"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24"
                       >
-                        <svg
-                          className={`h-4 w-4 transition-transform ${
-                            openDropdown === item.name ? "rotate-180" : ""
-                          }`}
-                          fill="none"
-                          stroke="currentColor"
-                          viewBox="0 0 24 24"
-                        >
-                          <path
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                            strokeWidth={2}
-                            d="M19 9l-7 7-7-7"
-                          />
-                        </svg>
-                      </button>
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth={2}
+                          d="M19 9l-7 7-7-7"
+                        />
+                      </svg>
                     </div>
 
                     {/* Dropdown Menu */}
-                    {openDropdown === item.name && (
-                      <div className="absolute top-full left-0 mt-2 w-64 bg-white rounded-md shadow-lg border border-[#E5E7EB] z-50 animate-in fade-in-0 slide-in-from-top-2 duration-200">
-                        <div className="py-2">
-                          {item.dropdown.map((dropdownItem) => (
-                            <Link
-                              key={dropdownItem.name}
-                              href={dropdownItem.href}
-                              className="block px-4 py-3 text-sm text-[#374151] hover:bg-[#F9FAFB] hover:text-[#A5375C] transition-colors"
-                              onClick={() => setOpenDropdown(null)}
-                            >
-                              {dropdownItem.name}
-                            </Link>
-                          ))}
-                        </div>
+                    <div className="absolute top-full left-0 mt-2 w-64 bg-white rounded-md shadow-lg border border-[#E5E7EB] z-50 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
+                      <div className="py-2">
+                        {item.dropdown.map((dropdownItem) => (
+                          <Link
+                            key={dropdownItem.name}
+                            href={dropdownItem.href}
+                            className="block px-4 py-3 text-sm text-[#374151] hover:bg-[#F9FAFB] hover:text-[#A5375C] transition-colors"
+                          >
+                            {dropdownItem.name}
+                          </Link>
+                        ))}
                       </div>
-                    )}
+                    </div>
                   </div>
                 ) : (
                   <Link

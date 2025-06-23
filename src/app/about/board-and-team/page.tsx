@@ -3,49 +3,91 @@ import { Recruit } from "@/components/sections";
 export default function OurBoardTeamPage() {
   const boardMembers = [
     {
-      name: "Dr. Sarah Johnson",
-      role: "Chairperson",
-      image: "/placeholder-avatar.jpg",
-      bio: "Dr. Sarah Johnson brings over 15 years of experience in mental health advocacy and women's empowerment. As a licensed clinical psychologist, she has dedicated her career to supporting women through trauma recovery and personal development. Dr. Johnson holds a Ph.D. in Clinical Psychology from the University of Melbourne and has worked extensively with diverse communities across Australia. Her passion for creating safe spaces for women to heal and grow led her to co-found the Women's Mentoring Foundation. She believes in the transformative power of peer support and community connection in the healing journey.",
+      name: "Daryl Buckingham",
+      role: "Chairman",
+      image:
+        "https://womensmentoringfoundation.com/wp-content/uploads/elementor/thumbs/Daryl-Buckingham-Headshot-300x300-1-qjs2xmue36kdlotkuubhrpabe3bedcbouen50tkv28.jpg",
+      bio: "Daryl has over 30 years' leadership experience within local government, community development and commercial business. A contemporary leader; he encourage local government and industry to challenge the way things have 'always been done', leading innovation and transformation. His experiences includes developing and delivering: Gig Economy, Smart City & Connected Community Economic, Development Strategies, Agile Local Government Systems, Place Based Economic Development Plans, Digital Transition Strategies, Local Government as a Service Model, Smart Horticulture and Agribusiness Development, Cooperative Research Centres, Long term financial sustainability. He also volunteers as welfare officer and peer councillor supporting Veterans with PTSD and depression and assist them with transitioning from the military to civilian life. He is also a lived experienced peer councillor with Roses in the Ocean an experience of suicide organisation saving lives and reducing emotional distress and pain.",
     },
     {
-      name: "Maria Rodriguez",
-      role: "Vice Chairperson",
-      image: "/placeholder-avatar.jpg",
-      bio: "Maria Rodriguez is a community leader and social worker with a deep commitment to supporting women from culturally and linguistically diverse backgrounds. With over 12 years of experience in community development, Maria has worked tirelessly to bridge gaps in mental health services for migrant and refugee women. She holds a Master's degree in Social Work and has developed numerous programs focused on trauma-informed care and cultural sensitivity. Maria's personal experience as an immigrant woman has shaped her understanding of the unique challenges faced by women in transition, making her an invaluable voice in our foundation's mission.",
+      name: "Lynne Cawley",
+      role: "Secretary",
+      image:
+        "https://womensmentoringfoundation.com/wp-content/uploads/elementor/thumbs/Lynne-Cawley-qjs2xmue36kdlotkuubhrpabe3bedcbouen50tkv28.jpg",
+      bio: "Lynne Cawley is a successful, solution-focused HR and Operations professional and the Chief Operations Officer at Canstar. Lynne is responsible for fostering the company's culture, as well as developing and leading the implementation of Canstar's operational strategy to drive business goals through quality research and technological advancements. With a degree in psychology at QUT and having specialised in Organisational psychology, Lynne established the human resources function at Canstar. Lynne has expanded this role in recent years to now head up the entire operations function, leading the People & Culture, Research, Product Data, Data Platform Services and Infrastructure teams. Lynne's leadership role sees her managing the back-end technology platforms that power many of Canstar's data initiatives including the company's Star Ratings research, product database and data feeds to the website. Her teams are also responsible for building resilience into the Canstar technology infrastructure and applications.",
     },
     {
-      name: "Amanda Chen",
+      name: "Sandra Cipriotti",
+      role: "Director",
+      image:
+        "https://womensmentoringfoundation.com/wp-content/uploads/elementor/thumbs/Sandra-Cipriotti-qjs2xmue36kdlotkuubhrpabe3bedcbouen50tkv28.jpg",
+      bio: "Having grown up starting businesses in the garage and consistently excelling in my academic and creative studies, thinking strategically is something that comes naturally to Sandra. She always aim at performing to her highest ability and that drive is what she wants to instill in others throughout her career, across various roles. She worked in Education, Art, Media, Fashion and SME's as CFO, Finance Director, Business Consultant/Operations, Project/Change Manage and Entrepreneur meant that she had a very diverse range of responsibilities and priorities while working with a diverse set of stakeholders across multiple corporations simultaneously. She is very passionate about the constant improvement, growth and best practices of organisations she's represented and the continuous learning of those around her. The fulfillment of strategic objectives coupled with growing the self-confidence of her teams and impact on the business brings her a great sense of accomplishment.",
+    },
+    {
+      name: "Michelle Teis",
+      role: "Director",
+      image:
+        "https://womensmentoringfoundation.com/wp-content/uploads/elementor/thumbs/Michelle-Teis-300x300-1-qjs2xmue36kdlotkuubhrpabe3bedcbouen50tkv28.jpg",
+      bio: "Michelle is the Managing Partner of a National Management Consultancy firm specialising in the core fields of digital transformation and information and data. In November 2021, she was awarded as the National Data Leader of the Year by Women in Digital, a global community dedicated to connecting, educating and empowering women. Based on a 30-year career, Michelle is a trusted advisor to clients (government, commercial and not-for-profit) seeking to leverage the potential value of information and data to simply solve complex business challenges.",
+    },
+    {
+      name: "Samantha Tinsley",
       role: "Treasurer",
-      image: "/placeholder-avatar.jpg",
-      bio: "Amanda Chen is a certified public accountant and financial strategist with a heart for nonprofit management. With over 10 years of experience in financial planning and grant management, Amanda ensures the foundation's resources are allocated effectively to maximize our impact on women's lives. She holds an MBA in Nonprofit Management and has worked with various organizations focused on women's health and empowerment. Amanda's analytical skills combined with her passion for social justice make her an essential member of our board, helping us maintain transparency and accountability in all our financial operations.",
+      image:
+        "https://womensmentoringfoundation.com/wp-content/uploads/elementor/thumbs/samantha-headshot-qr6zh8uxlq0bp4psct67imdh5eq7owkce4gwkuwz0g.jpg",
+      bio: "Samantha Tinsley is a seasoned leader with over 30 years of expertise in driving change for business owners and CEOs. She excels in building high-performance teams through empathy and curiosity and has held key leadership roles, including Head of Sales and Marketing at PE Foods Pty Ltd ,Managing Director at Bare Bite Pty Ltd and Chair of The Food Connect Shed. Dedicated to fostering innovation, Samantha simplifies complex ideas and guides teams through transformative journeys, especially in times of uncertainty. She aligns business goals with strategic objectives, creating cohesive, productive cultures. Samantha is skilled in developing comprehensive business strategies, optimising performance, and adopting new systems and processes. Committed to the mission of the Women's Mentoring Foundation (WMF), she excels in helping organisations achieve growth and resilience.",
+    },
+    {
+      name: "Claudia Lordao",
+      role: "Director",
+      image:
+        "https://womensmentoringfoundation.com/wp-content/uploads/elementor/thumbs/IMG_7848-scaled-quj03owktbw306mvpvz5z0z5glt7kzajhr2g3mkx8g.jpg",
+      bio: "Claudia Lordao is an accomplished marketing leader with over 25 years of experience driving growth and innovation across diverse industries. She is highly skilled in developing strategic marketing plans, both from the ground up and by adapting international strategies to local markets. Claudia's expertise spans online and offline communication, public relations, branding, digital marketing, and e-commerce, with a proven track record of delivering exceptional sales results and market share growth. Renowned for her leadership, Claudia has built and led high-performing teams, fostering a positive and growth-focused environment. She is adept at managing complex projects, coordinating cross-functional teams, and aligning key stakeholders to achieve strategic objectives. Her strong numerical acumen and ability to manage budgets, forecast sales, and analyse data ensure that her initiatives are both creative and financially sound. Claudia's global experience and cultural sensitivity have been instrumental in her success in diverse markets. Fluent in English and Portuguese, with knowledge of French and Spanish, she excels at navigating the intricacies of international business and trade. Her ability to challenge the status quo and think creatively has consistently driven results beyond expectations. In addition to her professional pursuits, Claudia is deeply committed to mentoring and empowering women in business. She holds an MBA specialising in Marketing and a B.A. in Communications, majoring in Advertising.",
     },
   ];
 
   const teamMembers = [
     {
-      name: "Lisa Thompson",
-      role: "Executive Director",
-      image: "/placeholder-avatar.jpg",
-      bio: "Lisa Thompson leads the day-to-day operations of the Women's Mentoring Foundation with compassion and strategic vision. With a background in counseling and nonprofit leadership, Lisa has spent over 8 years developing programs that support women through crisis and recovery. She holds a Master's degree in Counseling Psychology and has specialized training in suicide prevention and trauma therapy. Lisa's leadership style emphasizes collaboration, innovation, and above all, the well-being of the women we serve. She believes that every woman deserves access to quality mental health support and works tirelessly to make this vision a reality.",
+      name: "Pushpa Vaghela",
+      role: "CEO & Peer Counsellor",
+      image:
+        "https://womensmentoringfoundation.com/wp-content/uploads/elementor/thumbs/pushpa2-qjs2xmue36kdlotkuubhrpabe3bedcbouen50tkv28.jpeg",
+      bio: "Pushpa Vaghela, Founder of The Women's Mentoring Foundation (WMF), is dedicated to empowering women to overcome trauma, challenges, and distressful situations, guiding them towards strength and their best selves. As a professional Leadership Consultant, Mentor, and Clinical Neuro Practitioner, Pushpa has positively impacted thousands of leaders globally, fostering transformation and developing exceptional leadership qualities. Her mission, fueled by a deep understanding of mental and emotional health challenges, led her to establish WMF as a Harm Prevention charity organisation, providing Workshops, Speaking Engagement and Peer Counselling to assist women on their empowering journey.",
     },
     {
-      name: "Dr. Priya Patel",
-      role: "Clinical Director",
-      image: "/placeholder-avatar.jpg",
-      bio: "Dr. Priya Patel oversees all clinical programs and ensures the highest standards of care for our clients. As a registered psychologist with over 12 years of clinical experience, Dr. Patel specializes in trauma therapy, grief counseling, and suicide prevention. She holds a Ph.D. in Clinical Psychology and has published research on culturally sensitive approaches to mental health care. Dr. Patel's expertise in evidence-based interventions and her commitment to cultural competency make her an invaluable asset to our team. She supervises our peer mentors and ensures all our programs meet professional standards while remaining accessible to the women who need them most.",
+      name: "Stef Miladinova",
+      role: "Digital Manager & Peer Counsellor",
+      image:
+        "https://womensmentoringfoundation.com/wp-content/uploads/elementor/thumbs/Stef-photo-qjs2xmue36kdlotkuubhrpabe3bedcbouen50tkv28.jpg",
+      bio: "Stef has joined WMF as a Digital Manager. She has formal qualifications in systems engineering, with nineteen plus years experience in IT. Stef also has business experience gained from running her own businesses over the years. She is currently looking forward to giving back to women in the Brisbane community by supporting them through the Women's Mentoring Foundation. Stef is a keen reader with a particular passion for mystery, fantasy and SiFi. She loves cooking, trying different foods and cuisines, watching movies, travelling and going for long walks in the country-side.",
     },
     {
-      name: "Jennifer Williams",
-      role: "Program Coordinator",
-      image: "/placeholder-avatar.jpg",
-      bio: "Jennifer Williams coordinates our various programs and ensures smooth delivery of services to women in need. With a background in social work and community development, Jennifer has spent over 6 years working with vulnerable populations and developing outreach programs. She holds a Bachelor's degree in Social Work and has extensive experience in program development and volunteer management. Jennifer's organizational skills and deep empathy for the women we serve make her an essential part of our team. She works closely with our partners and volunteers to ensure that every woman who reaches out to us receives the support she needs.",
+      name: "Michael Godfrey",
+      role: "Digital Assistant",
+      image:
+        "https://womensmentoringfoundation.com/wp-content/uploads/elementor/thumbs/mugshot-qlq5rttlgraw2gin18grh1dfq0a7g64zqj25lilv7k.jpg",
+      bio: "Michael is a lively and varied individual from the Sunshine Coast in Queensland. He served in the Australian Army before becoming an English teacher abroad. Now, with a degree in agricultural science, he specialises in pest and disease management for farms and property owners. Beyond work, Michael enjoys fitness at the gym, riding motorcycles, and exploring the world. His passion for technology leads him to develop hobbies like coding projects and volunteer projects. He's particularly interested in using AI and other tech innovations to make a meaningful difference.",
     },
     {
-      name: "Sofia Martinez",
-      role: "Community Outreach Coordinator",
-      image: "/placeholder-avatar.jpg",
-      bio: "Sofia Martinez builds bridges between our foundation and the diverse communities we serve. With a background in communications and community relations, Sofia has spent over 5 years developing partnerships with healthcare providers, social services, and community organizations. She holds a degree in Communications and has specialized training in cross-cultural communication. Sofia's ability to connect with women from various cultural backgrounds and her understanding of the barriers they face in accessing mental health services make her an invaluable member of our team. She ensures that our services are accessible and culturally appropriate for all women.",
+      name: "Sharon Hawthorne",
+      role: "Peer Counsellor",
+      image:
+        "https://womensmentoringfoundation.com/wp-content/uploads/elementor/thumbs/pushpa2-qjs2xmue36kdlotkuubhrpabe3bedcbouen50tkv28.jpeg",
+      bio: "Sharon Hawthorne, has traveled and survived numerous challenges, demonstrating her commitment to supporting women in their healing journeys. She is an author and writer with over two decades of experience working in various capacities within newspapers, magazines, and book publishers. This includes advertising, feature writing, marketing and communications, book editing, and author mentorship. Sharon also coaches and mentors authors and writers, aiding them in producing the most professional versions of their books and navigating the ever-evolving landscape of the self-publishing industry.",
+    },
+    {
+      name: "Cherie Remar",
+      role: "Peer Counsellor & Ambassador",
+      image:
+        "https://womensmentoringfoundation.com/wp-content/uploads/elementor/thumbs/Cherie-Remar-quj0x48orm68gpw4w3vpj3nmxurvjv417eanygy8g0.jpg",
+      bio: "Cherie's lifelong passion for yoga has shaped her philosophy on life and career, improving her physical health and helping her navigate challenges. With a background in accounting, business administration, and beauty therapy, she spent over a decade in both private and public sectors in finance department before becoming a BAS agent to support local sole traders in her own bookkeeping business. In her 30s, she pursued her childhood dream in beauty therapy and now runs a successful home spa, offering holistic facial rituals. Cherie aims to leave a meaningful legacy, empowering others and supporting vulnerable communities through her diverse experiences and wisdom.",
+    },
+    {
+      name: "Abraham Sham",
+      role: "Peer Counsellor & Ambassador",
+      image:
+        "https://womensmentoringfoundation.com/wp-content/uploads/elementor/thumbs/Abraham-Sham-qujqsxkvv1r9wgdnqw1dbyluwxz65ycpbgb2xfc85c.jpg",
+      bio: "Abraham is a seasoned business and life coach with over 20 years of experience, dedicated to empowering individuals and fostering personal growth. He has successfully trained entrepreneurs, business leaders, and organisations, helping them achieve balance and prosperity. As a single parent, Abraham understands resilience, which he applies in managing two businesses—a property agency and a coaching company. With a focus on creating transformative 'Break Free' experiences, Abraham is eager to bring his expertise to Women's Mentoring Foundation Ltd, mentoring women to unlock their full potential and achieve success.",
     },
   ];
 
@@ -74,10 +116,12 @@ export default function OurBoardTeamPage() {
               key={index}
               className="bg-wmf-background-white rounded-lg shadow-lg overflow-hidden border border-wmf-border-light"
             >
-              <div className="h-64 bg-wmf-background-light flex items-center justify-center">
-                <span className="text-wmf-text-muted text-lg">
-                  Photo Placeholder
-                </span>
+              <div className="h-64 bg-wmf-background-light flex items-center justify-center overflow-hidden">
+                <img
+                  src={member.image}
+                  alt={member.name}
+                  className="w-full h-full object-cover"
+                />
               </div>
               <div className="p-6">
                 <h3 className="text-xl font-semibold mb-2 wmf-heading text-wmf-text-primary">
@@ -107,10 +151,12 @@ export default function OurBoardTeamPage() {
               className="bg-wmf-background-white rounded-lg shadow-lg overflow-hidden border border-wmf-border-light"
             >
               <div className="flex">
-                <div className="w-32 h-32 bg-wmf-background-light flex items-center justify-center flex-shrink-0">
-                  <span className="text-wmf-text-muted text-sm text-center">
-                    Photo
-                  </span>
+                <div className="w-32 h-32 bg-wmf-background-light flex items-center justify-center flex-shrink-0 overflow-hidden">
+                  <img
+                    src={member.image}
+                    alt={member.name}
+                    className="w-full h-full object-cover"
+                  />
                 </div>
                 <div className="p-6 flex-1">
                   <h3 className="text-xl font-semibold mb-2 wmf-heading text-wmf-text-primary">
