@@ -1,6 +1,12 @@
+"use client";
+
 import { Newsletter } from "@/components/sections";
+import { ContactModal, useContactModal } from "@/components/ui";
 
 export default function GetInvolvedPage() {
+  const { isOpen, selectedInquiryType, openModal, closeModal } =
+    useContactModal();
+
   const involvementOptions = [
     {
       title: "Volunteer",
@@ -130,112 +136,6 @@ export default function GetInvolvedPage() {
     },
   ];
 
-  // const volunteerRoles = [
-  //   {
-  //     title: "Peer Counseling Support",
-  //     description:
-  //       "Provide emotional support and guidance to women in need through our peer counseling program.",
-  //     requirements: [
-  //       "Personal experience with mental health recovery",
-  //       "Compassionate and empathetic nature",
-  //       "Good listening and communication skills",
-  //       "Commitment to ongoing training",
-  //     ],
-  //     timeCommitment: "4-8 hours per week",
-  //     training: "40-hour comprehensive training program",
-  //   },
-  //   {
-  //     title: "Event Coordination",
-  //     description:
-  //       "Help organize and coordinate workshops, fundraisers, and community events.",
-  //     requirements: [
-  //       "Strong organizational skills",
-  //       "Experience with event planning",
-  //       "Excellent communication abilities",
-  //       "Flexible schedule for events",
-  //     ],
-  //     timeCommitment: "6-10 hours per week",
-  //     training: "Event management and safety protocols",
-  //   },
-  //   {
-  //     title: "Administrative Support",
-  //     description:
-  //       "Assist with office tasks, data entry, and general administrative duties.",
-  //     requirements: [
-  //       "Proficiency with computers and office software",
-  //       "Attention to detail",
-  //       "Reliable and punctual",
-  //       "Ability to work independently",
-  //     ],
-  //     timeCommitment: "3-6 hours per week",
-  //     training: "Office procedures and confidentiality",
-  //   },
-  //   {
-  //     title: "Community Outreach",
-  //     description:
-  //       "Represent WMF at community events and help spread awareness about our programs.",
-  //     requirements: [
-  //       "Outgoing and friendly personality",
-  //       "Knowledge of WMF programs",
-  //       "Comfortable speaking in public",
-  //       "Reliable transportation",
-  //     ],
-  //     timeCommitment: "2-5 hours per week",
-  //     training: "Public speaking and program information",
-  //   },
-  // ];
-
-  // const trainingModules = [
-  //   {
-  //     title: "Foundations of Peer Support",
-  //     description:
-  //       "Learn the core principles and values of peer support, including empathy, active listening, and building trust.",
-  //     duration: "8 hours",
-  //     topics: [
-  //       "Peer support philosophy and values",
-  //       "Building authentic relationships",
-  //       "Active listening techniques",
-  //       "Cultural sensitivity and awareness",
-  //     ],
-  //   },
-  //   {
-  //     title: "Mental Health Awareness",
-  //     description:
-  //       "Develop understanding of common mental health challenges and recovery principles.",
-  //     duration: "12 hours",
-  //     topics: [
-  //       "Understanding mental health conditions",
-  //       "Recovery-oriented approaches",
-  //       "Crisis recognition and response",
-  //       "Self-care and boundaries",
-  //     ],
-  //   },
-  //   {
-  //     title: "Communication Skills",
-  //     description:
-  //       "Master essential communication techniques for effective peer support relationships.",
-  //     duration: "10 hours",
-  //     topics: [
-  //       "Non-judgmental communication",
-  //       "Motivational interviewing basics",
-  //       "Conflict resolution skills",
-  //       "Cultural communication styles",
-  //     ],
-  //   },
-  //   {
-  //     title: "Safety and Ethics",
-  //     description:
-  //       "Learn about safety protocols, ethical guidelines, and professional boundaries.",
-  //     duration: "6 hours",
-  //     topics: [
-  //       "Confidentiality and privacy",
-  //       "Safety planning and crisis intervention",
-  //       "Ethical decision-making",
-  //       "Professional boundaries",
-  //     ],
-  //   },
-  // ];
-
   return (
     <div className="container mx-auto px-4 py-12">
       {/* Hero Section */}
@@ -295,7 +195,20 @@ export default function GetInvolvedPage() {
                   ))}
                 </ul>
 
-                <button className="w-full bg-gradient-to-r from-[#A5375C] to-[#C84862] text-white px-6 py-3 rounded-lg hover:shadow-lg transition-all duration-300 font-semibold">
+                <button
+                  onClick={() => {
+                    const inquiryTypeMap: Record<string, string> = {
+                      Volunteer: "volunteer",
+                      "Become a Peer Counselor": "peerCounselor",
+                      "Partner With Us": "partner",
+                      Fundraise: "fundraise",
+                      "Spread Awareness": "awareness",
+                      "Join Our Board": "board",
+                    };
+                    openModal(inquiryTypeMap[option.title] || "volunteer");
+                  }}
+                  className="w-full bg-gradient-to-r from-[#A5375C] to-[#C84862] text-white px-6 py-3 rounded-lg hover:shadow-lg transition-all duration-300 font-semibold"
+                >
                   Contact Us
                 </button>
               </div>
@@ -348,6 +261,12 @@ export default function GetInvolvedPage() {
       </section>
 
       <Newsletter />
+
+      <ContactModal
+        isOpen={isOpen}
+        onClose={closeModal}
+        inquiryType={selectedInquiryType}
+      />
     </div>
   );
 }
