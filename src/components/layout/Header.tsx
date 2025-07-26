@@ -11,6 +11,7 @@ const navigation = [
       { name: "Our Story", href: "/about" },
       { name: "Our Board & Team", href: "/about/board-and-team" },
       { name: "Partners", href: "/about/partners" },
+      { name: "Affiliated Services", href: "/about/affiliates" },
       { name: "Gallery", href: "/about/gallery" },
     ],
   },
@@ -34,11 +35,6 @@ const navigation = [
   {
     name: "Get Help",
     href: "/get-help",
-    dropdown: [
-      { name: "Get Help & Support", href: "/get-help" },
-      { name: "Affiliated Services", href: "/get-help/affiliates" },
-      { name: "Case Studies", href: "/get-help/case-studies" },
-    ],
   },
   {
     name: "Get Involved",

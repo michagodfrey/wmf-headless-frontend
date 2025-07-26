@@ -70,7 +70,7 @@ npm run dev
 
 ## Project Structure
 
-```
+```bash
 src/
 ├── app/                    # Next.js 14 App Router pages
 │   ├── blog/              # Blog listing and individual posts

@@ -22,33 +22,12 @@ export default function GetInvolvedPage() {
         </svg>
       ),
       features: [
-        "Peer counseling support",
+        "Social media advocacy",
         "Event coordination",
         "Administrative assistance",
         "Community outreach",
       ],
       gradient: "from-[#A5375C] to-[#C84862]",
-    },
-    {
-      title: "Become a Peer Counselor",
-      description:
-        "If you've experienced healing and growth, help other women on their journey to recovery.",
-      icon: (
-        <svg
-          className="w-12 h-12 text-white"
-          fill="currentColor"
-          viewBox="0 0 24 24"
-        >
-          <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
-        </svg>
-      ),
-      features: [
-        "Comprehensive training program",
-        "Ongoing support and supervision",
-        "Make a lasting impact",
-        "Join our peer network",
-      ],
-      gradient: "from-[#3C6A72] to-[#4A7A82]",
     },
     {
       title: "Partner With Us",
@@ -60,7 +39,7 @@ export default function GetInvolvedPage() {
           fill="currentColor"
           viewBox="0 0 24 24"
         >
-          <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z" />
+          <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
         </svg>
       ),
       features: [
@@ -69,49 +48,7 @@ export default function GetInvolvedPage() {
         "Healthcare provider networks",
         "Educational institution partnerships",
       ],
-      gradient: "from-[#A5375C] to-[#C84862]",
-    },
-    {
-      title: "Fundraise",
-      description:
-        "Organize fundraising events or campaigns to support our mission and programs.",
-      icon: (
-        <svg
-          className="w-12 h-12 text-white"
-          fill="currentColor"
-          viewBox="0 0 24 24"
-        >
-          <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z" />
-        </svg>
-      ),
-      features: [
-        "Community fundraising events",
-        "Online fundraising campaigns",
-        "Corporate matching programs",
-        "Legacy giving opportunities",
-      ],
       gradient: "from-[#3C6A72] to-[#4A7A82]",
-    },
-    {
-      title: "Spread Awareness",
-      description:
-        "Help us reach more women who need support by sharing our mission and programs.",
-      icon: (
-        <svg
-          className="w-12 h-12 text-white"
-          fill="currentColor"
-          viewBox="0 0 24 24"
-        >
-          <path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81 1.66 0 3-1.34 3-3s-1.34-3-3-3-3 1.34-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9c-1.66 0-3 1.34-3 3s1.34 3 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.16c-.05.21-.08.43-.08.65 0 1.61 1.31 2.92 2.92 2.92s2.92-1.31 2.92-2.92-1.31-2.92-2.92-2.92z" />
-        </svg>
-      ),
-      features: [
-        "Social media advocacy",
-        "Community presentations",
-        "Resource distribution",
-        "Event promotion",
-      ],
-      gradient: "from-[#A5375C] to-[#C84862]",
     },
     {
       title: "Join Our Board",
@@ -132,7 +69,7 @@ export default function GetInvolvedPage() {
         "Financial stewardship",
         "Community representation",
       ],
-      gradient: "from-[#3C6A72] to-[#4A7A82]",
+      gradient: "from-[#A5375C] to-[#C84862]",
     },
   ];
 
@@ -140,9 +77,6 @@ export default function GetInvolvedPage() {
     <div className="container mx-auto px-4 py-12">
       {/* Hero Section */}
       <section className="max-w-4xl mx-auto mb-16 text-center">
-        <div className="inline-block bg-gradient-to-r from-[#A5375C] to-[#C84862] text-white px-6 py-2 rounded-full text-sm font-semibold mb-4">
-          Get Involved
-        </div>
         <h1 className="text-4xl font-bold mb-6 text-[#374151]">
           Make a Difference Today
         </h1>
@@ -207,7 +141,7 @@ export default function GetInvolvedPage() {
                     };
                     openModal(inquiryTypeMap[option.title] || "volunteer");
                   }}
-                  className="w-full bg-gradient-to-r from-[#A5375C] to-[#C84862] text-white px-6 py-3 rounded-lg hover:shadow-lg transition-all duration-300 font-semibold"
+                  className="cursor-pointer w-full bg-gradient-to-r from-[#A5375C] to-[#C84862] text-white px-6 py-3 rounded-lg hover:shadow-lg transition-all duration-300 font-semibold"
                 >
                   Contact Us
                 </button>
@@ -254,7 +188,7 @@ export default function GetInvolvedPage() {
               <li>• Connect with caring people</li>
               <li>• Share your expertise</li>
               <li>• Learn new perspectives</li>
-              <li>• Be part of something bigger</li>
+              <li>• Make a difference in people&apos;s lives</li>
             </ul>
           </div>
         </div>

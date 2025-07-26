@@ -1,13 +1,12 @@
-import { Newsletter, Contact } from "@/components/sections";
+"use client";
+
+import Link from "next/link";
 
 export default function HelpAndSupportPage() {
   return (
     <div className="container mx-auto px-4 py-12">
       {/* Hero Section */}
       <section className="max-w-4xl mx-auto mb-16 text-center">
-        <div className="inline-block bg-gradient-to-r from-[#A5375C] to-[#C84862] text-white px-6 py-2 rounded-full text-sm font-semibold mb-4">
-          Get Help & Support
-        </div>
         <h1 className="text-4xl font-bold mb-6 text-[#374151]">
           Get Help & Support
         </h1>
@@ -40,27 +39,102 @@ export default function HelpAndSupportPage() {
             </div>
             <div className="ml-4">
               <h3 className="text-xl font-semibold text-red-800 mb-3">
-                Need Immediate Help?
+                🔴 Need Immediate Help?
               </h3>
               <div className="text-red-700">
                 <p className="mb-3 font-medium">
-                  If you&apos;re in crisis or need immediate support:
+                  If you are in crisis or need immediate support:
                 </p>
-                <ul className="space-y-2">
+                <ul className="space-y-3">
                   <li className="flex items-start">
                     <span className="w-2 h-2 bg-red-600 rounded-full mt-2 mr-3 flex-shrink-0"></span>
-                    Call our 24/7 Crisis Line: <strong>1-800-CRISIS</strong>
+                    <div>
+                      <strong>
+                        Emergency Services (Police, Ambulance, Fire):
+                      </strong>
+                      <br />
+                      📞 <strong>000</strong> (available 24/7)
+                    </div>
                   </li>
                   <li className="flex items-start">
                     <span className="w-2 h-2 bg-red-600 rounded-full mt-2 mr-3 flex-shrink-0"></span>
-                    Text &quot;HELP&quot; to <strong>741741</strong> for Crisis
-                    Text Line
+                    <div>
+                      <strong>
+                        Lifeline Australia - Crisis Support and Suicide
+                        Prevention:
+                      </strong>
+                      <br />
+                      📞 <strong>13 11 14</strong>
+                      <br />
+                      🌐{" "}
+                      <a
+                        href="https://www.lifeline.org.au"
+                        className="underline hover:text-red-800"
+                      >
+                        www.lifeline.org.au
+                      </a>
+                      <br />
+                      💬 Text: <strong>0477 13 11 14</strong> (24/7)
+                    </div>
                   </li>
                   <li className="flex items-start">
                     <span className="w-2 h-2 bg-red-600 rounded-full mt-2 mr-3 flex-shrink-0"></span>
-                    Call <strong>000</strong> for emergency services
+                    <div>
+                      <strong>
+                        13YARN - For Aboriginal and Torres Strait Islander
+                        people:
+                      </strong>
+                      <br />
+                      📞 <strong>13 92 76</strong> (24/7)
+                    </div>
+                  </li>
+                  <li className="flex items-start">
+                    <span className="w-2 h-2 bg-red-600 rounded-full mt-2 mr-3 flex-shrink-0"></span>
+                    <div>
+                      <strong>
+                        Suicide Call Back Service - Free 24/7 telephone & online
+                        counselling:
+                      </strong>
+                      <br />
+                      📞 <strong>1300 659 467</strong>
+                      <br />
+                      🌐{" "}
+                      <a
+                        href="https://www.suicidecallbackservice.org.au"
+                        className="underline hover:text-red-800"
+                      >
+                        www.suicidecallbackservice.org.au
+                      </a>
+                    </div>
+                  </li>
+                  <li className="flex items-start">
+                    <span className="w-2 h-2 bg-red-600 rounded-full mt-2 mr-3 flex-shrink-0"></span>
+                    <div>
+                      <strong>Beyond Blue - Mental health support:</strong>
+                      <br />
+                      📞 <strong>1300 22 4636</strong>
+                      <br />
+                      🌐{" "}
+                      <a
+                        href="https://www.beyondblue.org.au"
+                        className="underline hover:text-red-800"
+                      >
+                        www.beyondblue.org.au
+                      </a>
+                      <br />
+                      💬 Chat available online
+                    </div>
                   </li>
                 </ul>
+                <div className="mt-6 p-4 bg-red-100 rounded-lg border border-red-200">
+                  <p className="text-red-800 font-medium">
+                    <strong>WMF is not a crisis service</strong>
+                    <br />
+                    If you or someone you know is in immediate danger, please
+                    one of the contacts above. WMF provides mentoring and
+                    wellbeing workshops but is not a crisis service.
+                  </p>
+                </div>
               </div>
             </div>
           </div>
@@ -74,11 +148,26 @@ export default function HelpAndSupportPage() {
           <div className="space-y-4 text-lg leading-relaxed">
             <p>
               WMF aims to empower women who are experiencing pain and/or grief
-              caused by: various abuses, anger, insecurity, suicidal thoughts,
-              depression, stress, gender inequality; domestic, sexual and family
-              violence; compromised mental and emotional well-being; and lack of
-              safety and stability in their lives.
+              caused by:
             </p>
+            <ul className="list-disc list-inside space-y-2 ml-4 mt-3">
+              <li className="font-semibold text-white">Various Abuses</li>
+              <li className="font-semibold text-white">Anger</li>
+              <li className="font-semibold text-white">Insecurity</li>
+              <li className="font-semibold text-white">Suicidal Thoughts</li>
+              <li className="font-semibold text-white">Depression</li>
+              <li className="font-semibold text-white">Stress</li>
+              <li className="font-semibold text-white">Gender Inequality</li>
+              <li className="font-semibold text-white">
+                Domestic, Sexual and Family Violence
+              </li>
+              <li className="font-semibold text-white">
+                Compromised Mental and Emotional Well-being
+              </li>
+              <li className="font-semibold text-white">
+                Lack of Safety and Stability in Their Lives
+              </li>
+            </ul>
             <p>
               WMF was founded to share the tools and resources of recovery, to
               help you and other women who are on their own road to recovery,
@@ -201,9 +290,72 @@ export default function HelpAndSupportPage() {
         </div>
       </section>
 
-      {/* Contact and Newsletter */}
-      <Contact />
-      <Newsletter />
+      {/* Case Studies */}
+      <section className="max-w-6xl mx-auto mb-16">
+        <h2 className="text-3xl font-bold mb-8 text-center text-[#374151]">
+          Case Studies
+        </h2>
+        <p className="text-center text-[#6B7280] text-xl mb-8 leading-relaxed">
+          Empowering Change Through Mentorship: Our Stories of Transformation
+        </p>
+        <p className="text-center text-[#6B7280] mb-12 leading-relaxed">
+          Here, we share powerful stories of resilience and transformation from
+          individuals who have navigated through life&apos;s toughest challenges
+          with our support. Each narrative is a testament to the power of
+          mentorship but also a reminder of the importance of seeking help when
+          needed.
+        </p>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <article className="bg-white rounded-xl shadow-lg overflow-hidden border border-[#E5E7EB] hover:shadow-xl transition-all duration-300 group">
+            <div className="relative h-48 bg-gradient-to-br from-[#A5375C] to-[#C84862] flex items-center justify-center">
+              <span className="text-white text-lg font-semibold text-center px-4">
+                Case Study Image - Peer Counselling
+              </span>
+            </div>
+            <div className="p-6">
+              <h3 className="text-xl font-semibold mb-3 text-[#374151] group-hover:text-[#A5375C] transition-colors">
+                A Young Man&apos;s Journey from Despair to Hope
+              </h3>
+              <p className="text-[#6B7280] mb-4 leading-relaxed">
+                At the Women&apos;s Mentoring Foundation (WMF), our mission
+                extends to supporting all individuals in crisis, regardless of
+                gender. One such story...
+              </p>
+              <Link
+                href="/get-help/case-studies/a-young-mans-journey-from-despair-to-hope"
+                className="bg-gradient-to-r from-[#A5375C] to-[#C84862] text-white px-4 py-2 rounded-lg font-semibold inline-block text-sm hover:shadow-lg transition-all duration-300"
+              >
+                Read Full Story →
+              </Link>
+            </div>
+          </article>
+
+          <article className="bg-white rounded-xl shadow-lg overflow-hidden border border-[#E5E7EB] hover:shadow-xl transition-all duration-300 group">
+            <div className="relative h-48 bg-gradient-to-br from-[#A5375C] to-[#C84862] flex items-center justify-center">
+              <span className="text-white text-lg font-semibold text-center px-4">
+                Case Study Image - Mentorship
+              </span>
+            </div>
+            <div className="p-6">
+              <h3 className="text-xl font-semibold mb-3 text-[#374151] group-hover:text-[#A5375C] transition-colors">
+                A Journey of Recovery through Peer Counselling
+              </h3>
+              <p className="text-[#6B7280] mb-4 leading-relaxed">
+                Sarah (name changed for privacy), a 34-year-old woman, was
+                struggling with severe depression and self-destructive thoughts,
+                feeling isolated...
+              </p>
+              <Link
+                href="/get-help/case-studies/rebuilding-hope-a-journey-of-recovery-through-peer-counselling"
+                className="bg-gradient-to-r from-[#A5375C] to-[#C84862] text-white px-4 py-2 rounded-lg font-semibold inline-block text-sm hover:shadow-lg transition-all duration-300"
+              >
+                Read Full Story →
+              </Link>
+            </div>
+          </article>
+        </div>
+      </section>
     </div>
   );
 }
