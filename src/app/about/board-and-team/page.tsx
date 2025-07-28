@@ -1,4 +1,5 @@
 import { Recruit } from "@/components/sections";
+import Image from "next/image";
 
 export default function OurBoardTeamPage() {
   const boardMembers = [
@@ -117,9 +118,11 @@ export default function OurBoardTeamPage() {
               className="bg-wmf-background-white rounded-lg shadow-lg overflow-hidden border border-wmf-border-light"
             >
               <div className="h-64 bg-wmf-background-light flex items-center justify-center overflow-hidden">
-                <img
+                <Image
                   src={member.image}
                   alt={member.name}
+                  width={300}
+                  height={256}
                   className="w-full h-full object-cover"
                 />
               </div>
@@ -152,9 +155,11 @@ export default function OurBoardTeamPage() {
             >
               <div className="flex">
                 <div className="w-32 h-32 bg-wmf-background-light flex items-center justify-center flex-shrink-0 overflow-hidden">
-                  <img
+                  <Image
                     src={member.image}
                     alt={member.name}
+                    width={128}
+                    height={128}
                     className="w-full h-full object-cover"
                   />
                 </div>

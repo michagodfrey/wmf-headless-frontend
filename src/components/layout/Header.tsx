@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 
 const navigation = [
   { name: "Home", href: "/" },
@@ -156,7 +157,13 @@ export default function Header() {
           <div className="flex-shrink-0">
             <Link href="/" className="flex items-center space-x-3">
               {/* WMF Logo */}
-              <img src="/logo.png" alt="WMF Logo" className="h-12 w-auto" />
+              <Image
+                src="/logo.png"
+                alt="WMF Logo"
+                className="h-12 w-auto"
+                width={100}
+                height={100}
+              />
               <div className="flex flex-col">
                 <span className="text-lg text-[#6B7280] -mt-1">
                   Women&apos;s Mentoring Foundation

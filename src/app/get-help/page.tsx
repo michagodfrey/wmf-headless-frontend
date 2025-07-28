@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 
 export default function HelpAndSupportPage() {
   return (
@@ -211,10 +212,10 @@ export default function HelpAndSupportPage() {
               </svg>
             </div>
             <h3 className="text-lg font-semibold mb-3 text-[#374151]">
-              Peer Counselling
+              Pro Bono Peer Counselling
             </h3>
             <p className="text-[#6B7280] text-sm leading-relaxed">
-              One-on-one support from trained peer counselors who understand
+              One-on-one support from peer counselors who understand listen to
               your journey and can provide compassionate guidance.
             </p>
           </div>
@@ -308,10 +309,14 @@ export default function HelpAndSupportPage() {
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           <article className="bg-white rounded-xl shadow-lg overflow-hidden border border-[#E5E7EB] hover:shadow-xl transition-all duration-300 group">
-            <div className="relative h-48 bg-gradient-to-br from-[#A5375C] to-[#C84862] flex items-center justify-center">
-              <span className="text-white text-lg font-semibold text-center px-4">
-                Case Study Image - Peer Counselling
-              </span>
+            <div className="relative h-48 overflow-hidden">
+              <Image
+                src="/case-studies/case-study-1.jpg"
+                alt="A young man with his face in his palms due to sadness."
+                fill
+                className="object-cover"
+                sizes="(max-width: 768px) 100vw, 50vw"
+              />
             </div>
             <div className="p-6">
               <h3 className="text-xl font-semibold mb-3 text-[#374151] group-hover:text-[#A5375C] transition-colors">
@@ -332,10 +337,14 @@ export default function HelpAndSupportPage() {
           </article>
 
           <article className="bg-white rounded-xl shadow-lg overflow-hidden border border-[#E5E7EB] hover:shadow-xl transition-all duration-300 group">
-            <div className="relative h-48 bg-gradient-to-br from-[#A5375C] to-[#C84862] flex items-center justify-center">
-              <span className="text-white text-lg font-semibold text-center px-4">
-                Case Study Image - Mentorship
-              </span>
+            <div className="relative h-48 overflow-hidden">
+              <Image
+                src="/case-studies/case-study-2.jpg"
+                alt="A young man with his face in his palms due to sadness."
+                fill
+                className="object-cover"
+                sizes="(max-width: 768px) 100vw, 50vw"
+              />
             </div>
             <div className="p-6">
               <h3 className="text-xl font-semibold mb-3 text-[#374151] group-hover:text-[#A5375C] transition-colors">

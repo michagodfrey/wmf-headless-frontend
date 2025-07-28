@@ -1,5 +1,6 @@
 import { notFound } from "next/navigation";
 import { getPost } from "@/lib/wordpress";
+import Image from "next/image";
 
 export default async function BlogPostPage({
   params,
@@ -18,9 +19,11 @@ export default async function BlogPostPage({
     <article className="container mx-auto px-4 py-12">
       {post._embedded?.["wp:featuredmedia"]?.[0]?.source_url && (
         <div className="mb-8">
-          <img
+          <Image
             src={post._embedded["wp:featuredmedia"][0].source_url}
             alt={post.title.rendered}
+            width={800}
+            height={400}
             className="w-full h-96 object-cover rounded-lg"
           />
         </div>

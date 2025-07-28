@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { getPosts } from "@/lib/wordpress";
+import Image from "next/image";
 
 export default async function BlogPage() {
   // Fetch posts from WordPress API
@@ -45,12 +46,14 @@ export default async function BlogPage() {
               className="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-all duration-300 border border-[#E5E7EB]"
             >
               <div className="aspect-w-16 aspect-h-9">
-                <img
+                <Image
                   src={
                     post._embedded?.["wp:featuredmedia"]?.[0]?.source_url ||
                     "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1471&q=80"
                   }
                   alt={post.title.rendered}
+                  width={400}
+                  height={300}
                   className="w-full h-48 object-cover"
                 />
               </div>

@@ -1,6 +1,7 @@
 import Newsletter from "@/components/sections/Newsletter";
 import { getPosts } from "@/lib/wordpress";
 import Link from "next/link";
+import Image from "next/image";
 
 export default async function Home() {
   // Fetch featured blog posts from WordPress
@@ -12,9 +13,10 @@ export default async function Home() {
       <section className="relative h-[600px] flex items-center">
         {/* Background Image with Gradient Overlay */}
         <div className="absolute inset-0">
-          <img
+          <Image
             src="/website-banner.png"
             alt="Women supporting each other"
+            fill
             className="w-full h-full object-cover"
           />
           {/* Gradient overlay that fades from white on left to transparent on right */}
@@ -53,9 +55,11 @@ export default async function Home() {
                 </div>
                 {/* Large WMF Icon on the right */}
                 <div className="hidden lg:block">
-                  <img
+                  <Image
                     src="/icon.png"
                     alt="WMF Icon"
+                    width={128}
+                    height={128}
                     className="w-32 h-32 opacity-90 drop-shadow-lg"
                   />
                 </div>
@@ -582,12 +586,14 @@ export default async function Home() {
                   className="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-all duration-300 border border-[#E5E7EB]"
                 >
                   <div className="aspect-w-16 aspect-h-9">
-                    <img
+                    <Image
                       src={
                         post._embedded?.["wp:featuredmedia"]?.[0]?.source_url ||
                         "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1471&q=80"
                       }
                       alt={post.title.rendered}
+                      width={400}
+                      height={300}
                       className="w-full h-48 object-cover"
                     />
                   </div>
@@ -734,10 +740,12 @@ export default async function Home() {
 
             {/* Right side - Image */}
             <div className="relative h-[400px] rounded-lg overflow-hidden">
-              <img
+              <Image
                 src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1471&q=80"
                 alt="Women supporting each other in a group setting"
-                className="w-full h-full object-cover"
+                fill
+                className="object-cover"
+                sizes="(max-width: 768px) 100vw, 50vw"
               />
             </div>
           </div>

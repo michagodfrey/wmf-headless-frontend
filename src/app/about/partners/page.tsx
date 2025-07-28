@@ -1,4 +1,5 @@
 import { Recruit, Newsletter } from "@/components/sections";
+import Image from "next/image";
 
 export default function PartnersPage() {
   const ambassadors = [
@@ -107,9 +108,11 @@ export default function PartnersPage() {
               >
                 <div className="w-32 h-32 bg-wmf-background-light rounded-full mx-auto mt-6 mb-4 flex items-center justify-center overflow-hidden">
                   {ambassador.image ? (
-                    <img
+                    <Image
                       src={ambassador.image}
                       alt={ambassador.name}
+                      width={128}
+                      height={128}
                       className="w-full h-full object-cover rounded-full"
                     />
                   ) : (

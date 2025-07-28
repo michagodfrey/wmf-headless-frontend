@@ -1,4 +1,4 @@
-import { Contact, Newsletter } from "@/components/sections";
+import Image from "next/image";
 
 export default function CaseStudyPage() {
   return (
@@ -19,24 +19,15 @@ export default function CaseStudyPage() {
 
         {/* Featured Image */}
         <div className="mb-8">
-          <div className="w-full h-64 bg-gradient-to-br from-[#A5375C] to-[#C84862] rounded-xl flex items-center justify-center">
-            <div className="text-white text-center">
-              <svg
-                className="w-16 h-16 mx-auto mb-4 opacity-80"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"
-                />
-              </svg>
-              <p className="text-lg font-semibold">Case Study Image</p>
-              <p className="text-sm opacity-80">Peer Counselling Support</p>
-            </div>
+          <div className="max-w-2xl mx-auto">
+            <Image
+              src="/case-studies/case-study-1.jpg"
+              alt="A young man with his face in his palms due to sadness."
+              width={800}
+              height={400}
+              className="w-full h-auto rounded-xl object-cover"
+              priority
+            />
           </div>
         </div>
 
@@ -107,10 +98,6 @@ export default function CaseStudyPage() {
           ← Back to Get Help
         </a>
       </section>
-
-      {/* Contact and Newsletter */}
-      <Contact />
-      <Newsletter />
     </div>
   );
 }

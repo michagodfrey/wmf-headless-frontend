@@ -69,7 +69,7 @@ export default function GetInvolvedPage() {
         "Financial stewardship",
         "Community representation",
       ],
-      gradient: "from-[#A5375C] to-[#C84862]",
+      gradient: "from-[#DE5762] to-[#E66772]",
     },
   ];
 

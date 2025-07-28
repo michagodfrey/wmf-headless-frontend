@@ -1,11 +1,12 @@
 import Link from "next/link";
+import Image from "next/image";
 import { SVGProps } from "react";
 
 const footerNavigation = {
   main: [
     { name: "About", href: "/about" },
     { name: "Programs", href: "/programs" },
-    { name: "Get Help & Support", href: "/help-and-support" },
+    { name: "Get Help & Support", href: "/get-help" },
     { name: "Get Involved", href: "/get-involved" },
     { name: "Blog", href: "/blog" },
     { name: "Contact", href: "/contact" },
@@ -17,8 +18,7 @@ const footerNavigation = {
     { name: "Workshops", href: "/programs/workshops" },
   ],
   support: [
-    { name: "Case Studies", href: "/help-and-support/case-studies" },
-    { name: "Affiliated Services", href: "/help-and-support/affiliates" },
+    { name: "Affiliated Services", href: "/about/affiliates" },
     { name: "Volunteer", href: "/get-involved" },
   ],
   social: [
@@ -78,10 +78,12 @@ export default function Footer() {
           <div className="lg:col-span-2">
             <div className="mb-6">
               {/* WMF Full Logo */}
-              <img
+              <Image
                 src="/logo-full-text.png"
                 alt="Women's Mentoring Foundation"
                 className="h-16 w-auto mb-4"
+                width={100}
+                height={100}
               />
             </div>
             <p className="text-[#6B7280] text-sm leading-relaxed mb-4">
@@ -213,6 +215,15 @@ export default function Footer() {
               </Link>
             </div>
           </div>
+        </div>
+
+        {/* Acknowledgement of country */}
+        <div className="mt-8 pt-8 border-t border-[#E5E7EB]">
+          <p className="text-[#6B7280] text-xs text-center italic">
+            We acknowledge the Traditional Owners of Country throughout
+            Australia and recognise their continuing connection to land, waters
+            and culture. We pay our respects to their Elders past and present.
+          </p>
         </div>
 
         {/* Copyright */}

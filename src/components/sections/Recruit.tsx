@@ -20,7 +20,7 @@ export default function Recruit({
         <p className="text-wmf-text-secondary mb-6 wmf-body">{description}</p>
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
           <a
-            href="/get-involved/volunteer"
+            href="/get-involved"
             className="wmf-button-primary px-6 py-3 rounded-lg wmf-transition wmf-focus-ring inline-block text-center"
           >
             Volunteer with Us

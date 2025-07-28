@@ -1,6 +1,7 @@
 import { Newsletter } from "@/components/sections";
 import { getGallerySections } from "@/lib/wordpress";
 import { WPGallerySection, WPMedia } from "@/types/wordpress";
+import Image from "next/image";
 
 // Fallback static gallery sections (current implementation)
 const fallbackGallerySections = [
@@ -87,11 +88,12 @@ function WordPressImage({ media }: { media: WPMedia }) {
   return (
     <div className="group relative overflow-hidden rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300">
       <div className="aspect-w-4 aspect-h-3 bg-gray-200">
-        <img
+        <Image
           src={imageUrl}
           alt={media.alt_text || media.title.rendered}
+          width={400}
+          height={300}
           className="w-full h-full object-cover"
-          loading="lazy"
         />
       </div>
 
