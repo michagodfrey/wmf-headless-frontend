@@ -11,7 +11,6 @@ const navigation = [
     dropdown: [
       { name: "Our Story", href: "/about" },
       { name: "Our Board & Team", href: "/about/board-and-team" },
-      { name: "Partners", href: "/about/partners" },
       { name: "Affiliated Services", href: "/about/affiliates" },
       { name: "Gallery", href: "/about/gallery" },
     ],
@@ -25,17 +24,22 @@ const navigation = [
       { name: "For Communities", href: "/programs/communities" },
       { name: "For Schools", href: "/programs/schools" },
       { name: "Workshops", href: "/programs/workshops" },
-      {
-        name: "Comprehensive Support",
-        href: "/programs/comprehensive-support",
-      },
-      { name: "Peer Counseling", href: "/programs/peer-counselling" },
-      { name: "Speaking Engagements", href: "/programs/speaking-engagements" },
     ],
   },
   {
     name: "Get Help",
     href: "/get-help",
+    dropdown: [
+      {
+        name: "How WMF Can Help You",
+        href: "/get-help",
+      },
+      {
+        name: "Comprehensive Support",
+        href: "/get-help/comprehensive-support",
+      },
+      { name: "Peer Counseling", href: "/get-help/peer-counselling" },
+    ],
   },
   {
     name: "Get Involved",
@@ -128,7 +132,7 @@ export default function Header() {
                 Login
               </Link>
               <button
-                className="text-[#6B7280] hover:text-[#A5375C] transition-colors"
+                className="text-[#6B7280] hover:text-[#A5375C] transition-colors cursor-pointer"
                 aria-label="Search"
               >
                 <svg
@@ -186,7 +190,7 @@ export default function Header() {
                         {item.name}
                       </Link>
                       <svg
-                        className="ml-1 h-4 w-4 text-[#6B7280] transition-colors"
+                        className="ml-1 h-4 w-4 text-[#6B7280] transition-colors cursor-pointer"
                         fill="none"
                         stroke="currentColor"
                         viewBox="0 0 24 24"

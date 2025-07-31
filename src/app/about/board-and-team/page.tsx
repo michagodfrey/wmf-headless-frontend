@@ -47,6 +47,30 @@ export default function OurBoardTeamPage() {
     },
   ];
 
+  const ambassadors = [
+    {
+      name: "Rod George",
+      role: "Ambassador & Patron",
+      image:
+        "https://womensmentoringfoundation.com/wp-content/uploads/elementor/thumbs/rod-george-300x323-1-qjs2xlwjwcj3a2uy0bwv77iuspg15n7yi9znjjm98g.png",
+      bio: "Rod has joined WMF as the Web Host Manager. He is a talented artist, with mandala art as his main genre, his other interests are web design, graphic design, and photography. He is also a skilled NLP Master Practitioner and Trainer. He is passionate about empowering people to become greater than they are. Rod also works full time a multi skilled tradesman in the building industry.",
+    },
+    {
+      name: "Amber Jane Powson",
+      role: "Ambassador & Patron",
+      image:
+        "https://womensmentoringfoundation.com/wp-content/uploads/elementor/thumbs/amber-img2-300x300-1-qjs2xlwjwcj3a2uy0bwv77iuspg15n7yi9znjjm98g.jpg",
+      bio: "Amber is Miss Voluptuous Australia 2021. She is a professional Actress, Runway/Print Model, and Voice Actor. As a Curve Model she has worked for award winning Australian designers including Sonia Straddiotto and Capriosca Swimwear. She has also worked as a featured extra on various films. Amber holds a Bachelor of Media and Communications from QUT. Her platform is body positivity and mental health; after being diagnosed with depression and severe GAD (generalised anxiety disorder) that almost took her life in 2017. She advocates the importance of having realistic and diverse body images in the media. As a keynote speaker for The Australian Care Expo (2020) and the MHFA Annual Fundraising Gala (2021), Amber has shared her story and strength tactics about having 'Compassion for Yourself and Your Body'.",
+    },
+    {
+      name: "Himanshu Bisht",
+      role: "Ambassador",
+      image:
+        "https://womensmentoringfoundation.com/wp-content/uploads/elementor/thumbs/himanshu-ambassador-headshot-300x300-1-qjs2xmue36kdlotkuubhrpabe3bedcbouen50tkv28.jpg",
+      bio: "Himanshu, is a Business Consultant and HR Services Expert with an impressive consulting career spanning over 18 years. With a proven track record, Himanshu has consistently demonstrated his ability to create innovative strategies, processes, and approaches that drive growth and profitability for the companies he collaborates with. Not only has Himanshu helped numerous startups navigate through the complexities of the business world and achieve their goals, but he also believes in using his expertise and resources to make a positive impact on society. We are delighted to have Himanshu join forces with the Women's Mentoring Foundation as an Ambassador.",
+    },
+  ];
+
   const teamMembers = [
     {
       name: "Pushpa Vaghela",
@@ -139,6 +163,51 @@ export default function OurBoardTeamPage() {
               </div>
             </div>
           ))}
+        </div>
+      </section>
+      
+      {/* Ambassadors and Patrons Section */}
+      <section className="max-w-6xl mx-auto mb-20">
+        <h2 className="text-3xl font-semibold mb-12 text-center wmf-heading text-wmf-text-primary">
+          Ambassadors and Patrons
+        </h2>
+
+        <div className="mb-16">
+          <div className="grid md:grid-cols-3 gap-8">
+            {ambassadors.map((ambassador, index) => (
+              <div
+                key={index}
+                className="bg-wmf-background-white rounded-lg shadow-lg overflow-hidden border border-wmf-border-light"
+              >
+                <div className="w-32 h-32 bg-wmf-background-light rounded-full mx-auto mt-6 mb-4 flex items-center justify-center overflow-hidden">
+                  {ambassador.image ? (
+                    <Image
+                      src={ambassador.image}
+                      alt={ambassador.name}
+                      width={128}
+                      height={128}
+                      className="w-full h-full object-cover rounded-full"
+                    />
+                  ) : (
+                    <span className="text-wmf-text-muted text-sm text-center">
+                      Photo
+                    </span>
+                  )}
+                </div>
+                <div className="p-6">
+                  <h4 className="text-xl font-semibold mb-2 wmf-heading text-wmf-text-primary">
+                    {ambassador.name}
+                  </h4>
+                  <p className="wmf-text-primary font-semibold mb-4">
+                    {ambassador.role}
+                  </p>
+                  <p className="text-wmf-text-secondary text-sm leading-relaxed wmf-body">
+                    {ambassador.bio}
+                  </p>
+                </div>
+              </div>
+            ))}
+          </div>
         </div>
       </section>
 

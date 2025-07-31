@@ -507,7 +507,7 @@ export default function ContactModal({
           </div>
           <button
             onClick={onClose}
-            className="text-[#6B7280] hover:text-[#374151] transition-colors p-2"
+            className="text-[#6B7280] hover:text-[#374151] transition-colors p-2 cursor-pointer"
             aria-label="Close modal"
           >
             <svg
@@ -586,14 +586,14 @@ export default function ContactModal({
             <button
               type="button"
               onClick={onClose}
-              className="flex-1 px-6 py-3 border border-[#D1D5DB] text-[#374151] rounded-lg hover:bg-[#F9FAFB] transition-colors font-semibold"
+              className="cursor-pointer flex-1 px-6 py-3 border border-[#D1D5DB] text-[#374151] rounded-lg hover:bg-[#F9FAFB] transition-colors font-semibold"
             >
               Cancel
             </button>
             <button
               type="submit"
               disabled={isSubmitting}
-              className="flex-1 bg-gradient-to-r from-[#A5375C] to-[#C84862] text-white px-6 py-3 rounded-lg hover:shadow-lg transition-all duration-300 font-semibold disabled:opacity-50 disabled:cursor-not-allowed"
+              className="cursor-pointer flex-1 bg-gradient-to-r from-[#A5375C] to-[#C84862] text-white px-6 py-3 rounded-lg hover:shadow-lg transition-all duration-300 font-semibold disabled:opacity-50 disabled:cursor-not-allowed"
             >
               {isSubmitting ? "Sending..." : "Send Message"}
             </button>

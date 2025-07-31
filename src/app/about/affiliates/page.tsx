@@ -120,9 +120,6 @@ export default function AffiliatedServicesPage() {
     <div className="container mx-auto px-4 py-12">
       {/* Hero Section */}
       <section className="max-w-4xl mx-auto mb-16 text-center">
-        <div className="inline-block bg-gradient-to-r from-[#A5375C] to-[#C84862] text-white px-6 py-2 rounded-full text-sm font-semibold mb-4">
-          Affiliated Services
-        </div>
         <h1 className="text-4xl font-bold mb-6 text-[#374151]">
           Affiliated Services
         </h1>
@@ -247,6 +244,18 @@ export default function AffiliatedServicesPage() {
               resources.
             </p>
           </div>
+        </div>
+      </section>
+
+      {/* WMF Partners Carousel Placeholder */}
+      <section className="max-w-6xl mx-auto mb-20">
+        <h2 className="text-3xl font-semibold mb-12 text-center wmf-heading text-wmf-text-primary">
+          WMF Partners
+        </h2>
+        <div className="bg-wmf-background-light rounded-lg p-12 text-center">
+          <p className="text-wmf-text-secondary wmf-body">
+            WMF Partners Carousel Placeholder
+          </p>
         </div>
       </section>
 

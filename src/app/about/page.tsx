@@ -1,5 +1,6 @@
 import Newsletter from "@/components/sections/Newsletter";
 import { Recruit } from "@/components/sections";
+import Image from "next/image";
 
 export default function AboutPage() {
   return (
@@ -68,24 +69,15 @@ export default function AboutPage() {
                 </div>
               </div>
 
-              {/* Right - Image Placeholder */}
-              <div className="relative h-80 bg-gradient-to-br from-[#F3F4F6] to-[#E5E7EB] rounded-xl flex items-center justify-center">
-                <div className="text-center">
-                  <svg
-                    className="w-16 h-16 mx-auto mb-4 text-[#A5375C]"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"
-                    />
-                  </svg>
-                  <p className="text-[#6B7280] font-medium">WMF Team Image</p>
-                </div>
+              {/* Right - Team Image */}
+              <div className="relative h-80 rounded-xl overflow-hidden">
+                <Image
+                  src="/team.jpg"
+                  alt="WMF Team"
+                  fill
+                  className="object-contain"
+                  sizes="(max-width: 768px) 100vw, 50vw"
+                />
               </div>
             </div>
           </div>
