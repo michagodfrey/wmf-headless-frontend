@@ -354,7 +354,7 @@ export default function ProgramsPage() {
               <h3 className="text-xl font-semibold mb-4">
                 WMF&apos;s Peer Counselling is supporting women and youth
                 experiencing mental health and wellbeing concerns to find help,
-                hope, and purpose – thus resulting in improved living!
+                hope, and purpose - thus resulting in improved living!
               </h3>
             </div>
 
@@ -366,7 +366,7 @@ export default function ProgramsPage() {
               </p>
               <p className="text-[#6B7280] leading-relaxed">
                 Every person&apos;s mental health journey is unique, which is
-                why we provide Peer Counselling – a personalised support to
+                why we provide Peer Counselling - a personalised support to
                 women and youth. WMF&apos;s Peer Counselling services are
                 offered via a range of mobile outreach, centre-based and online
                 delivery services.
@@ -534,7 +534,7 @@ export default function ProgramsPage() {
                   </li>
                   <li className="flex items-center">
                     <span className="text-[#DE5762] mr-2 font-bold">•</span>
-                    Self-leadership – from Trauma
+                    Self-leadership - from Trauma
                   </li>
                 </ul>
               </div>

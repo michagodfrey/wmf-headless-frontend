@@ -23,7 +23,6 @@ const navigation = [
       { name: "For Workplaces", href: "/programs/workplaces" },
       { name: "For Communities", href: "/programs/communities" },
       { name: "For Schools", href: "/programs/schools" },
-      { name: "Workshops", href: "/programs/workshops" },
     ],
   },
   {

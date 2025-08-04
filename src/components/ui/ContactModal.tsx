@@ -16,6 +16,7 @@ export interface ContactModalProps {
     options?: string[];
     placeholder?: string;
   }>;
+  initialValues?: Record<string, string>;
 }
 
 interface InquiryConfig {
@@ -410,6 +411,7 @@ export default function ContactModal({
   title,
   description,
   customFields,
+  initialValues,
 }: ContactModalProps) {
   const [formData, setFormData] = useState<Record<string, string>>({});
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -428,9 +430,9 @@ export default function ContactModal({
   // Reset form when modal opens/closes
   useEffect(() => {
     if (isOpen) {
-      setFormData({});
+      setFormData(initialValues || {});
     }
-  }, [isOpen]);
+  }, [isOpen, initialValues]);
 
   // Handle form input changes
   const handleInputChange = (name: string, value: string) => {

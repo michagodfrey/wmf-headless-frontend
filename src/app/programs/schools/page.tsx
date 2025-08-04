@@ -1,4 +1,7 @@
+"use client";
+
 import { Newsletter } from "@/components/sections";
+import Image from "next/image";
 
 export default function SchoolsPage() {
   return (
@@ -15,28 +18,17 @@ export default function SchoolsPage() {
           Navigating Mental Health Challenges with Effective Solutions
         </h2>
 
-        {/* Image Placeholder - Landscape Orientation */}
+        {/* Hero Image */}
         <div className="bg-gradient-to-br from-[#F9FAFB] to-[#F3F4F6] rounded-xl p-6 border border-[#E5E7EB] mb-8">
-          <div className="aspect-[16/9] bg-gradient-to-br from-[#DE5762] to-[#E66772] rounded-lg flex items-center justify-center">
-            <div className="text-center text-white">
-              <svg
-                className="w-16 h-16 mx-auto mb-4 opacity-80"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={1.5}
-                  d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.746 0 3.332.477 4.5 1.253v13C19.832 18.477 18.246 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"
-                />
-              </svg>
-              <p className="text-lg font-semibold">School Programs</p>
-              <p className="text-sm opacity-80">
-                Student Development & Support
-              </p>
-            </div>
+          <div className="aspect-[16/9] relative rounded-lg overflow-hidden">
+            <Image
+              src="/programs/programs-for-schools.jpg"
+              alt="WMF Programs for Schools - Student Development and Support"
+              fill
+              className="object-cover"
+              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 80vw, 1200px"
+              priority
+            />
           </div>
         </div>
 

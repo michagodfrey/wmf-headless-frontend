@@ -1,4 +1,7 @@
+"use client";
+
 import { Newsletter } from "@/components/sections";
+import Image from "next/image";
 
 export default function CommunitiesPage() {
   return (
@@ -16,28 +19,17 @@ export default function CommunitiesPage() {
           Wellness
         </h2>
 
-        {/* Image Placeholder - 4:3 Aspect Ratio */}
+        {/* Hero Image */}
         <div className="bg-gradient-to-br from-[#F9FAFB] to-[#F3F4F6] rounded-xl p-6 border border-[#E5E7EB] mb-8">
-          <div className="aspect-[4/3] bg-gradient-to-br from-[#3C6A72] to-[#4A7A82] rounded-lg flex items-center justify-center">
-            <div className="text-center text-white">
-              <svg
-                className="w-16 h-16 mx-auto mb-4 opacity-80"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={1.5}
-                  d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"
-                />
-              </svg>
-              <p className="text-lg font-semibold">Community Programs</p>
-              <p className="text-sm opacity-80">
-                Building Stronger Communities
-              </p>
-            </div>
+          <div className="aspect-[4/3] relative rounded-lg overflow-hidden">
+            <Image
+              src="/programs/programs-for-communities.jpg"
+              alt="WMF Programs for Communities - Building Stronger Communities"
+              fill
+              className="object-cover"
+              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 80vw, 1200px"
+              priority
+            />
           </div>
         </div>
 

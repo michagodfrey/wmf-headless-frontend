@@ -15,10 +15,10 @@ const footerNavigation = {
     { name: "For Workplaces", href: "/programs/workplaces" },
     { name: "For Communities", href: "/programs/communities" },
     { name: "For Schools", href: "/programs/schools" },
-    { name: "Workshops", href: "/programs/workshops" },
   ],
   support: [
-    { name: "Affiliated Services", href: "/about/affiliates" },
+    { name: "Comprehensive Support", href: "/get-help/comprehensive-support" },
+    { name: "Peer Counseling", href: "/get-help/peer-counselling" },
     { name: "Volunteer", href: "/get-involved" },
   ],
   social: [
@@ -219,7 +219,7 @@ export default function Footer() {
 
         {/* Acknowledgement of country */}
         <div className="mt-8 pt-8 border-t border-[#E5E7EB]">
-          <p className="text-[#6B7280] text-xs text-center italic">
+          <p className="text-[#6B7280] text-sm text-center italic">
             We acknowledge the Traditional Owners of Country throughout
             Australia and recognise their continuing connection to land, waters
             and culture. We pay our respects to their Elders past and present.
