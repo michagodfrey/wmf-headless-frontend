@@ -82,6 +82,12 @@ export interface WPMedia {
       name: string;
     }>;
   };
+  // ACF fields support
+  acf?: {
+    gallery_category?: string;
+    gallery_section?: string;
+    [key: string]: any;
+  };
 }
 
 export interface WPGallerySection {

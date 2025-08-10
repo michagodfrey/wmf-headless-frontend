@@ -575,30 +575,34 @@ export default function WorkplacesPage() {
                 us today to learn more about our workshops and how they can
                 benefit your organisation.
               </p>
-              <div className="space-y-3">
-                <div className="flex items-center">
-                  <div className="w-10 h-10 bg-white/20 rounded-lg flex items-center justify-center mr-3">
-                    <svg
-                      className="w-5 h-5 text-white"
-                      fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={2}
-                        d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"
-                      />
-                    </svg>
-                  </div>
-                  <div>
-                    <p className="font-semibold text-white">Pushpa Vaghela</p>
-                    <p className="text-white/80 text-sm">
-                      Founder & Clinical Neuro Practitioner
-                    </p>
-                  </div>
+
+              {/* Founder Profile */}
+              <div className="flex items-start mb-6">
+                <div className="relative w-16 h-16 rounded-lg overflow-hidden mr-4 flex-shrink-0">
+                  <Image
+                    src="/programs/pushpa.webp"
+                    alt="Pushpa at the 4EB radio Luncheon on International Women's Day 2024"
+                    fill
+                    className="object-cover"
+                    sizes="64px"
+                  />
                 </div>
+                <div>
+                  <p className="font-semibold text-white text-lg">
+                    Pushpa Vaghela
+                  </p>
+                  <p className="text-white/80 text-sm mb-2">
+                    Founder & Clinical Neuro Practitioner
+                  </p>
+                  <p className="text-white/70 text-xs">
+                    Leading WMF&apos;s mission to empower women through mental
+                    health support and leadership development
+                  </p>
+                </div>
+              </div>
+
+              {/* Contact Information */}
+              <div className="space-y-3">
                 <div className="flex items-center">
                   <div className="w-10 h-10 bg-white/20 rounded-lg flex items-center justify-center mr-3">
                     <svg
@@ -617,7 +621,7 @@ export default function WorkplacesPage() {
                   </div>
                   <a
                     href="tel:0497998829"
-                    className="text-white hover:text-white/80 transition-colors"
+                    className="text-white hover:text-white/80 transition-colors font-medium"
                   >
                     0497 998 829
                   </a>
@@ -640,7 +644,7 @@ export default function WorkplacesPage() {
                   </div>
                   <a
                     href="mailto:pushpa@womensmentoringfoundation.com"
-                    className="text-white hover:text-white/80 transition-colors"
+                    className="text-white hover:text-white/80 transition-colors font-medium"
                   >
                     pushpa@womensmentoringfoundation.com
                   </a>

@@ -8,53 +8,6 @@ import { useState, useEffect } from "react";
 import { WPPost } from "@/types/wordpress";
 
 export default function Home() {
-  const testimonials = [
-    {
-      name: "Lila W Pratap, CAHRI President Damini Women's Association of Qld Inc",
-      content:
-        "Congratulations for being a wonderful inspiration to our community and for the work that you have done over the years. It's a pleasure to have been involved in your IWD International Womens Day events.",
-    },
-    {
-      name: "Queensland University of Technology",
-      content:
-        "Pushpa and WMF thank you for mentoring university students across the world on Mental health, creating Mental health products/services/entrepreneurs and supporting health projects across the Globe.",
-    },
-    {
-      name: "Ginta Taylor",
-      content:
-        "I am feeling extremely empowered - this was incredible! Wonderful work WMF - thank you for giving us so much!",
-    },
-    {
-      name: "Sharon Hawthorne",
-      content:
-        "I met Pushpa after a distressing turn in my life left me with little confidence and anxiety. With her innate wisdom and understanding, Pushpa has shown me how to question the trauma of my past and overcome the blocks that were holding me back. I can trust myself again and look forward to a positive and bright future.",
-    },
-    {
-      name: "ACTE Pty Ltd",
-      content:
-        "Pushpa and Team at WMF, thank you for coming into our organisation and speaking on Burnout, how to maintain better mindsets, and increasing the awareness of observing changes in our personal and fellow team member's behaviours. It has made a significant difference on our behaviours, our work performance, and the respect we have for each other.",
-    },
-    {
-      name: "Team Griffith University",
-      content:
-        " Thank you for mentoring our women in the 'SistersinBusiness' project, you have a made a huge difference with your speaking engagement on better Mental, Emotional and Leadership health and the one-on-one mentoring sessions.",
-    },
-    {
-      name: "Amy",
-      content:
-        "No doubt you hear this all the time, but I just want to say, thank you for saving my daughters and my life, we will forever be indebted to Women's Mentoring Foundation.",
-    },
-    {
-      name: "Carers Queensland, NDIS Local Area Coordination Partner in the Community",
-      content:
-        "Pushpa from WMF engaged in the Be Your Own Boss microbusiness program, presenting a workshop on Accounting and Finance in a Business Mentor capacity. The session provided participants with practical information, with examples of managing and understanding finances and effective cost saving strategies. Pushpa's personable approach and shared experience of running her own business supported participants to engage on specific topics, to apply directly to their own microbusiness. Thank you, Pushpa and WMF for your contribution to empowering, educating and supporting people with disability to start or grow their own microbusiness through the Be Your Own Boss program.",
-    },
-    {
-      name: "Carrie Payne",
-      content:
-        "Having dealt directly with Pushpa at Women's Mentoring Foundation, it's easy to see the passion built into the programs delivered by them. Life is tough; but so are you. WMF is here to remind you of this by giving you the tools and the confidence to be the best version of yourself. In doing this, WMF provides a safe space for healing, without judgment or guilt. Offering psychology based and trauma informed programs and service, WMF addresses the complex and multifactorial issues which prevent women from overcoming obstacles on their pathway to recovery and excellence. The team at WMF are here to help and share their experience with you.",
-    },
-  ];
 
   const awards = [
     {
@@ -79,7 +32,6 @@ export default function Home() {
   ];
 
   const [featuredPosts, setFeaturedPosts] = useState<WPPost[]>([]);
-  const [showAllTestimonials, setShowAllTestimonials] = useState(false);
   const [selectedAward, setSelectedAward] = useState<(typeof awards)[0] | null>(
     null
   );
@@ -97,11 +49,6 @@ export default function Home() {
     };
     fetchPosts();
   }, []);
-
-  // Get testimonials to display (first 3 or all)
-  const displayedTestimonials = showAllTestimonials
-    ? testimonials
-    : testimonials.slice(0, 3);
 
   const openAwardModal = (award: (typeof awards)[0]) => {
     setSelectedAward(award);
@@ -668,60 +615,6 @@ export default function Home() {
               </a>
             </div>
           </div>
-        </div>
-      </section>
-
-      {/* Testimonials Section */}
-      <section className="py-20 bg-gradient-to-br from-[#F9FAFB] to-[#F3F4F6]">
-        <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto text-center mb-12">
-            <div className="inline-block bg-gradient-to-r from-[#A5375C] to-[#C84862] text-white px-6 py-2 rounded-full text-sm font-semibold mb-4">
-              What People Say
-            </div>
-            <h2 className="text-4xl font-bold mb-4 text-[#374151]">
-              Testimonials from Our Community
-            </h2>
-            <p className="text-[#6B7280] text-lg">
-              Hear from the women and organizations whose lives have been
-              transformed through our programs.
-            </p>
-          </div>
-
-          <div className="grid md:grid-cols-3 gap-8 mb-8">
-            {displayedTestimonials.map((testimonial, index) => (
-              <div
-                key={index}
-                className="bg-white rounded-xl shadow-lg p-8 border border-[#E5E7EB] hover:shadow-xl transition-all duration-300 relative group"
-              >
-                <div className="absolute top-6 left-6 text-[#A5375C] text-4xl opacity-20 group-hover:opacity-30 transition-opacity">
-                  &ldquo;
-                </div>
-                <div className="relative z-10">
-                  <p className="text-[#6B7280] mb-6 leading-relaxed italic pl-4">
-                    {testimonial.content}
-                  </p>
-                  <div className="border-t border-[#E5E7EB] pt-4">
-                    <p className="font-semibold text-[#374151] text-sm">
-                      {testimonial.name}
-                    </p>
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
-
-          {testimonials.length > 3 && (
-            <div className="text-center">
-              <button
-                onClick={() => setShowAllTestimonials(!showAllTestimonials)}
-                className="cursor-pointer bg-gradient-to-r from-[#A5375C] to-[#C84862] text-white px-8 py-3 rounded-lg hover:from-[#C84862] hover:to-[#DE5762] transition-all duration-300 font-semibold shadow-lg hover:shadow-xl transform hover:-translate-y-1"
-              >
-                {showAllTestimonials
-                  ? "Show Less"
-                  : `Show ${testimonials.length - 3} More`}
-              </button>
-            </div>
-          )}
         </div>
       </section>
 

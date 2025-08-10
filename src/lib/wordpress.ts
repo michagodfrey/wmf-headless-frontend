@@ -78,74 +78,129 @@ export async function getGallerySections(): Promise<WPGallerySection[]> {
     // Option 1: Get all media and organize by categories
     const media = await getMedia();
 
-    // Simple implementation: Create sections based on image titles or descriptions
-    // You can customize this logic based on your WordPress setup
+    // Check if ACF fields are available
+    const hasACF = media.some((m) => m.acf && Object.keys(m.acf).length > 0);
 
-    // Example: Group images by keywords in their titles
-    const sections: WPGallerySection[] = [
-      {
-        id: 1,
-        title: "WMF Programs and Workshops",
-        description:
-          "A visual journey through our various programs and workshops designed to support women's mental health and well-being.",
-        images: media.filter(
-          (m) =>
-            m.title.rendered.toLowerCase().includes("workshop") ||
-            m.title.rendered.toLowerCase().includes("program") ||
-            m.title.rendered.toLowerCase().includes("wmf")
-        ),
-      },
-      {
-        id: 2,
-        title: "GOPIO",
-        description:
-          "Pushpa delivering the domestic violence workshops for Global Organisation of Person of Indian Origin (GOPIO).",
-        images: media.filter(
-          (m) =>
-            m.title.rendered.toLowerCase().includes("gopio") ||
-            m.title.rendered.toLowerCase().includes("pushpa")
-        ),
-      },
-      {
-        id: 3,
-        title: "Community Events",
-        description:
-          "Supporting our community through various events and initiatives.",
-        images: media.filter(
-          (m) =>
-            m.title.rendered.toLowerCase().includes("event") ||
-            m.title.rendered.toLowerCase().includes("community") ||
-            m.title.rendered.toLowerCase().includes("gathering")
-        ),
-      },
-      {
-        id: 4,
-        title: "Other",
-        description:
-          "A collection of images showcasing our values, community impact, and the diverse ways we support women's mental health and well-being.",
-        images: media.filter(
-          (m) =>
-            !m.title.rendered.toLowerCase().includes("workshop") &&
-            !m.title.rendered.toLowerCase().includes("program") &&
-            !m.title.rendered.toLowerCase().includes("wmf") &&
-            !m.title.rendered.toLowerCase().includes("gopio") &&
-            !m.title.rendered.toLowerCase().includes("pushpa") &&
-            !m.title.rendered.toLowerCase().includes("event") &&
-            !m.title.rendered.toLowerCase().includes("community") &&
-            !m.title.rendered.toLowerCase().includes("gathering")
-        ),
-      },
-    ];
+    if (hasACF) {
+      console.log("ACF fields detected, organizing by gallery_category");
 
-    // Only return sections that have images
-    const validSections = sections.filter(
-      (section) => section.images.length > 0
-    );
+      // Organize by ACF gallery_category field
+      const sections: WPGallerySection[] = [
+        {
+          id: 1,
+          title: "WMF Programs and Workshops",
+          description:
+            "A visual journey through our various programs and workshops designed to support women's mental health and well-being.",
+          images: media.filter(
+            (m) => m.acf?.gallery_category === "wmf-programs"
+          ),
+        },
+        {
+          id: 2,
+          title: "GOPIO",
+          description:
+            "Pushpa delivering the domestic violence workshops for Global Organisation of Person of Indian Origin (GOPIO).",
+          images: media.filter((m) => m.acf?.gallery_category === "gopio"),
+        },
+        {
+          id: 3,
+          title: "Community Events",
+          description:
+            "Supporting our community through various events and initiatives.",
+          images: media.filter(
+            (m) => m.acf?.gallery_category === "community-events"
+          ),
+        },
+        {
+          id: 4,
+          title: "Other",
+          description:
+            "A collection of images showcasing our values, community impact, and the diverse ways we support women's mental health and well-being.",
+          images: media.filter(
+            (m) =>
+              m.acf?.gallery_category === "other" || !m.acf?.gallery_category
+          ),
+        },
+      ];
 
-    console.log(
-      `Found ${media.length} media items, organized into ${validSections.length} gallery sections`
-    );
-    return validSections;
+      // Only return sections that have images
+      const validSections = sections.filter(
+        (section) => section.images.length > 0
+      );
+
+      console.log(
+        `Found ${media.length} media items with ACF fields, organized into ${validSections.length} gallery sections`
+      );
+      return validSections;
+    } else {
+      console.log("No ACF fields found, using title-based organization");
+
+      // Fallback: Simple implementation using title keywords
+      const sections: WPGallerySection[] = [
+        {
+          id: 1,
+          title: "WMF Programs and Workshops",
+          description:
+            "A visual journey through our various programs and workshops designed to support women's mental health and well-being.",
+          images: media.filter(
+            (m) =>
+              m.title.rendered.toLowerCase().includes("workshop") ||
+              m.title.rendered.toLowerCase().includes("program") ||
+              m.title.rendered.toLowerCase().includes("wmf")
+          ),
+        },
+        {
+          id: 2,
+          title: "GOPIO",
+          description:
+            "Pushpa delivering the domestic violence workshops for Global Organisation of Person of Indian Origin (GOPIO).",
+          images: media.filter(
+            (m) =>
+              m.title.rendered.toLowerCase().includes("gopio") ||
+              m.title.rendered.toLowerCase().includes("pushpa")
+          ),
+        },
+        {
+          id: 3,
+          title: "Community Events",
+          description:
+            "Supporting our community through various events and initiatives.",
+          images: media.filter(
+            (m) =>
+              m.title.rendered.toLowerCase().includes("event") ||
+              m.title.rendered.toLowerCase().includes("community") ||
+              m.title.rendered.toLowerCase().includes("gathering")
+          ),
+        },
+        {
+          id: 4,
+          title: "Other",
+          description:
+            "A collection of images showcasing our values, community impact, and the diverse ways we support women's mental health and well-being.",
+          images: media.filter(
+            (m) =>
+              !m.title.rendered.toLowerCase().includes("workshop") &&
+              !m.title.rendered.toLowerCase().includes("program") &&
+              !m.title.rendered.toLowerCase().includes("wmf") &&
+              !m.title.rendered.toLowerCase().includes("gopio") &&
+              !m.title.rendered.toLowerCase().includes("pushpa") &&
+              !m.title.rendered.toLowerCase().includes("event") &&
+              !m.title.rendered.toLowerCase().includes("community") &&
+              !m.title.rendered.toLowerCase().includes("gathering")
+          ),
+        },
+      ];
+
+      // Only return sections that have images
+      const validSections = sections.filter(
+        (section) => section.images.length > 0
+      );
+
+      console.log(
+        `Found ${media.length} media items, organized into ${validSections.length} gallery sections using title keywords`
+      );
+      return validSections;
+    }
   } catch (error) {
     console.error("Error fetching gallery sections:", error);
     return [];
