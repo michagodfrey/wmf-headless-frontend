@@ -86,7 +86,7 @@ export interface WPMedia {
   acf?: {
     gallery_category?: string;
     gallery_section?: string;
-    [key: string]: any;
+    [key: string]: string | number | boolean | null | undefined;
   };
 }
 
