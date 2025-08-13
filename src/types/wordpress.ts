@@ -57,21 +57,64 @@ export interface WPMedia {
     sizes: {
       thumbnail: {
         source_url: string;
+        url?: string;
+        file?: string;
         width: number;
         height: number;
       };
       medium: {
         source_url: string;
+        url?: string;
+        file?: string;
         width: number;
         height: number;
       };
       large: {
         source_url: string;
+        url?: string;
+        file?: string;
+        width: number;
+        height: number;
+      };
+      medium_large: {
+        source_url: string;
+        url?: string;
+        file?: string;
+        width: number;
+        height: number;
+      };
+      "gallery-large": {
+        source_url: string;
+        url?: string;
+        file?: string;
+        width: number;
+        height: number;
+      };
+      "gallery-medium": {
+        source_url: string;
+        url?: string;
+        file?: string;
+        width: number;
+        height: number;
+      };
+      "gallery-thumbnail": {
+        source_url: string;
+        url?: string;
+        file?: string;
         width: number;
         height: number;
       };
       full: {
         source_url: string;
+        url?: string;
+        file?: string;
+        width: number;
+        height: number;
+      };
+      [key: string]: {
+        source_url: string;
+        url?: string;
+        file?: string;
         width: number;
         height: number;
       };

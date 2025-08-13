@@ -53,6 +53,45 @@ export async function getMedia(page = 1, perPage = 100): Promise<WPMedia[]> {
   return res.json();
 }
 
+// Function to get ALL media by handling pagination
+export async function getAllMedia(): Promise<WPMedia[]> {
+  let allMedia: WPMedia[] = [];
+  let page = 1;
+  let hasMore = true;
+
+  while (hasMore) {
+    try {
+      const media = await getMedia(page, 100);
+
+      // Check if media is an array and has content
+      if (!Array.isArray(media) || media.length === 0) {
+        console.log(`Page ${page}: No more media found or invalid response`);
+        hasMore = false;
+      } else {
+        console.log(`Page ${page}: Found ${media.length} media items`);
+        allMedia = [...allMedia, ...media];
+        page++;
+
+        // Safety check to prevent infinite loops
+        if (page > 50) {
+          console.warn(
+            "Stopping pagination at 50 pages to prevent infinite loop"
+          );
+          hasMore = false;
+        }
+      }
+    } catch (error) {
+      console.error(`Error fetching media page ${page}:`, error);
+      hasMore = false;
+    }
+  }
+
+  console.log(
+    `Fetched ${allMedia.length} total media items across ${page - 1} pages`
+  );
+  return allMedia;
+}
+
 export async function getMediaByCategory(
   categorySlug: string
 ): Promise<WPMedia[]> {
@@ -76,13 +115,20 @@ export async function getGallerySections(): Promise<WPGallerySection[]> {
 
   try {
     // Option 1: Get all media and organize by categories
-    const media = await getMedia();
+    const media = await getAllMedia();
 
     // Check if ACF fields are available
     const hasACF = media.some((m) => m.acf && Object.keys(m.acf).length > 0);
 
     if (hasACF) {
       console.log("ACF fields detected, organizing by gallery_category");
+
+      // Filter to only include images that have been categorized
+      const categorizedMedia = media.filter((m) => m.acf?.gallery_category);
+
+      console.log(
+        `Found ${categorizedMedia.length} categorized images out of ${media.length} total images`
+      );
 
       // Organize by ACF gallery_category field
       const sections: WPGallerySection[] = [
@@ -91,7 +137,7 @@ export async function getGallerySections(): Promise<WPGallerySection[]> {
           title: "WMF Programs and Workshops",
           description:
             "A visual journey through our various programs and workshops designed to support women's mental health and well-being.",
-          images: media.filter(
+          images: categorizedMedia.filter(
             (m) => m.acf?.gallery_category === "wmf-programs"
           ),
         },
@@ -100,14 +146,16 @@ export async function getGallerySections(): Promise<WPGallerySection[]> {
           title: "GOPIO",
           description:
             "Pushpa delivering the domestic violence workshops for Global Organisation of Person of Indian Origin (GOPIO).",
-          images: media.filter((m) => m.acf?.gallery_category === "gopio"),
+          images: categorizedMedia.filter(
+            (m) => m.acf?.gallery_category === "gopio"
+          ),
         },
         {
           id: 3,
           title: "Community Events",
           description:
             "Supporting our community through various events and initiatives.",
-          images: media.filter(
+          images: categorizedMedia.filter(
             (m) => m.acf?.gallery_category === "community-events"
           ),
         },
@@ -116,9 +164,8 @@ export async function getGallerySections(): Promise<WPGallerySection[]> {
           title: "Other",
           description:
             "A collection of images showcasing our values, community impact, and the diverse ways we support women's mental health and well-being.",
-          images: media.filter(
-            (m) =>
-              m.acf?.gallery_category === "other" || !m.acf?.gallery_category
+          images: categorizedMedia.filter(
+            (m) => m.acf?.gallery_category === "other"
           ),
         },
       ];
@@ -129,7 +176,7 @@ export async function getGallerySections(): Promise<WPGallerySection[]> {
       );
 
       console.log(
-        `Found ${media.length} media items with ACF fields, organized into ${validSections.length} gallery sections`
+        `Organized ${categorizedMedia.length} categorized images into ${validSections.length} gallery sections`
       );
       return validSections;
     } else {

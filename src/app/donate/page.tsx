@@ -543,7 +543,7 @@ export default function DonatePage() {
               </p>
               <button
                 onClick={scrollToDonation}
-                className="bg-white text-[#A5375C] px-8 py-4 rounded-lg font-semibold text-lg hover:bg-gray-100 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1"
+                className="cursor-pointer bg-white text-[#A5375C] px-8 py-4 rounded-lg font-semibold text-lg hover:bg-gray-100 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1"
               >
                 Donate Now
               </button>

@@ -97,7 +97,7 @@ export default function OurBoardTeamPage() {
       name: "Sharon Hawthorne",
       role: "Peer Counsellor",
       image:
-        "https://womensmentoringfoundation.com/wp-content/uploads/elementor/thumbs/pushpa2-qjs2xmue36kdlotkuubhrpabe3bedcbouen50tkv28.jpeg",
+        "https://womensmentoringfoundation.com/wp-content/uploads/elementor/thumbs/Sharon-Hawthorne-headshot-qlupp28gi5n9y0n9z2qcivrkaduqj3ml2x9xm4sf28.webp",
       bio: "Sharon Hawthorne, has traveled and survived numerous challenges, demonstrating her commitment to supporting women in their healing journeys. She is an author and writer with over two decades of experience working in various capacities within newspapers, magazines, and book publishers. This includes advertising, feature writing, marketing and communications, book editing, and author mentorship. Sharon also coaches and mentors authors and writers, aiding them in producing the most professional versions of their books and navigating the ever-evolving landscape of the self-publishing industry.",
     },
     {

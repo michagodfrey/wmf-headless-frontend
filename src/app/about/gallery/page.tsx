@@ -1,7 +1,7 @@
 import { Newsletter } from "@/components/sections";
 import { getGallerySections } from "@/lib/wordpress";
-import { WPGallerySection, WPMedia } from "@/types/wordpress";
-import Image from "next/image";
+import { WPGallerySection } from "@/types/wordpress";
+import WordPressImage from "@/components/ui/WordPressImage";
 
 // Fallback static gallery sections (current implementation)
 const fallbackGallerySections = [
@@ -77,44 +77,6 @@ const fallbackGallerySections = [
     ],
   },
 ];
-
-// Component for rendering WordPress media
-function WordPressImage({ media }: { media: WPMedia }) {
-  const imageUrl =
-    media.media_details?.sizes?.large?.source_url ||
-    media.media_details?.sizes?.medium?.source_url ||
-    media.source_url;
-
-  return (
-    <div className="group relative overflow-hidden rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300">
-      <div className="aspect-w-4 aspect-h-3 bg-gray-200">
-        <Image
-          src={imageUrl}
-          alt={media.alt_text || media.title.rendered}
-          width={400}
-          height={300}
-          className="w-full h-full object-cover"
-        />
-      </div>
-
-      {/* Overlay on hover */}
-      <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-50 transition-all duration-300 flex items-center justify-center">
-        <div className="text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300 text-center p-4">
-          <p className="text-sm font-medium">{media.title.rendered}</p>
-          {media.caption.rendered && (
-            <p
-              className="text-xs mt-1"
-              dangerouslySetInnerHTML={{ __html: media.caption.rendered }}
-            />
-          )}
-          <button className="mt-2 bg-white text-black px-3 py-1 rounded text-xs hover:bg-gray-100 transition-colors">
-            View Full Size
-          </button>
-        </div>
-      </div>
-    </div>
-  );
-}
 
 // Component for rendering fallback placeholder images
 function PlaceholderImage({ image }: { image: { id: number; alt: string } }) {
