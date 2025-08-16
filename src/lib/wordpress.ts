@@ -152,11 +152,11 @@ export async function getGallerySections(): Promise<WPGallerySection[]> {
         },
         {
           id: 3,
-          title: "Community Events",
+          title: "Deadly Thinking",
           description:
-            "Supporting our community through various events and initiatives.",
+            "Supporting our indigenous people, Pushpa attends the local deadly thinking workshop.",
           images: categorizedMedia.filter(
-            (m) => m.acf?.gallery_category === "community-events"
+            (m) => m.acf?.gallery_category === "deadly-thinking"
           ),
         },
         {

@@ -35,7 +35,7 @@ export default function WordPressImage({ media }: { media: WPMedia }) {
   if (imageError || !imageUrl) {
     return (
       <div className="group relative overflow-hidden rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300">
-        <div className="aspect-w-4 aspect-h-3 bg-gray-200 flex items-center justify-center">
+        <div className="aspect-[4/3] bg-gray-200 flex items-center justify-center">
           <div className="text-center p-4">
             <div className="w-16 h-16 bg-gray-300 rounded-full mx-auto mb-3 flex items-center justify-center">
               <svg
@@ -62,7 +62,7 @@ export default function WordPressImage({ media }: { media: WPMedia }) {
 
   return (
     <div className="group relative overflow-hidden rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300">
-      <div className="aspect-w-4 aspect-h-3 bg-gray-200">
+      <div className="aspect-[4/3] bg-gray-200">
         <Image
           src={imageUrl}
           alt={media.alt_text || media.title.rendered}
@@ -80,7 +80,7 @@ export default function WordPressImage({ media }: { media: WPMedia }) {
       </div>
 
       {/* Overlay on hover */}
-      <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-50 transition-all duration-300 flex items-center justify-center">
+      <div className="absolute inset-0 bg-black/0 group-hover:bg-black/50 transition-all duration-300 flex items-center justify-center">
         <div className="text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300 text-center p-4">
           <p className="text-sm font-medium">{media.title.rendered}</p>
           {hasCaption && (

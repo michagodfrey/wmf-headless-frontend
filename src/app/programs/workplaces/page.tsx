@@ -25,14 +25,16 @@ export default function WorkplacesPage() {
       title: "Emotional Flooding Awareness",
       description:
         "This session helps individuals understand emotional flooding—a state of overwhelming emotional intensity. Attendees learn techniques to recognize, manage, and navigate intense emotions, especially during conflicts, using stress-management tools and mindfulness.",
-      gradient: "from-[#A5375C] to-[#C84862]",
+      image:
+        "https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?q=80&w=1200&auto=format&fit=crop",
       buttonClass: "wmf-button-primary",
     },
     {
       title: "Mood Swing Management",
       description:
         'Introducing the Mood Swing, this session guides participants on using an evidence-based tool to manage symptoms of anxiety and depression. Participants learn how to engage in "missions" that encourage positive behavior changes and improve emotional resilience.',
-      gradient: "from-[#3C6A72] to-[#4A7A82]",
+      image:
+        "https://womensmentoringfoundation.com/wp-content/uploads/2024/11/mood-swing.webp",
       buttonClass:
         "bg-[#3C6A72] text-white px-4 py-2 rounded-lg hover:bg-[#4A7A82] transition-colors font-semibold inline-block",
     },
@@ -40,7 +42,8 @@ export default function WorkplacesPage() {
       title: "Boost Self-Esteem",
       description:
         "Aimed at strengthening self-esteem, this workshop includes daily practices like self-acceptance, positive affirmations, and self-care routines. Participants leave with actionable steps to build self-confidence and foster a more positive self-image.",
-      gradient: "from-[#DE5762] to-[#E66772]",
+      image:
+        "https://womensmentoringfoundation.com/wp-content/uploads/2024/11/tips-to-build-self-esteem.webp",
       buttonClass:
         "bg-[#DE5762] text-white px-4 py-2 rounded-lg hover:bg-[#E66772] transition-colors font-semibold inline-block",
     },
@@ -48,14 +51,16 @@ export default function WorkplacesPage() {
       title: "Mindful Breathing",
       description:
         "This mindfulness session focuses on breath awareness, helping participants develop relaxation skills and improve mental clarity. Although not directly aimed at stress reduction, the techniques often lead to a sense of calm and focus.",
-      gradient: "from-[#A5375C] to-[#C84862]",
+      image:
+        "https://womensmentoringfoundation.com/wp-content/uploads/2024/11/mindful-breathing-techniques.webp",
       buttonClass: "wmf-button-primary",
     },
     {
       title: "Managing Anger",
       description:
         "This workshop explores techniques for handling anger constructively. Attendees learn methods to express emotions healthily and recognize triggers that lead to frustration, enhancing their ability to respond rather than react in tense situations.",
-      gradient: "from-[#3C6A72] to-[#4A7A82]",
+      image:
+        "https://womensmentoringfoundation.com/wp-content/uploads/2024/11/mananging-anger-through-calmness.webp",
       buttonClass:
         "bg-[#3C6A72] text-white px-4 py-2 rounded-lg hover:bg-[#4A7A82] transition-colors font-semibold inline-block",
     },
@@ -63,7 +68,8 @@ export default function WorkplacesPage() {
       title: "Conflict Resolution",
       description:
         "This session promotes conflict resolution through active listening, empathy, and collaborative problem-solving. Participants learn how to address disagreements constructively, strengthening personal and professional relationships.",
-      gradient: "from-[#DE5762] to-[#E66772]",
+      image:
+        "https://images.unsplash.com/photo-1626447269096-f8665509589c?q=80&w=1631&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       buttonClass:
         "bg-[#DE5762] text-white px-4 py-2 rounded-lg hover:bg-[#E66772] transition-colors font-semibold inline-block",
     },
@@ -71,14 +77,16 @@ export default function WorkplacesPage() {
       title: "Healing from Deep Wounds",
       description:
         "Addressing emotional wounds, this workshop helps participants identify and heal from past traumas. It teaches that while personal challenges can shape one's view of the world, healing can lead to growth and self-compassion.",
-      gradient: "from-[#A5375C] to-[#C84862]",
+      image:
+        "https://womensmentoringfoundation.com/wp-content/uploads/2024/11/healing-from-wounds-too-deep.webp",
       buttonClass: "wmf-button-primary",
     },
     {
       title: "Menopause Support",
       description:
         "Focused on the mental and emotional shifts during menopause, this session provides support for women experiencing mood changes and emotional sensitivity. It includes coping strategies to improve mental wellbeing and addresses the social impact of menopause.",
-      gradient: "from-[#3C6A72] to-[#4A7A82]",
+      image:
+        "https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=1200&auto=format&fit=crop",
       buttonClass:
         "bg-[#3C6A72] text-white px-4 py-2 rounded-lg hover:bg-[#4A7A82] transition-colors font-semibold inline-block",
     },
@@ -86,7 +94,8 @@ export default function WorkplacesPage() {
       title: "Cognitive Reframing",
       description:
         "This cognitive reframing workshop guides participants in shifting perspectives on challenges. Attendees learn to approach stressful situations with a positive outlook, which can enhance emotional resilience and reduce negative thinking.",
-      gradient: "from-[#DE5762] to-[#E66772]",
+      image:
+        "https://womensmentoringfoundation.com/wp-content/uploads/2024/11/working-on-reframing.webp",
       buttonClass:
         "bg-[#DE5762] text-white px-4 py-2 rounded-lg hover:bg-[#E66772] transition-colors font-semibold inline-block",
     },
@@ -94,14 +103,16 @@ export default function WorkplacesPage() {
       title: "Self-Care Priority",
       description:
         "This session encourages participants to prioritise self-care by addressing common barriers such as guilt, ingrained habits, or self-doubt. It offers strategies to build a consistent self-care routine, promoting mental and physical wellbeing.",
-      gradient: "from-[#A5375C] to-[#C84862]",
+      image:
+        "https://womensmentoringfoundation.com/wp-content/uploads/2024/11/self-care-pathways.webp",
       buttonClass: "wmf-button-primary",
     },
     {
       title: "Stress Management",
       description:
         "Offering practical stress-reduction techniques, this workshop includes identifying personal stressors, setting realistic goals, and adopting healthy lifestyle habits. Techniques like time management, meditation, and journaling are also discussed.",
-      gradient: "from-[#3C6A72] to-[#4A7A82]",
+      image:
+        "https://womensmentoringfoundation.com/wp-content/uploads/2024/11/stress-managment.webp",
       buttonClass:
         "bg-[#3C6A72] text-white px-4 py-2 rounded-lg hover:bg-[#4A7A82] transition-colors font-semibold inline-block",
     },
@@ -109,7 +120,8 @@ export default function WorkplacesPage() {
       title: "Personal Needs",
       description:
         "This session emphasises the importance of recognizing and honouring personal needs without guilt. Participants learn self-reflection and self-advocacy techniques, empowering them to set boundaries and pursue balanced, fulfilling lives.",
-      gradient: "from-[#DE5762] to-[#E66772]",
+      image:
+        "https://womensmentoringfoundation.com/wp-content/uploads/2024/11/validating-personal-needs.webp",
       buttonClass:
         "bg-[#DE5762] text-white px-4 py-2 rounded-lg hover:bg-[#E66772] transition-colors font-semibold inline-block",
     },
@@ -117,14 +129,16 @@ export default function WorkplacesPage() {
       title: "Problem Solving",
       description:
         "Participants learn structured problem-solving skills, including critical thinking, creative brainstorming, and goal-setting. The session teaches that a positive mindset can turn challenges into opportunities for growth and innovation.",
-      gradient: "from-[#A5375C] to-[#C84862]",
+      image:
+        "https://images.unsplash.com/photo-1529101091764-c3526daf38fe?q=80&w=1200&auto=format&fit=crop",
       buttonClass: "wmf-button-primary",
     },
     {
       title: "Workplace Health",
       description:
         "Focused on sedentary workplace behaviors, this session highlights the health risks of prolonged sitting. Participants learn about posture, regular movement, and exercises to prevent health issues associated with long hours of sitting.",
-      gradient: "from-[#3C6A72] to-[#4A7A82]",
+      image:
+        "https://images.unsplash.com/photo-1512314889357-e157c22f938d?q=80&w=1200&auto=format&fit=crop",
       buttonClass:
         "bg-[#3C6A72] text-white px-4 py-2 rounded-lg hover:bg-[#4A7A82] transition-colors font-semibold inline-block",
     },
@@ -132,7 +146,8 @@ export default function WorkplacesPage() {
       title: "Self-Care Pathways",
       description:
         "Covering essential self-care practices like sleep, nutrition, and relaxation, this workshop provides a framework for building a holistic self-care routine. Attendees learn how self-care can positively impact both emotional and physical health.",
-      gradient: "from-[#DE5762] to-[#E66772]",
+      image:
+        "https://images.unsplash.com/photo-1506126613408-eca07ce68773?q=80&w=1200&auto=format&fit=crop",
       buttonClass:
         "bg-[#DE5762] text-white px-4 py-2 rounded-lg hover:bg-[#E66772] transition-colors font-semibold inline-block",
     },
@@ -140,7 +155,8 @@ export default function WorkplacesPage() {
       title: "Job Transitions",
       description:
         "This workshop provides guidance on dealing with job changes, whether voluntary or involuntary. It covers emotional resilience, rebranding, and exploring new career opportunities, helping participants manage career shifts positively.",
-      gradient: "from-[#A5375C] to-[#C84862]",
+      image:
+        "https://womensmentoringfoundation.com/wp-content/uploads/2024/11/managing-career-transition.webp",
       buttonClass: "wmf-button-primary",
     },
   ];
@@ -271,12 +287,20 @@ export default function WorkplacesPage() {
         </h2>
         <div className="grid md:grid-cols-3 gap-8">
           <div className="bg-white rounded-xl shadow-lg overflow-hidden border border-[#E5E7EB] hover:shadow-xl transition-all duration-300">
-            <div className="h-48 bg-gradient-to-br from-[#A5375C] to-[#C84862] flex items-center justify-center">
-              <span className="text-white text-2xl font-bold text-center px-4">
-                Financial Wellbeing
-              </span>
+            <div className="h-48 relative">
+              <Image
+                src="https://images.unsplash.com/photo-1450101499163-c8848c66ca85?q=80&w=1200&auto=format&fit=crop"
+                alt="Financial Wellbeing"
+                fill
+                className="object-cover"
+                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 33vw, 400px"
+                priority
+              />
             </div>
             <div className="p-6">
+              <p className="text-sm font-semibold text-[#374151] mb-2">
+                Financial Wellbeing
+              </p>
               <h3 className="text-xl font-semibold mb-3 text-[#374151]">
                 Financial Wellbeing Webinar
               </h3>
@@ -297,12 +321,20 @@ export default function WorkplacesPage() {
           </div>
 
           <div className="bg-white rounded-xl shadow-lg overflow-hidden border border-[#E5E7EB] hover:shadow-xl transition-all duration-300">
-            <div className="h-48 bg-gradient-to-br from-[#3C6A72] to-[#4A7A82] flex items-center justify-center">
-              <span className="text-white text-2xl font-bold text-center px-4">
-                Mental Health Conversations
-              </span>
+            <div className="h-48 relative">
+              <Image
+                src="https://images.unsplash.com/photo-1529333166437-7750a6dd5a70?q=80&w=1200&auto=format&fit=crop"
+                alt="Mental Health Conversations"
+                fill
+                className="object-cover"
+                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 33vw, 400px"
+                priority
+              />
             </div>
             <div className="p-6">
+              <p className="text-sm font-semibold text-[#374151] mb-2">
+                Mental Health Conversations
+              </p>
               <h3 className="text-xl font-semibold mb-3 text-[#374151]">
                 How to Talk about Mental Health
               </h3>
@@ -325,12 +357,20 @@ export default function WorkplacesPage() {
           </div>
 
           <div className="bg-white rounded-xl shadow-lg overflow-hidden border border-[#E5E7EB] hover:shadow-xl transition-all duration-300">
-            <div className="h-48 bg-gradient-to-br from-[#DE5762] to-[#E66772] flex items-center justify-center">
-              <span className="text-white text-2xl font-bold text-center px-4">
-                Workplace Safety
-              </span>
+            <div className="h-48 relative">
+              <Image
+                src="https://womensmentoringfoundation.com/wp-content/uploads/2024/11/work-related-injury-awareness.webp"
+                alt="Workplace Safety"
+                fill
+                className="object-cover"
+                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 33vw, 400px"
+                priority
+              />
             </div>
             <div className="p-6">
+              <p className="text-sm font-semibold text-[#374151] mb-2">
+                Workplace Safety
+              </p>
               <h3 className="text-xl font-semibold mb-3 text-[#374151]">
                 Safe Work Australia (Work-Related Injury & Illness Awareness)
               </h3>
@@ -476,14 +516,19 @@ export default function WorkplacesPage() {
                 key={index}
                 className="bg-white rounded-xl shadow-lg overflow-hidden border border-[#E5E7EB] hover:shadow-xl transition-all duration-300"
               >
-                <div
-                  className={`h-48 bg-gradient-to-br ${workshop.gradient} flex items-center justify-center`}
-                >
-                  <span className="text-white text-xl font-bold text-center px-4">
-                    {workshop.title}
-                  </span>
+                <div className="h-48 relative">
+                  <Image
+                    src={workshop.image}
+                    alt={workshop.title}
+                    fill
+                    className="object-cover"
+                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 33vw, 400px"
+                  />
                 </div>
                 <div className="p-6">
+                  <p className="text-sm font-semibold text-[#374151] mb-2">
+                    {workshop.title}
+                  </p>
                   <p className="text-[#6B7280] mb-4 leading-relaxed">
                     {workshop.description}
                   </p>
