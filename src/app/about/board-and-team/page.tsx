@@ -2,13 +2,30 @@ import { Recruit } from "@/components/sections";
 import Image from "next/image";
 
 export default function OurBoardTeamPage() {
+  function renderBio(bio: string | string[]) {
+    const paragraphs = Array.isArray(bio)
+      ? bio
+      : (bio || "")
+          .split(/\n\s*\n/)
+          .map((p) => p.trim())
+          .filter(Boolean);
+
+    return paragraphs.map((paragraph, index) => (
+      <p
+        key={index}
+        className="text-wmf-text-secondary text-sm leading-relaxed wmf-body mb-3 last:mb-0"
+      >
+        {paragraph}
+      </p>
+    ));
+  }
   const boardMembers = [
     {
-      name: "Daryl Buckingham",
-      role: "Chairman",
+      name: "Samantha Tinsley",
+      role: "Chair",
       image:
-        "https://womensmentoringfoundation.com/wp-content/uploads/elementor/thumbs/Daryl-Buckingham-Headshot-300x300-1-qjs2xmue36kdlotkuubhrpabe3bedcbouen50tkv28.jpg",
-      bio: "Daryl has over 30 years' leadership experience within local government, community development and commercial business. A contemporary leader; he encourage local government and industry to challenge the way things have 'always been done', leading innovation and transformation. His experiences includes developing and delivering: Gig Economy, Smart City & Connected Community Economic, Development Strategies, Agile Local Government Systems, Place Based Economic Development Plans, Digital Transition Strategies, Local Government as a Service Model, Smart Horticulture and Agribusiness Development, Cooperative Research Centres, Long term financial sustainability. He also volunteers as welfare officer and peer councillor supporting Veterans with PTSD and depression and assist them with transitioning from the military to civilian life. He is also a lived experienced peer councillor with Roses in the Ocean an experience of suicide organisation saving lives and reducing emotional distress and pain.",
+        "https://womensmentoringfoundation.com/wp-content/uploads/elementor/thumbs/samantha-headshot-qr6zh8uxlq0bp4psct67imdh5eq7owkce4gwkuwz0g.jpg",
+      bio: "Samantha Tinsley is a seasoned leader with over 30 years of expertise in driving change for business owners and CEOs. She excels in building high-performance teams through empathy and curiosity and has held key leadership roles, including Head of Sales and Marketing at PE Foods Pty Ltd ,Managing Director at Bare Bite Pty Ltd and Chair of The Food Connect Shed. Dedicated to fostering innovation, Samantha simplifies complex ideas and guides teams through transformative journeys, especially in times of uncertainty. She aligns business goals with strategic objectives, creating cohesive, productive cultures. Samantha is skilled in developing comprehensive business strategies, optimising performance, and adopting new systems and processes. Committed to the mission of the Women's Mentoring Foundation (WMF), she excels in helping organisations achieve growth and resilience.",
     },
     {
       name: "Lynne Cawley",
@@ -28,15 +45,8 @@ export default function OurBoardTeamPage() {
       name: "Michelle Teis",
       role: "Director",
       image:
-        "https://womensmentoringfoundation.com/wp-content/uploads/elementor/thumbs/Michelle-Teis-300x300-1-qjs2xmue36kdlotkuubhrpabe3bedcbouen50tkv28.jpg",
-      bio: "Michelle is the Managing Partner of a National Management Consultancy firm specialising in the core fields of digital transformation and information and data. In November 2021, she was awarded as the National Data Leader of the Year by Women in Digital, a global community dedicated to connecting, educating and empowering women. Based on a 30-year career, Michelle is a trusted advisor to clients (government, commercial and not-for-profit) seeking to leverage the potential value of information and data to simply solve complex business challenges.",
-    },
-    {
-      name: "Samantha Tinsley",
-      role: "Treasurer",
-      image:
-        "https://womensmentoringfoundation.com/wp-content/uploads/elementor/thumbs/samantha-headshot-qr6zh8uxlq0bp4psct67imdh5eq7owkce4gwkuwz0g.jpg",
-      bio: "Samantha Tinsley is a seasoned leader with over 30 years of expertise in driving change for business owners and CEOs. She excels in building high-performance teams through empathy and curiosity and has held key leadership roles, including Head of Sales and Marketing at PE Foods Pty Ltd ,Managing Director at Bare Bite Pty Ltd and Chair of The Food Connect Shed. Dedicated to fostering innovation, Samantha simplifies complex ideas and guides teams through transformative journeys, especially in times of uncertainty. She aligns business goals with strategic objectives, creating cohesive, productive cultures. Samantha is skilled in developing comprehensive business strategies, optimising performance, and adopting new systems and processes. Committed to the mission of the Women's Mentoring Foundation (WMF), she excels in helping organisations achieve growth and resilience.",
+        "https://womensmentoringfoundation.com/wp-content/uploads/2025/08/Michelle-Teis.jpg",
+      bio: "Michelle is an experienced executive and board director with a strong track record of governance in organisations dedicated to preventing domestic violence and advancing the safety and security of women in society. As Managing Partner of a national professional services firm, she brings deep expertise in data strategy, governance, and analytics, advising boards and C-suite leaders on unlocking value, managing risk, and enabling sustainable, data-driven and digital growth. \n\nNationally recognised as a Data Leader of the Year by Women in Digital, Michelle is a respected thought leader in strategic data and AI governance. She is also a proven people leader, known for fostering collaboration, accountability, and continuous learning—qualities she brings to her board contributions.",
     },
     {
       name: "Claudia Lordao",
@@ -44,6 +54,13 @@ export default function OurBoardTeamPage() {
       image:
         "https://womensmentoringfoundation.com/wp-content/uploads/elementor/thumbs/IMG_7848-scaled-quj03owktbw306mvpvz5z0z5glt7kzajhr2g3mkx8g.jpg",
       bio: "Claudia Lordao is an accomplished marketing leader with over 25 years of experience driving growth and innovation across diverse industries. She is highly skilled in developing strategic marketing plans, both from the ground up and by adapting international strategies to local markets. Claudia's expertise spans online and offline communication, public relations, branding, digital marketing, and e-commerce, with a proven track record of delivering exceptional sales results and market share growth. Renowned for her leadership, Claudia has built and led high-performing teams, fostering a positive and growth-focused environment. She is adept at managing complex projects, coordinating cross-functional teams, and aligning key stakeholders to achieve strategic objectives. Her strong numerical acumen and ability to manage budgets, forecast sales, and analyse data ensure that her initiatives are both creative and financially sound. Claudia's global experience and cultural sensitivity have been instrumental in her success in diverse markets. Fluent in English and Portuguese, with knowledge of French and Spanish, she excels at navigating the intricacies of international business and trade. Her ability to challenge the status quo and think creatively has consistently driven results beyond expectations. In addition to her professional pursuits, Claudia is deeply committed to mentoring and empowering women in business. She holds an MBA specialising in Marketing and a B.A. in Communications, majoring in Advertising.",
+    },
+    {
+      name: "Leo Mucci",
+      role: "Treasurer and Director",
+      image:
+        "https://womensmentoringfoundation.com/wp-content/uploads/2025/08/leo-mucci.jpg",
+      bio: "Leo Mucci is a dedicated executive and board director with over 15 years of leadership across healthcare, aged care, and community services. He has held senior roles including Group Chief Operating Officer at Centaurus Healthcare, overseeing five hospitals and two diagnostic businesses, and General Manager at Bolton Clarke, Australia's largest not-for-profit aged care provider. \n\n Leo excels in financial governance, strategic planning, and building high-performing organisations through collaboration and accountability. His experience spans large-scale mergers and acquisitions, commissioning new healthcare facilities, and leading national reforms in aged care and clinical governance. \n\n He currently serves as a Board Director with Churches of Christ, one of Australia's largest faith-based providers of aged care and community services where he contributes to governance, compliance, and long-term sustainability. \n\n Passionate about the mission of the Women's Mentoring Foundation, Leo brings a focus on transparency, financial stewardship, and organisational growth to support resilient, purpose-driven outcomes. He lives by the belief that a straight road never made skilful drivers.",
     },
   ];
 
@@ -54,20 +71,6 @@ export default function OurBoardTeamPage() {
       image:
         "https://womensmentoringfoundation.com/wp-content/uploads/elementor/thumbs/rod-george-300x323-1-qjs2xlwjwcj3a2uy0bwv77iuspg15n7yi9znjjm98g.png",
       bio: "Rod has joined WMF as the Web Host Manager. He is a talented artist, with mandala art as his main genre, his other interests are web design, graphic design, and photography. He is also a skilled NLP Master Practitioner and Trainer. He is passionate about empowering people to become greater than they are. Rod also works full time a multi skilled tradesman in the building industry.",
-    },
-    {
-      name: "Amber Jane Powson",
-      role: "Ambassador & Patron",
-      image:
-        "https://womensmentoringfoundation.com/wp-content/uploads/elementor/thumbs/amber-img2-300x300-1-qjs2xlwjwcj3a2uy0bwv77iuspg15n7yi9znjjm98g.jpg",
-      bio: "Amber is Miss Voluptuous Australia 2021. She is a professional Actress, Runway/Print Model, and Voice Actor. As a Curve Model she has worked for award winning Australian designers including Sonia Straddiotto and Capriosca Swimwear. She has also worked as a featured extra on various films. Amber holds a Bachelor of Media and Communications from QUT. Her platform is body positivity and mental health; after being diagnosed with depression and severe GAD (generalised anxiety disorder) that almost took her life in 2017. She advocates the importance of having realistic and diverse body images in the media. As a keynote speaker for The Australian Care Expo (2020) and the MHFA Annual Fundraising Gala (2021), Amber has shared her story and strength tactics about having 'Compassion for Yourself and Your Body'.",
-    },
-    {
-      name: "Himanshu Bisht",
-      role: "Ambassador",
-      image:
-        "https://womensmentoringfoundation.com/wp-content/uploads/elementor/thumbs/himanshu-ambassador-headshot-300x300-1-qjs2xmue36kdlotkuubhrpabe3bedcbouen50tkv28.jpg",
-      bio: "Himanshu, is a Business Consultant and HR Services Expert with an impressive consulting career spanning over 18 years. With a proven track record, Himanshu has consistently demonstrated his ability to create innovative strategies, processes, and approaches that drive growth and profitability for the companies he collaborates with. Not only has Himanshu helped numerous startups navigate through the complexities of the business world and achieve their goals, but he also believes in using his expertise and resources to make a positive impact on society. We are delighted to have Himanshu join forces with the Women's Mentoring Foundation as an Ambassador.",
     },
   ];
 
@@ -80,15 +83,8 @@ export default function OurBoardTeamPage() {
       bio: "Pushpa Vaghela, Founder of The Women's Mentoring Foundation (WMF), is dedicated to empowering women to overcome trauma, challenges, and distressful situations, guiding them towards strength and their best selves. As a professional Leadership Consultant, Mentor, and Clinical Neuro Practitioner, Pushpa has positively impacted thousands of leaders globally, fostering transformation and developing exceptional leadership qualities. Her mission, fueled by a deep understanding of mental and emotional health challenges, led her to establish WMF as a Harm Prevention charity organisation, providing Workshops, Speaking Engagement and Peer Counselling to assist women on their empowering journey.",
     },
     {
-      name: "Stef Miladinova",
-      role: "Digital Manager & Peer Counsellor",
-      image:
-        "https://womensmentoringfoundation.com/wp-content/uploads/elementor/thumbs/Stef-photo-qjs2xmue36kdlotkuubhrpabe3bedcbouen50tkv28.jpg",
-      bio: "Stef has joined WMF as a Digital Manager. She has formal qualifications in systems engineering, with nineteen plus years experience in IT. Stef also has business experience gained from running her own businesses over the years. She is currently looking forward to giving back to women in the Brisbane community by supporting them through the Women's Mentoring Foundation. Stef is a keen reader with a particular passion for mystery, fantasy and SiFi. She loves cooking, trying different foods and cuisines, watching movies, travelling and going for long walks in the country-side.",
-    },
-    {
       name: "Michael Godfrey",
-      role: "Digital Assistant",
+      role: "Digital Manager",
       image:
         "https://womensmentoringfoundation.com/wp-content/uploads/elementor/thumbs/mugshot-qlq5rttlgraw2gin18grh1dfq0a7g64zqj25lilv7k.jpg",
       bio: "Michael is a lively and varied individual from the Sunshine Coast in Queensland. He served in the Australian Army before becoming an English teacher abroad. Now, with a degree in agricultural science, he specialises in pest and disease management for farms and property owners. Beyond work, Michael enjoys fitness at the gym, riding motorcycles, and exploring the world. His passion for technology leads him to develop hobbies like coding projects and volunteer projects. He's particularly interested in using AI and other tech innovations to make a meaningful difference.",
@@ -99,20 +95,6 @@ export default function OurBoardTeamPage() {
       image:
         "https://womensmentoringfoundation.com/wp-content/uploads/elementor/thumbs/Sharon-Hawthorne-headshot-qlupp28gi5n9y0n9z2qcivrkaduqj3ml2x9xm4sf28.webp",
       bio: "Sharon Hawthorne, has traveled and survived numerous challenges, demonstrating her commitment to supporting women in their healing journeys. She is an author and writer with over two decades of experience working in various capacities within newspapers, magazines, and book publishers. This includes advertising, feature writing, marketing and communications, book editing, and author mentorship. Sharon also coaches and mentors authors and writers, aiding them in producing the most professional versions of their books and navigating the ever-evolving landscape of the self-publishing industry.",
-    },
-    {
-      name: "Cherie Remar",
-      role: "Peer Counsellor & Ambassador",
-      image:
-        "https://womensmentoringfoundation.com/wp-content/uploads/elementor/thumbs/Cherie-Remar-quj0x48orm68gpw4w3vpj3nmxurvjv417eanygy8g0.jpg",
-      bio: "Cherie's lifelong passion for yoga has shaped her philosophy on life and career, improving her physical health and helping her navigate challenges. With a background in accounting, business administration, and beauty therapy, she spent over a decade in both private and public sectors in finance department before becoming a BAS agent to support local sole traders in her own bookkeeping business. In her 30s, she pursued her childhood dream in beauty therapy and now runs a successful home spa, offering holistic facial rituals. Cherie aims to leave a meaningful legacy, empowering others and supporting vulnerable communities through her diverse experiences and wisdom.",
-    },
-    {
-      name: "Abraham Sham",
-      role: "Peer Counsellor & Ambassador",
-      image:
-        "https://womensmentoringfoundation.com/wp-content/uploads/elementor/thumbs/Abraham-Sham-qujqsxkvv1r9wgdnqw1dbyluwxz65ycpbgb2xfc85c.jpg",
-      bio: "Abraham is a seasoned business and life coach with over 20 years of experience, dedicated to empowering individuals and fostering personal growth. He has successfully trained entrepreneurs, business leaders, and organisations, helping them achieve balance and prosperity. As a single parent, Abraham understands resilience, which he applies in managing two businesses—a property agency and a coaching company. With a focus on creating transformative 'Break Free' experiences, Abraham is eager to bring his expertise to Women's Mentoring Foundation Ltd, mentoring women to unlock their full potential and achieve success.",
     },
   ];
 
@@ -157,15 +139,13 @@ export default function OurBoardTeamPage() {
                 <p className="wmf-text-primary font-semibold mb-4">
                   {member.role}
                 </p>
-                <p className="text-wmf-text-secondary text-sm leading-relaxed wmf-body">
-                  {member.bio}
-                </p>
+                {renderBio(member.bio)}
               </div>
             </div>
           ))}
         </div>
       </section>
-      
+
       {/* Ambassadors and Patrons Section */}
       <section className="max-w-6xl mx-auto mb-20">
         <h2 className="text-3xl font-semibold mb-12 text-center wmf-heading text-wmf-text-primary">
@@ -201,9 +181,7 @@ export default function OurBoardTeamPage() {
                   <p className="wmf-text-primary font-semibold mb-4">
                     {ambassador.role}
                   </p>
-                  <p className="text-wmf-text-secondary text-sm leading-relaxed wmf-body">
-                    {ambassador.bio}
-                  </p>
+                  {renderBio(ambassador.bio)}
                 </div>
               </div>
             ))}
@@ -239,9 +217,7 @@ export default function OurBoardTeamPage() {
                   <p className="wmf-text-primary font-semibold mb-4">
                     {member.role}
                   </p>
-                  <p className="text-wmf-text-secondary text-sm leading-relaxed wmf-body">
-                    {member.bio}
-                  </p>
+                  {renderBio(member.bio)}
                 </div>
               </div>
             </div>

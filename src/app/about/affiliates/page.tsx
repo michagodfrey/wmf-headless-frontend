@@ -1,4 +1,8 @@
+"use client";
+
 import { Contact, Newsletter } from "@/components/sections";
+import Image from "next/image";
+import Link from "next/link";
 
 // Reusable Partner Card Component
 function PartnerCard({
@@ -6,34 +10,25 @@ function PartnerCard({
   description,
   image,
   category,
+  link,
 }: {
   name: string;
   description: string;
   image: string;
   category: string;
+  link: string;
 }) {
   return (
     <div className="bg-white rounded-xl shadow-lg overflow-hidden border border-[#E5E7EB] hover:shadow-xl transition-all duration-300">
-      {/* Image Placeholder */}
-      <div className="h-48 bg-gradient-to-br from-[#A5375C] to-[#C84862] flex items-center justify-center">
-        <div className="text-center">
-          <div className="w-16 h-16 bg-white bg-opacity-20 rounded-full flex items-center justify-center mx-auto mb-3">
-            <svg
-              className="w-8 h-8 text-white"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={2}
-                d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"
-              />
-            </svg>
-          </div>
-          <p className="text-sm text-white text-opacity-90">{image}</p>
-        </div>
+      {/* Image */}
+      <div className="relative h-48 bg-gradient-to-br from-white via-[#A5375C]/5 to-[#C84862]/5">
+        <Image
+          src={image}
+          alt={name}
+          fill
+          sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
+          className="object-contain p-6"
+        />
       </div>
 
       {/* Content */}
@@ -47,9 +42,12 @@ function PartnerCard({
         <p className="text-[#6B7280] text-sm leading-relaxed">{description}</p>
 
         <div className="mt-4 pt-4 border-t border-[#E5E7EB]">
-          <button className="text-[#A5375C] hover:text-[#C84862] text-sm font-medium transition-colors">
+          <Link
+            href={link}
+            className="text-[#A5375C] hover:text-[#C84862] text-sm font-medium transition-colors"
+          >
             Learn More →
-          </button>
+          </Link>
         </div>
       </div>
     </div>
@@ -59,60 +57,19 @@ function PartnerCard({
 export default function AffiliatedServicesPage() {
   const partners = [
     {
-      name: "White Ribbon",
-      description: "End violent against women and girls",
-      image: "White Ribbon Image",
-      category: "Violence Prevention",
-    },
-    {
-      name: "Women's Health",
-      description: "Jean Hailes for Women Health",
-      image: "Women's Health Image",
-      category: "Health & Wellness",
-    },
-    {
-      name: "Thriving Multicultural Communities",
-      description:
-        "Advocating and supporting migrants from Culturally and Linguistically Diverse backgrounds.",
-      image: "Multicultural Communities Image",
-      category: "Cultural Support",
-    },
-    {
-      name: "Australia India House Charitable Foundation Limited",
-      description: "Wonderful partnership",
-      image: "Australia India House Image",
-      category: "Community Partnership",
-    },
-    {
-      name: "WICCI Eastern Australia - India",
-      description: "Women's Indian Chamber of Commerce and Industry",
-      image: "WICCI Image",
-      category: "Business & Commerce",
-    },
-    {
-      name: "Diversity with Harmony",
-      description: "We are one, but we are many.",
-      image: "Diversity with Harmony Image",
-      category: "Cultural Unity",
-    },
-    {
-      name: "Kurbingui Youth Development",
-      description:
-        "Leading the way as a mentor, educator and role model for the Aboriginal and Torres Strait Islander community in the greater Brisbane region.",
-      image: "Kurbingui Youth Development Image",
-      category: "Indigenous Support",
-    },
-    {
       name: "Brisbane Lord Mayor Charitable Trust",
       description: "Caring for the Brisbane community since the 1950s.",
-      image: "Brisbane Trust Image",
+      image: "/affiliates/Lord-Mayor.jpg",
       category: "Community Support",
+      link: "https://www.lmct.org.au/",
     },
     {
-      name: "Queensland Health",
-      description: "Mental Health Support",
-      image: "Queensland Health Image",
-      category: "Mental Health",
+      name: "Kurbingui Youth & Family Development",
+      description:
+        "Leading the way as a mentor, educator and role model for the Aboriginal and Torres Strait Islander community in the greater Brisbane region.",
+      image: "/affiliates/kurbingui.png",
+      category: "Indigenous Support",
+      link: "https://www.kurbingui.org.au/",
     },
   ];
 
@@ -152,6 +109,7 @@ export default function AffiliatedServicesPage() {
               description={partner.description}
               image={partner.image}
               category={partner.category}
+              link={partner.link}
             />
           ))}
         </div>
