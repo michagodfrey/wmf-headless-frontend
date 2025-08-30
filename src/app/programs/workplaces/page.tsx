@@ -622,27 +622,29 @@ export default function WorkplacesPage() {
               </p>
 
               {/* Founder Profile */}
-              <div className="flex items-start mb-6">
-                <div className="relative w-16 h-16 rounded-lg overflow-hidden mr-4 flex-shrink-0">
-                  <Image
-                    src="/programs/pushpa.webp"
-                    alt="Pushpa at the 4EB radio Luncheon on International Women's Day 2024"
-                    fill
-                    className="object-cover"
-                    sizes="64px"
-                  />
-                </div>
-                <div>
-                  <p className="font-semibold text-white text-lg">
-                    Pushpa Vaghela
-                  </p>
-                  <p className="text-white/80 text-sm mb-2">
-                    Founder & Clinical Neuro Practitioner
-                  </p>
-                  <p className="text-white/70 text-xs">
-                    Leading WMF&apos;s mission to empower women through mental
-                    health support and leadership development
-                  </p>
+              <div className="mb-6">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4 items-center">
+                  <div className="relative w-full h-56 md:h-64 lg:h-72 rounded-lg overflow-hidden">
+                    <Image
+                      src="/programs/pushpa.webp"
+                      alt="Pushpa at the 4EB radio Luncheon on International Women's Day 2024"
+                      fill
+                      className="object-cover"
+                      sizes="(max-width: 768px) 100vw, 50vw"
+                    />
+                  </div>
+                  <div>
+                    <p className="font-semibold text-white text-lg">
+                      Pushpa Vaghela
+                    </p>
+                    <p className="text-white/80 text-sm mb-2">
+                      Founder & Clinical Neuro Practitioner
+                    </p>
+                    <p className="text-white/70 text-xs">
+                      Leading WMF&apos;s mission to empower women through mental
+                      health support and leadership development
+                    </p>
+                  </div>
                 </div>
               </div>
 

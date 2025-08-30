@@ -17,9 +17,118 @@ export default function HelpAndSupportPage() {
         </p>
       </section>
 
+      {/* Support Services Overview */}
+      <section className="max-w-6xl mx-auto mb-16">
+        <h2 className="text-3xl font-bold mb-8 text-center text-[#374151]">
+          Our Support Services
+        </h2>
+        <div className="grid md:grid-cols-2 gap-8">
+          <Link
+            href="/get-help/peer-counselling"
+            className="bg-white rounded-xl shadow-lg p-8 border border-[#E5E7EB] hover:shadow-xl transition-all duration-300 cursor-pointer group"
+          >
+            <div className="w-16 h-16 bg-gradient-to-r from-[#A5375C] to-[#C84862] rounded-lg flex items-center justify-center mb-6">
+              <svg
+                className="w-8 h-8 text-white"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"
+                />
+              </svg>
+            </div>
+            <h3 className="text-2xl font-semibold mb-4 text-[#374151] group-hover:text-[#A5375C] transition-colors">
+              Pro Bono Peer Counselling
+            </h3>
+            <p className="text-[#6B7280] text-base leading-relaxed mb-6">
+              One-on-one support from peer counselors who understand your
+              journey and can provide compassionate guidance. Our peer
+              counselors have walked similar paths and are here to listen,
+              support, and guide you through your challenges.
+            </p>
+            <div className="flex items-center text-[#A5375C] font-semibold group-hover:text-[#C84862] transition-colors">
+              Learn More
+              <svg
+                className="w-5 h-5 ml-2 transform group-hover:translate-x-1 transition-transform"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M17 8l4 4m0 0l-4 4m4-4H3"
+                />
+              </svg>
+            </div>
+          </Link>
+
+          <Link
+            href="/get-help/comprehensive-support"
+            className="bg-white rounded-xl shadow-lg p-8 border border-[#E5E7EB] hover:shadow-xl transition-all duration-300 cursor-pointer group"
+          >
+            <div className="w-16 h-16 bg-gradient-to-r from-[#3C6A72] to-[#4A7A82] rounded-lg flex items-center justify-center mb-6">
+              <svg
+                className="w-8 h-8 text-white"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"
+                />
+              </svg>
+            </div>
+            <h3 className="text-2xl font-semibold mb-4 text-[#374151] group-hover:text-[#3C6A72] transition-colors">
+              Mentoring & Coaching
+            </h3>
+            <p className="text-[#6B7280] text-base leading-relaxed mb-6">
+              Personalized guidance to help you build confidence, develop
+              skills, and achieve your personal and professional goals. Our
+              comprehensive support programs are designed to address your unique
+              needs and challenges.
+            </p>
+            <div className="flex items-center text-[#3C6A72] font-semibold group-hover:text-[#4A7A82] transition-colors">
+              Learn More
+              <svg
+                className="w-5 h-5 ml-2 transform group-hover:translate-x-1 transition-transform"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M17 8l4 4m0 0l-4 4m4-4H3"
+                />
+              </svg>
+            </div>
+          </Link>
+        </div>
+      </section>
+
       {/* Emergency Support */}
       <section className="max-w-4xl mx-auto mb-16">
         <div className="bg-red-50 border border-red-200 rounded-xl p-8">
+          <div className="my-6 p-4 bg-red-100 rounded-lg border border-red-200">
+            <p className="text-red-800 font-medium">
+              <strong>WMF is not a crisis service</strong>
+              <br />
+              If you or someone you know is in immediate danger, please one of
+              the contacts above. WMF provides mentoring and wellbeing workshops
+              but is not a crisis service.
+            </p>
+          </div>
           <div className="flex items-start">
             <div className="flex-shrink-0">
               <div className="w-12 h-12 bg-red-100 rounded-lg flex items-center justify-center">
@@ -127,15 +236,6 @@ export default function HelpAndSupportPage() {
                     </div>
                   </li>
                 </ul>
-                <div className="mt-6 p-4 bg-red-100 rounded-lg border border-red-200">
-                  <p className="text-red-800 font-medium">
-                    <strong>WMF is not a crisis service</strong>
-                    <br />
-                    If you or someone you know is in immediate danger, please
-                    one of the contacts above. WMF provides mentoring and
-                    wellbeing workshops but is not a crisis service.
-                  </p>
-                </div>
               </div>
             </div>
           </div>
@@ -186,106 +286,6 @@ export default function HelpAndSupportPage() {
               this from both a personal and a professional perspective.
             </p>
           </div>
-        </div>
-      </section>
-
-      {/* Support Services Overview */}
-      <section className="max-w-6xl mx-auto mb-16">
-        <h2 className="text-3xl font-bold mb-8 text-center text-[#374151]">
-          Our Support Services
-        </h2>
-        <div className="grid md:grid-cols-2 gap-8">
-          <Link
-            href="/get-help/peer-counselling"
-            className="bg-white rounded-xl shadow-lg p-8 border border-[#E5E7EB] hover:shadow-xl transition-all duration-300 cursor-pointer group"
-          >
-            <div className="w-16 h-16 bg-gradient-to-r from-[#A5375C] to-[#C84862] rounded-lg flex items-center justify-center mb-6">
-              <svg
-                className="w-8 h-8 text-white"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"
-                />
-              </svg>
-            </div>
-            <h3 className="text-2xl font-semibold mb-4 text-[#374151] group-hover:text-[#A5375C] transition-colors">
-              Pro Bono Peer Counselling
-            </h3>
-            <p className="text-[#6B7280] text-base leading-relaxed mb-6">
-              One-on-one support from peer counselors who understand your
-              journey and can provide compassionate guidance. Our peer
-              counselors have walked similar paths and are here to listen,
-              support, and guide you through your challenges.
-            </p>
-            <div className="flex items-center text-[#A5375C] font-semibold group-hover:text-[#C84862] transition-colors">
-              Learn More
-              <svg
-                className="w-5 h-5 ml-2 transform group-hover:translate-x-1 transition-transform"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M17 8l4 4m0 0l-4 4m4-4H3"
-                />
-              </svg>
-            </div>
-          </Link>
-
-          <Link
-            href="/get-help/comprehensive-support"
-            className="bg-white rounded-xl shadow-lg p-8 border border-[#E5E7EB] hover:shadow-xl transition-all duration-300 cursor-pointer group"
-          >
-            <div className="w-16 h-16 bg-gradient-to-r from-[#3C6A72] to-[#4A7A82] rounded-lg flex items-center justify-center mb-6">
-              <svg
-                className="w-8 h-8 text-white"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"
-                />
-              </svg>
-            </div>
-            <h3 className="text-2xl font-semibold mb-4 text-[#374151] group-hover:text-[#3C6A72] transition-colors">
-              Mentoring & Coaching
-            </h3>
-            <p className="text-[#6B7280] text-base leading-relaxed mb-6">
-              Personalized guidance to help you build confidence, develop
-              skills, and achieve your personal and professional goals. Our
-              comprehensive support programs are designed to address your unique
-              needs and challenges.
-            </p>
-            <div className="flex items-center text-[#3C6A72] font-semibold group-hover:text-[#4A7A82] transition-colors">
-              Learn More
-              <svg
-                className="w-5 h-5 ml-2 transform group-hover:translate-x-1 transition-transform"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M17 8l4 4m0 0l-4 4m4-4H3"
-                />
-              </svg>
-            </div>
-          </Link>
         </div>
       </section>
 

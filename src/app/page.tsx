@@ -8,7 +8,6 @@ import { useState, useEffect } from "react";
 import { WPPost } from "@/types/wordpress";
 
 export default function Home() {
-
   const awards = [
     {
       title: "Certificate of Appreciation - International Women's Day 2023",

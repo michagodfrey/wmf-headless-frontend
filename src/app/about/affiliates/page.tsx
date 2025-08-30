@@ -1,6 +1,6 @@
 "use client";
 
-import { Contact, Newsletter } from "@/components/sections";
+import { Newsletter } from "@/components/sections";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -62,6 +62,14 @@ export default function AffiliatedServicesPage() {
       image: "/affiliates/Lord-Mayor.jpg",
       category: "Community Support",
       link: "https://www.lmct.org.au/",
+    },
+    {
+      name: "Multicultural Community Connect Queensland",
+      description:
+        "Amplifying multicultural voices with news, events and community media for greater inclusion.",
+      image: "/affiliates/mccq.jpg",
+      category: "Community Media",
+      link: "https://mccq.org.au/",
     },
     {
       name: "Kurbingui Youth & Family Development",
@@ -205,23 +213,8 @@ export default function AffiliatedServicesPage() {
         </div>
       </section>
 
-      {/* WMF Partners Carousel Placeholder */}
-      <section className="max-w-6xl mx-auto mb-20">
-        <h2 className="text-3xl font-semibold mb-12 text-center wmf-heading text-wmf-text-primary">
-          WMF Partners
-        </h2>
-        <div className="bg-wmf-background-light rounded-lg p-12 text-center">
-          <p className="text-wmf-text-secondary wmf-body">
-            WMF Partners Carousel Placeholder
-          </p>
-        </div>
-      </section>
-
       {/* Newsletter Signup */}
       <Newsletter />
-
-      {/* Contact Section */}
-      <Contact />
     </div>
   );
 }

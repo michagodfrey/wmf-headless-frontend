@@ -22,7 +22,7 @@ export default function SchoolsPage() {
         <div className="bg-gradient-to-br from-[#F9FAFB] to-[#F3F4F6] rounded-xl p-6 border border-[#E5E7EB] mb-8">
           <div className="aspect-[16/9] relative rounded-lg overflow-hidden">
             <Image
-              src="/programs/programs-for-schools.jpg"
+              src="/programs/program-for-schools.jpg"
               alt="WMF Programs for Schools - Student Development and Support"
               fill
               className="object-cover"
