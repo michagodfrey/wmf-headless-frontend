@@ -1,5 +1,6 @@
 import { Newsletter } from "@/components/sections";
 import { Recruit } from "@/components/sections";
+import Image from "next/image";
 
 export default function ProgramsPage() {
   return (
@@ -116,225 +117,85 @@ export default function ProgramsPage() {
           {/* Right Side - Large Workshop Photo */}
           <div className="relative">
             <div className="bg-gradient-to-br from-[#F9FAFB] to-[#F3F4F6] rounded-xl p-8 border border-[#E5E7EB] h-full">
-              <div className="aspect-[4/3] bg-gradient-to-br from-[#A5375C] to-[#C84862] rounded-lg mb-6 flex items-center justify-center">
-                <div className="text-center text-white">
-                  <svg
-                    className="w-16 h-16 mx-auto mb-4 opacity-80"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={1.5}
-                      d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"
-                    />
-                  </svg>
-                  <p className="text-lg font-semibold">Workshop Photo</p>
-                  <p className="text-sm opacity-80">
-                    Placeholder for workshop image
-                  </p>
-                </div>
+              <div className="aspect-[4/3] relative rounded-lg mb-6 overflow-hidden">
+                <Image
+                  src="/programs/workshop.jpg"
+                  alt="Workshop"
+                  fill
+                  className="object-cover"
+                  sizes="(max-width: 1024px) 100vw, 50vw"
+                  priority
+                />
               </div>
-              <p className="text-[#6B7280] text-center italic">
+              <p className="text-[#6B7280] italic">
                 A supportive environment where women come together to heal,
                 grow, and empower each other through our comprehensive programs
                 and workshops.
               </p>
-            </div>
-          </div>
-        </div>
-
-        {/* Program Areas Grid */}
-        <div className="grid md:grid-cols-3 gap-8">
-          {/* For Workplaces */}
-          <div className="bg-white rounded-xl shadow-lg p-6 border border-[#E5E7EB] hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
-            <div className="bg-gradient-to-r from-[#A5375C] to-[#C84862] p-4 rounded-lg mb-4">
-              <h3 className="text-xl font-semibold text-white">
-                For Workplaces
-              </h3>
-            </div>
-            <p className="text-[#6B7280] mb-4 text-sm leading-relaxed">
-              Workplace wellness programs and corporate training to support
-              women&apos;s mental health and professional growth.
-            </p>
-            <ul className="text-[#6B7280] text-sm space-y-2 mb-6">
-              <li className="flex items-center">
-                <span className="text-[#A5375C] mr-2">•</span>
-                Stress management workshops
-              </li>
-              <li className="flex items-center">
-                <span className="text-[#A5375C] mr-2">•</span>
-                Leadership development
-              </li>
-              <li className="flex items-center">
-                <span className="text-[#A5375C] mr-2">•</span>
-                Work-life balance strategies
-              </li>
-            </ul>
-            <a
-              href="/programs/workplaces"
-              className="wmf-button-primary px-4 py-2 rounded text-sm font-semibold inline-block w-full text-center"
-            >
-              Learn More
-            </a>
-          </div>
-
-          {/* For Communities */}
-          <div className="bg-white rounded-xl shadow-lg p-6 border border-[#E5E7EB] hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
-            <div className="bg-gradient-to-r from-[#3C6A72] to-[#4A7A82] p-4 rounded-lg mb-4">
-              <h3 className="text-xl font-semibold text-white">
-                For Communities
-              </h3>
-            </div>
-            <p className="text-[#6B7280] mb-4 text-sm leading-relaxed">
-              Community support groups and culturally sensitive programs that
-              honor diverse backgrounds and traditions.
-            </p>
-            <ul className="text-[#6B7280] text-sm space-y-2 mb-6">
-              <li className="flex items-center">
-                <span className="text-[#3C6A72] mr-2">•</span>
-                Support groups
-              </li>
-              <li className="flex items-center">
-                <span className="text-[#3C6A72] mr-2">•</span>
-                Cultural programs
-              </li>
-              <li className="flex items-center">
-                <span className="text-[#3C6A72] mr-2">•</span>
-                Community connection
-              </li>
-            </ul>
-            <a
-              href="/programs/communities"
-              className="bg-[#3C6A72] text-white px-4 py-2 rounded text-sm hover:bg-[#4A7A82] transition-colors font-semibold inline-block w-full text-center"
-            >
-              Learn More
-            </a>
-          </div>
-
-          {/* For Schools */}
-          <div className="bg-white rounded-xl shadow-lg p-6 border border-[#E5E7EB] hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
-            <div className="bg-gradient-to-r from-[#DE5762] to-[#E66772] p-4 rounded-lg mb-4">
-              <h3 className="text-xl font-semibold text-white">For Schools</h3>
-            </div>
-            <p className="text-[#6B7280] mb-4 text-sm leading-relaxed">
-              Student wellness programs and parent & teacher support to create
-              supportive environments for young women.
-            </p>
-            <ul className="text-[#6B7280] text-sm space-y-2 mb-6">
-              <li className="flex items-center">
-                <span className="text-[#DE5762] mr-2">•</span>
-                Student wellness
-              </li>
-              <li className="flex items-center">
-                <span className="text-[#DE5762] mr-2">•</span>
-                Parent support
-              </li>
-              <li className="flex items-center">
-                <span className="text-[#DE5762] mr-2">•</span>
-                Teacher training
-              </li>
-            </ul>
-            <a
-              href="/programs/schools"
-              className="bg-[#DE5762] text-white px-4 py-2 rounded text-sm hover:bg-[#E66772] transition-colors font-semibold inline-block w-full text-center"
-            >
-              Learn More
-            </a>
-          </div>
-        </div>
-      </section>
-
-      {/* Comprehensive Support Section */}
-      <section className="mb-20 bg-gradient-to-r from-[#A5375C] to-[#C84862] rounded-xl p-8 text-white">
-        <h2 className="text-3xl font-bold mb-8 text-center">
-          Comprehensive Support
-        </h2>
-
-        {/* Content with Image */}
-        <div className="grid lg:grid-cols-3 gap-8">
-          <div className="lg:col-span-2">
-            <div className="grid md:grid-cols-2 gap-8">
-              <div>
-                <h3 className="text-xl font-semibold mb-4">
-                  Holistic Care Approach
-                </h3>
-                <p className="text-white/90 mb-4 leading-relaxed">
-                  Our comprehensive support services address the whole person -
-                  mental, emotional, physical, and social well-being. We provide
-                  coordinated care that considers all aspects of a woman&apos;s
-                  life and circumstances.
-                </p>
-                <ul className="text-white/90 space-y-2">
-                  <li className="flex items-center">
-                    <span className="text-white mr-3 text-lg font-bold">✓</span>
-                    Individual counseling and therapy
-                  </li>
-                  <li className="flex items-center">
-                    <span className="text-white mr-3 text-lg font-bold">✓</span>
-                    Group support programs
-                  </li>
-                  <li className="flex items-center">
-                    <span className="text-white mr-3 text-lg font-bold">✓</span>
-                    Crisis intervention services
-                  </li>
-                  <li className="flex items-center">
-                    <span className="text-white mr-3 text-lg font-bold">✓</span>
-                    Referral to specialized care
-                  </li>
-                </ul>
-              </div>
-              <div>
-                <h3 className="text-xl font-semibold mb-4">Ongoing Support</h3>
-                <p className="text-white/90 mb-4 leading-relaxed">
-                  Mentoring and one-on-one coaching can often be the first port
-                  of call when in a heightened state that is often the case
-                  after facing a traumatic experience. Our friendly team can
-                  help you find the correct path to start on wether it is our
-                  programs or a referral to external services.
-                </p>
-                <p className="text-white/90 mb-4 leading-relaxed">
-                  WMF can help you trouble shoot and support you through your
-                  journey.
-                </p>
-                <a
-                  href="/help-and-support"
-                  className="bg-white text-[#A5375C] px-6 py-3 rounded-lg hover:bg-gray-100 transition-colors font-semibold inline-block"
-                >
-                  Learn More
-                </a>
-              </div>
-            </div>
-          </div>
-
-          {/* Image Placeholder */}
-          <div className="relative">
-            <div className="bg-white/10 backdrop-blur-sm rounded-xl p-6 border border-white/20 h-full">
-              <div className="aspect-[4/3] bg-white/20 rounded-lg mb-4 flex items-center justify-center">
-                <div className="text-center text-white">
-                  <svg
-                    className="w-16 h-16 mx-auto mb-4 opacity-80"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
+              <div className="mt-8 grid md:grid-cols-2 gap-8">
+                <div>
+                  <div className="bg-gradient-to-r from-[#A5375C] to-[#C84862] p-4 rounded-lg mb-4">
+                    <h3 className="text-xl font-semibold text-white">
+                      For Workplaces
+                    </h3>
+                  </div>
+                  <p className="text-[#6B7280] mb-4 text-sm leading-relaxed">
+                    Workplace wellness programs and corporate training to
+                    support women&apos;s mental health and professional growth.
+                  </p>
+                  <ul className="text-[#6B7280] text-sm space-y-2 mb-6">
+                    <li className="flex items-center">
+                      <span className="text-[#A5375C] mr-2">•</span>
+                      Stress management workshops
+                    </li>
+                    <li className="flex items-center">
+                      <span className="text-[#A5375C] mr-2">•</span>
+                      Leadership development
+                    </li>
+                    <li className="flex items-center">
+                      <span className="text-[#A5375C] mr-2">•</span>
+                      Work-life balance strategies
+                    </li>
+                  </ul>
+                  <a
+                    href="/programs/workplaces"
+                    className="wmf-button-primary px-4 py-2 rounded text-sm font-semibold inline-block"
                   >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={1.5}
-                      d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"
-                    />
-                  </svg>
-                  <p className="text-lg font-semibold">Comprehensive Care</p>
-                  <p className="text-sm opacity-80">Holistic Support</p>
+                    Learn More
+                  </a>
+                </div>
+                <div>
+                  <div className="bg-gradient-to-r from-[#3C6A72] to-[#4A7A82] p-4 rounded-lg mb-4">
+                    <h3 className="text-xl font-semibold text-white">
+                      For Communities
+                    </h3>
+                  </div>
+                  <p className="text-[#6B7280] mb-4 text-sm leading-relaxed">
+                    Community support groups and culturally sensitive programs
+                    that honor diverse backgrounds and traditions.
+                  </p>
+                  <ul className="text-[#6B7280] text-sm space-y-2 mb-6">
+                    <li className="flex items-center">
+                      <span className="text-[#3C6A72] mr-2">•</span>
+                      Support groups
+                    </li>
+                    <li className="flex items-center">
+                      <span className="text-[#3C6A72] mr-2">•</span>
+                      Cultural programs
+                    </li>
+                    <li className="flex items-center">
+                      <span className="text-[#3C6A72] mr-2">•</span>
+                      Community connection
+                    </li>
+                  </ul>
+                  <a
+                    href="/programs/communities"
+                    className="bg-[#3C6A72] text-white px-4 py-2 rounded text-sm hover:bg-[#4A7A82] transition-colors font-semibold inline-block"
+                  >
+                    Learn More
+                  </a>
                 </div>
               </div>
-              <p className="text-white/90 text-center italic text-sm">
-                A complete approach to women&apos;s mental health and wellbeing
-                through coordinated, compassionate care.
-              </p>
             </div>
           </div>
         </div>
@@ -374,27 +235,18 @@ export default function ProgramsPage() {
             </div>
           </div>
 
-          {/* Right Side - Image Placeholder */}
+          {/* Right Side - Image */}
           <div className="relative">
             <div className="bg-gradient-to-br from-[#F9FAFB] to-[#F3F4F6] rounded-xl p-6 border border-[#E5E7EB] h-full">
-              <div className="aspect-[4/3] bg-gradient-to-br from-[#3C6A72] to-[#4A7A82] rounded-lg mb-4 flex items-center justify-center">
-                <div className="text-center text-white">
-                  <svg
-                    className="w-16 h-16 mx-auto mb-4 opacity-80"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={1.5}
-                      d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"
-                    />
-                  </svg>
-                  <p className="text-lg font-semibold">Peer Counseling</p>
-                  <p className="text-sm opacity-80">Support & Connection</p>
-                </div>
+              <div className="aspect-[4/3] relative rounded-lg mb-4 overflow-hidden">
+                <Image
+                  src="/programs/peer-counseling.jpg"
+                  alt="Peer counseling"
+                  fill
+                  className="object-cover"
+                  sizes="(max-width: 1024px) 100vw, 50vw"
+                  priority
+                />
               </div>
               <p className="text-[#6B7280] text-center italic text-sm">
                 A safe space where women support each other through shared
@@ -508,10 +360,6 @@ export default function ProgramsPage() {
                   </li>
                   <li className="flex items-center">
                     <span className="text-[#DE5762] mr-2 font-bold">•</span>
-                    COVID-19 Impact / Effect
-                  </li>
-                  <li className="flex items-center">
-                    <span className="text-[#DE5762] mr-2 font-bold">•</span>
                     Trauma Related Difficulties
                   </li>
                   <li className="flex items-center">
@@ -532,36 +380,23 @@ export default function ProgramsPage() {
                     <span className="text-[#DE5762] mr-2 font-bold">•</span>
                     Emotional / Physical / Mindset
                   </li>
-                  <li className="flex items-center">
-                    <span className="text-[#DE5762] mr-2 font-bold">•</span>
-                    Self-leadership - from Trauma
-                  </li>
                 </ul>
               </div>
             </div>
           </div>
 
-          {/* Right Side - Image Placeholder */}
+          {/* Right Side - Image */}
           <div className="relative">
             <div className="bg-white rounded-xl p-6 border border-[#E5E7EB] shadow-sm h-full">
-              <div className="aspect-[4/3] bg-gradient-to-br from-[#DE5762] to-[#E66772] rounded-lg mb-4 flex items-center justify-center">
-                <div className="text-center text-white">
-                  <svg
-                    className="w-16 h-16 mx-auto mb-4 opacity-80"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={1.5}
-                      d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"
-                    />
-                  </svg>
-                  <p className="text-lg font-semibold">Speaking Events</p>
-                  <p className="text-sm opacity-80">Keynotes & Seminars</p>
-                </div>
+              <div className="aspect-[4/3] relative rounded-lg mb-4 overflow-hidden">
+                <Image
+                  src="/programs/speaking-engagement.jpeg"
+                  alt="Speaking engagement"
+                  fill
+                  className="object-cover"
+                  sizes="(max-width: 1024px) 100vw, 50vw"
+                  priority
+                />
               </div>
               <p className="text-[#6B7280] text-center italic text-sm">
                 Professional speaking engagements to educate, inspire, and

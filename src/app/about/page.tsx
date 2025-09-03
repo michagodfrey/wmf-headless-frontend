@@ -72,8 +72,8 @@ export default function AboutPage() {
               {/* Right - Team Image */}
               <div className="relative h-80 rounded-xl overflow-hidden">
                 <Image
-                  src="/team.jpg"
-                  alt="WMF Team"
+                  src="/about/who-are-we.jpg"
+                  alt="WMF member giving counseling"
                   fill
                   className="object-contain"
                   sizes="(max-width: 768px) 100vw, 50vw"
@@ -230,26 +230,16 @@ export default function AboutPage() {
         <div className="container mx-auto px-4">
           <div className="max-w-6xl mx-auto">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-              {/* Left - Image Placeholder */}
-              <div className="relative h-80 bg-gradient-to-br from-[#F3F4F6] to-[#E5E7EB] rounded-xl flex items-center justify-center">
-                <div className="text-center">
-                  <svg
-                    className="w-16 h-16 mx-auto mb-4 text-[#3C6A72]"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
-                    />
-                  </svg>
-                  <p className="text-[#6B7280] font-medium">
-                    Mission & Values Image
-                  </p>
-                </div>
+              {/* Left - Mission & Values Image */}
+              <div className="relative h-80 rounded-xl overflow-hidden">
+                <Image
+                  src="/about/mission-values.jpg"
+                  alt="Mission and Values"
+                  fill
+                  className="object-cover"
+                  sizes="(max-width: 768px) 100vw, 50vw"
+                  priority
+                />
               </div>
 
               {/* Right - Text */}

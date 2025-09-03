@@ -14,10 +14,8 @@ const footerNavigation = {
   programs: [
     { name: "For Workplaces", href: "/programs/workplaces" },
     { name: "For Communities", href: "/programs/communities" },
-    { name: "For Schools", href: "/programs/schools" },
   ],
   support: [
-    { name: "Comprehensive Support", href: "/get-help/comprehensive-support" },
     { name: "Peer Counseling", href: "/get-help/peer-counselling" },
     { name: "Volunteer", href: "/get-involved" },
   ],

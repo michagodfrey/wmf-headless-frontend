@@ -11,7 +11,6 @@ const navigation = [
     dropdown: [
       { name: "Our Story", href: "/about" },
       { name: "Our Board & Team", href: "/about/board-and-team" },
-      { name: "Affiliated Services", href: "/about/affiliates" },
       // { name: "Gallery", href: "/about/gallery" },
     ],
   },
@@ -22,7 +21,6 @@ const navigation = [
       { name: "Our Programs", href: "/programs" },
       { name: "For Workplaces", href: "/programs/workplaces" },
       { name: "For Communities", href: "/programs/communities" },
-      { name: "For Schools", href: "/programs/schools" },
     ],
   },
   {
@@ -32,10 +30,6 @@ const navigation = [
       {
         name: "How WMF Can Help You",
         href: "/get-help",
-      },
-      {
-        name: "Comprehensive Support",
-        href: "/get-help/comprehensive-support",
       },
       { name: "Peer Counseling", href: "/get-help/peer-counselling" },
     ],

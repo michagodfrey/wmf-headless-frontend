@@ -1,6 +1,7 @@
 "use client";
 
 import Newsletter from "@/components/sections/Newsletter";
+import { PartnerCard } from "@/components/sections";
 import { getPosts } from "@/lib/wordpress";
 import Link from "next/link";
 import Image from "next/image";
@@ -8,6 +9,32 @@ import { useState, useEffect } from "react";
 import { WPPost } from "@/types/wordpress";
 
 export default function Home() {
+  const partners = [
+    {
+      name: "Brisbane Lord Mayor Charitable Trust",
+      description: "Caring for the Brisbane community since the 1950s.",
+      image: "/affiliates/Lord-Mayor.jpg",
+      category: "Community Support",
+      link: "https://www.lmct.org.au/",
+    },
+    {
+      name: "Multicultural Community Connect Queensland",
+      description:
+        "Amplifying multicultural voices with news, events and community media for greater inclusion.",
+      image: "/affiliates/mccq.jpg",
+      category: "Community Media",
+      link: "https://mccq.org.au/",
+    },
+    {
+      name: "Kurbingui Youth & Family Development",
+      description:
+        "Leading the way as a mentor, educator and role model for the Aboriginal and Torres Strait Islander community in the greater Brisbane region.",
+      image: "/affiliates/kurbingui.png",
+      category: "Indigenous Support",
+      link: "https://www.kurbingui.org.au/",
+    },
+  ];
+
   const awards = [
     {
       title: "Certificate of Appreciation - International Women's Day 2023",
@@ -115,6 +142,17 @@ export default function Home() {
                 </div>
               </div>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* What's on Section */}
+      <section className="py-16 bg-gradient-to-br from-[#F9FAFB] to-[#F3F4F6]">
+        <div className="container mx-auto px-4">
+          <div className="max-w-3xl mx-auto text-center mb-12">
+            <h2 className="text-4xl font-bold mb-4 text-[#374151]">
+              What&apos;s On
+            </h2>
           </div>
         </div>
       </section>
@@ -524,7 +562,7 @@ export default function Home() {
       </section>
 
       {/* Donate call to action */}
-      <section className="py-20 bg-gradient-to-br from-[#6B0E51] via-[#A71466] to-[#1D4C4C] text-white relative overflow-hidden">
+      <section className="py-20 mb-16 bg-gradient-to-br from-[#6B0E51] via-[#A71466] to-[#1D4C4C] text-white relative overflow-hidden">
         {/* Background Pattern */}
         <div className="absolute inset-0 opacity-10">
           <div
@@ -617,11 +655,130 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Our Partners Section */}
+      <section className="max-w-6xl mx-auto mb-16">
+        <div className="text-center mb-12">
+          <div className="inline-block bg-gradient-to-r from-[#3C6A72] to-[#4A7A82] text-white px-6 py-2 rounded-full text-sm font-semibold mb-4">
+            Partners
+          </div>
+          <h2 className="text-3xl font-bold text-[#374151] mb-4">
+            Our Partner Organizations
+          </h2>
+          <p className="text-lg text-[#6B7280] max-w-3xl mx-auto">
+            We collaborate with specialized organizations to provide
+            comprehensive support and resources for women in need.
+          </p>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {partners.map((partner, index) => (
+            <PartnerCard
+              key={index}
+              name={partner.name}
+              description={partner.description}
+              image={partner.image}
+              category={partner.category}
+              link={partner.link}
+            />
+          ))}
+        </div>
+      </section>
+
+      {/* Partnership Benefits Section */}
+      <section className="max-w-6xl mx-auto mb-16">
+        <div className="text-center mb-12">
+          <h2 className="text-3xl font-bold text-[#374151] mb-4">
+            Why We Partner
+          </h2>
+          <p className="text-lg text-[#6B7280] max-w-3xl mx-auto">
+            Our partnerships enable us to provide comprehensive support by
+            leveraging specialized expertise and resources.
+          </p>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="text-center">
+            <div className="w-16 h-16 bg-gradient-to-r from-[#A5375C] to-[#C84862] rounded-full flex items-center justify-center mx-auto mb-4">
+              <svg
+                className="w-8 h-8 text-white"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"
+                />
+              </svg>
+            </div>
+            <h3 className="text-lg font-semibold text-[#374151] mb-2">
+              Specialized Expertise
+            </h3>
+            <p className="text-[#6B7280]">
+              Access to specialized knowledge and resources in areas beyond our
+              core services.
+            </p>
+          </div>
+
+          <div className="text-center">
+            <div className="w-16 h-16 bg-gradient-to-r from-[#3C6A72] to-[#4A7A82] rounded-full flex items-center justify-center mx-auto mb-4">
+              <svg
+                className="w-8 h-8 text-white"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"
+                />
+              </svg>
+            </div>
+            <h3 className="text-lg font-semibold text-[#374151] mb-2">
+              Comprehensive Support
+            </h3>
+            <p className="text-[#6B7280]">
+              Holistic approach to supporting women through coordinated services
+              and referrals.
+            </p>
+          </div>
+
+          <div className="text-center">
+            <div className="w-16 h-16 bg-gradient-to-r from-[#DE5762] to-[#E66772] rounded-full flex items-center justify-center mx-auto mb-4">
+              <svg
+                className="w-8 h-8 text-white"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M13 10V3L4 14h7v7l9-11h-7z"
+                />
+              </svg>
+            </div>
+            <h3 className="text-lg font-semibold text-[#374151] mb-2">
+              Enhanced Impact
+            </h3>
+            <p className="text-[#6B7280]">
+              Greater positive outcomes through collaborative efforts and shared
+              resources.
+            </p>
+          </div>
+        </div>
+      </section>
+
       {/* Acknowledgements and Awards Section */}
       <section className="py-20 bg-white">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center mb-12">
-            <div className="inline-block bg-gradient-to-r from-[#3C6A72] to-[#4A7A82] text-white px-6 py-2 rounded-full text-sm font-semibold mb-4">
+            <div className="inline-block bg-gradient-to-r from-[#A5375C] to-[#C84862] text-white px-6 py-2 rounded-full text-sm font-semibold mb-4">
               Recognition
             </div>
             <h2 className="text-4xl font-bold mb-4 text-[#374151]">
@@ -683,6 +840,9 @@ export default function Home() {
       <section className="py-16 bg-gray-50">
         <div className="container mx-auto px-4">
           <div className="max-w-3xl mx-auto text-center mb-12">
+            <div className="inline-block bg-gradient-to-r from-[#3C6A72] to-[#4A7A82] text-white px-6 py-2 rounded-full text-sm font-semibold mb-4">
+              Blog
+            </div>
             <h2 className="text-3xl font-bold mb-4">Latest from Our Blog</h2>
             <p className="text-gray-600">
               Stay updated with our latest articles, success stories, and

@@ -86,7 +86,7 @@ export default function WorkplacesPage() {
       description:
         "Focused on the mental and emotional shifts during menopause, this session provides support for women experiencing mood changes and emotional sensitivity. It includes coping strategies to improve mental wellbeing and addresses the social impact of menopause.",
       image:
-        "https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=1200&auto=format&fit=crop",
+        "https://womensmentoringfoundation.com/wp-content/uploads/2024/11/psychological-adjustments-of-menopause.webp",
       buttonClass:
         "bg-[#3C6A72] text-white px-4 py-2 rounded-lg hover:bg-[#4A7A82] transition-colors font-semibold inline-block",
     },
