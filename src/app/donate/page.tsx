@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { Newsletter } from "@/components/sections";
+import Image from "next/image";
 
 export default function DonatePage() {
   const [showAllTestimonials, setShowAllTestimonials] = useState(false);
@@ -123,23 +124,18 @@ export default function DonatePage() {
               </button>
             </div>
 
-            {/* Right Side - Image Placeholder */}
+            {/* Right Side - Image */}
             <div className="hidden lg:block">
               <div className="relative">
-                <div className="w-full h-[500px] bg-white bg-opacity-20 backdrop-blur-sm rounded-2xl border-2 border-white border-opacity-30 flex items-center justify-center">
-                  <div className="text-center text-white">
-                    <svg
-                      className="w-24 h-24 mx-auto mb-4 text-white text-opacity-60"
-                      fill="currentColor"
-                      viewBox="0 0 24 24"
-                    >
-                      <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
-                    </svg>
-                    <p className="text-lg font-semibold">Hero Image</p>
-                    <p className="text-sm text-white text-opacity-70">
-                      Placeholder for impactful imagery
-                    </p>
-                  </div>
+                <div className="relative w-full h-[640px] rounded-3xl overflow-hidden shadow-2xl">
+                  <Image
+                    src="/donation/donation.webp"
+                    alt="WMF Donation impact"
+                    fill
+                    className="object-contain"
+                    sizes="(max-width: 1024px) 100vw, 50vw"
+                    priority
+                  />
                 </div>
               </div>
             </div>
@@ -252,6 +248,20 @@ export default function DonatePage() {
                   : "Enter Amount to Continue"}
               </button>
 
+              {/* Kids with Cancer Foundation Note */}
+              <div className="mt-6 flex flex-col sm:flex-row items-center sm:items-center justify-center sm:justify-start gap-3 sm:gap-4 text-center sm:text-left bg-white/10 backdrop-blur-sm rounded-lg px-4 py-3 w-full">
+                <Image
+                  src="/donation/KWC-Logo.webp"
+                  alt="Kids with Cancer Foundation"
+                  width={240}
+                  height={144}
+                  className="w-32 sm:w-40 md:w-60 h-auto"
+                />
+                <p className="text-sm sm:text-base leading-relaxed">
+                  10% of all donations will go to Kids With Cancer Foundation.
+                </p>
+              </div>
+
               {/* DGR Notice */}
               <div className="mt-6 p-4 bg-[#3C6A72] bg-opacity-10 border border-[#3C6A72] border-opacity-20 rounded-lg">
                 <div className="flex items-start">
@@ -297,26 +307,7 @@ export default function DonatePage() {
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-            <div className="text-center">
-              <div className="w-20 h-20 bg-gradient-to-r from-[#A5375C] to-[#C84862] rounded-full mx-auto mb-6 flex items-center justify-center">
-                <svg
-                  className="w-10 h-10 text-white"
-                  fill="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
-                </svg>
-              </div>
-              <h3 className="text-xl font-semibold mb-3 text-[#374151]">
-                Workplace Workshops
-              </h3>
-              <p className="text-[#6B7280] leading-relaxed">
-                Mental health awareness, burnout prevention, and leadership
-                development programs for organizations.
-              </p>
-            </div>
-
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             <div className="text-center">
               <div className="w-20 h-20 bg-gradient-to-r from-[#3C6A72] to-[#4A7A82] rounded-full mx-auto mb-6 flex items-center justify-center">
                 <svg
@@ -343,15 +334,15 @@ export default function DonatePage() {
                   fill="currentColor"
                   viewBox="0 0 24 24"
                 >
-                  <path d="M12 3L1 9l4 2.18v6L12 21l7-3.82v-6l2-1.09L12 3zm6.82 6L12 12.72 5.18 9 12 5.28 18.82 9zM17 15.99l-5 2.73-5-2.73v-3.72L12 15l5-2.73v3.72z" />
+                  <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
                 </svg>
               </div>
               <h3 className="text-xl font-semibold mb-3 text-[#374151]">
-                School Programs
+                Workplace Workshops
               </h3>
               <p className="text-[#6B7280] leading-relaxed">
-                Mental health education, peer support training, and
-                resilience-building programs for students and educators.
+                Mental health awareness, burnout prevention, and leadership
+                development programs for organizations.
               </p>
             </div>
 

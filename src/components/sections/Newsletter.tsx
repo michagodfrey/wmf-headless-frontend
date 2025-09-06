@@ -33,22 +33,24 @@ export default function Newsletter({
   };
 
   return (
-    <section className={`py-16 ${className}`}>
+    <section
+      className={`py-16 bg-gradient-to-br from-[#A5375C] via-[#C84862] to-[#3C6A72] ${className}`}
+    >
       <div className="container mx-auto px-4">
         <div className="max-w-2xl mx-auto text-center">
-          <h2 className="text-3xl font-bold mb-4 text-[#374151]">{title}</h2>
-          <p className="text-[#6B7280] mb-8 text-lg">{description}</p>
+          <h2 className="text-3xl font-bold mb-4 text-white">{title}</h2>
+          <p className="text-white/90 mb-8 text-lg">{description}</p>
 
           {isSubmitted ? (
-            <div className="bg-green-50 border border-green-200 rounded-lg p-4 mb-6">
-              <p className="text-green-800 font-medium">
+            <div className="bg-white/10 border border-white/20 rounded-lg p-4 mb-6">
+              <p className="text-white font-medium">
                 Thank you for subscribing! You&apos;ll receive our updates soon.
               </p>
             </div>
           ) : (
             <form
               onSubmit={handleSubmit}
-              className="flex flex-col sm:flex-row gap-4 max-w-md mx-auto"
+              className="flex flex-col sm:flex-row gap-4 max-w-md mx-auto text-white"
             >
               <input
                 type="email"
@@ -68,7 +70,7 @@ export default function Newsletter({
             </form>
           )}
 
-          <p className="text-xs text-[#9CA3AF] mt-4">
+          <p className="text-xs text-white/70 mt-4">
             We respect your privacy. Unsubscribe at any time.
           </p>
         </div>

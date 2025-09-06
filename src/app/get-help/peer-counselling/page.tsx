@@ -1,5 +1,5 @@
 import { Newsletter } from "@/components/sections";
-import { Recruit } from "@/components/sections";
+import Image from "next/image";
 
 export default function PeerCounselingPage() {
   return (
@@ -12,10 +12,15 @@ export default function PeerCounselingPage() {
         <h1 className="text-4xl font-bold mb-6 text-[#374151]">
           Peer Counselling
         </h1>
-        <div className="bg-gradient-to-br from-[#A5375C] to-[#C84862] rounded-xl h-64 flex items-center justify-center mb-8">
-          <span className="text-white text-xl font-semibold text-center px-6">
-            Peer Counselling Session Image Placeholder
-          </span>
+        <div className="relative rounded-xl overflow-hidden h-64 mb-8">
+          <Image
+            src="/programs/peer-counseling.jpg"
+            alt="Peer Counselling session"
+            fill
+            className="object-cover"
+            sizes="(max-width: 768px) 100vw, 768px"
+            priority
+          />
         </div>
         <p className="text-xl text-[#6B7280] mb-8 font-bold leading-relaxed">
           WMF&apos;s Peer Counselling is supporting women and youth experiencing
@@ -54,7 +59,7 @@ export default function PeerCounselingPage() {
               women with mental health and wellbeing concerns through our
               culturally appropriate Peer Counselling services. Every
               person&apos;s mental health journey is unique, which is why we
-              provide Peer Counselling – a personalised support to women and
+              provide Peer Counselling - a personalised support to women and
               youth.
             </p>
             <p className="text-[#6B7280] mb-6 leading-relaxed">
@@ -100,7 +105,7 @@ export default function PeerCounselingPage() {
             </h3>
             <div className="bg-red-50 border-l-4 border-red-400 p-4 mb-6">
               <p className="text-red-800 font-semibold mb-2">
-                IMPORTANT – If you are looking for support for yourself
+                IMPORTANT - If you are looking for support for yourself
                 urgently, or are worried that someone&apos;s life is in danger,
                 CALL 000 for emergency help, or head to the nearest hospital.
               </p>
@@ -289,7 +294,7 @@ export default function PeerCounselingPage() {
           </div>
           <div className="text-center mt-8">
             <a
-              href="/get-involved/volunteer"
+              href="/get-involved"
               className="bg-gradient-to-r from-[#3C6A72] to-[#4A7A82] text-white px-8 py-3 rounded-lg hover:shadow-lg transition-all duration-300 font-semibold inline-block"
             >
               Apply to Volunteer
@@ -300,7 +305,6 @@ export default function PeerCounselingPage() {
 
       {/* Call to Action */}
       <Newsletter />
-      <Recruit />
     </div>
   );
 }

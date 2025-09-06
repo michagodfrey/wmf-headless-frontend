@@ -257,7 +257,7 @@ export default function WorkplacesPage() {
         <div className="bg-gradient-to-br from-[#F9FAFB] to-[#F3F4F6] rounded-xl p-6 border border-[#E5E7EB] mt-8">
           <div className="aspect-[16/9] relative rounded-lg overflow-hidden">
             <Image
-              src="/programs/programs-for-workplaces.jpg"
+              src="/programs/for-workplaces.webp"
               alt="WMF Programs for Workplaces - Empowering Organizations"
               fill
               className="object-cover"

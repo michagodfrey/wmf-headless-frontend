@@ -117,13 +117,7 @@ export default function Header() {
             </div>
 
             {/* Login and Search */}
-            <div className="flex items-center space-x-4">
-              <Link
-                href="/members/login"
-                className="text-sm text-[#6B7280] hover:text-[#A5375C] transition-colors"
-              >
-                Login
-              </Link>
+            {/* <div className="flex items-center space-x-4">
               <button
                 className="text-[#6B7280] hover:text-[#A5375C] transition-colors cursor-pointer"
                 aria-label="Search"
@@ -142,7 +136,7 @@ export default function Header() {
                   />
                 </svg>
               </button>
-            </div>
+            </div> */}
           </div>
         </div>
       </div>

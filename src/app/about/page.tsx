@@ -6,8 +6,14 @@ export default function AboutPage() {
   return (
     <div>
       {/* Hero Section */}
-      <section className="relative py-20 bg-gradient-to-br from-[#A5375C] to-[#C84862] text-white">
-        <div className="container mx-auto px-4">
+      <section className="relative py-24 overflow-hidden bg-gradient-to-br from-[#A5375C] via-[#C84862] to-[#3C6A72] text-white">
+        {/* Decorative gradient glows */}
+        <div className="absolute inset-0">
+          <div className="absolute -top-24 -right-16 w-80 h-80 bg-white/10 rounded-full blur-3xl" />
+          <div className="absolute -bottom-24 -left-16 w-96 h-96 bg-[#3C6A72]/20 rounded-full blur-3xl" />
+          <div className="absolute inset-0 bg-black/10" />
+        </div>
+        <div className="container mx-auto px-4 relative z-10">
           <div className="max-w-4xl mx-auto text-center">
             <h1 className="text-5xl font-bold mb-6">About WMF</h1>
             <p className="text-xl mb-8 leading-relaxed">
@@ -17,19 +23,19 @@ export default function AboutPage() {
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a
                 href="/get-help"
-                className="bg-white text-[#A5375C] px-8 py-3 rounded-lg hover:bg-gray-100 transition-colors font-semibold text-center"
+                className="bg-white text-[#A5375C] px-8 py-3 rounded-lg hover:bg-gray-100 transition-colors font-semibold text-center shadow-md hover:shadow-lg"
               >
                 Get Help
               </a>
               <a
                 href="/donate"
-                className="bg-[#3C6A72] text-white px-8 py-3 rounded-lg hover:bg-[#4A7A82] transition-colors font-semibold text-center"
+                className="bg-gradient-to-r from-[#3C6A72] to-[#4A7A82] text-white px-8 py-3 rounded-lg hover:from-[#4A7A82] hover:to-[#5A8A92] transition-colors font-semibold text-center shadow-md hover:shadow-lg"
               >
                 Donate
               </a>
               <a
                 href="/get-involved"
-                className="border-2 border-white text-white px-8 py-3 rounded-lg hover:bg-white hover:text-[#A5375C] transition-colors font-semibold text-center"
+                className="border-2 border-white text-white px-8 py-3 rounded-lg hover:bg-white hover:text-[#A5375C] transition-colors font-semibold text-center shadow-md hover:shadow-lg"
               >
                 Get Involved
               </a>
@@ -180,53 +186,8 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* Workshop Types Section */}
-      <section className="py-16 bg-white">
-        <div className="container mx-auto px-4">
-          <div className="max-w-6xl mx-auto">
-            <div className="text-center mb-12">
-              <h2 className="text-3xl font-bold mb-4 text-[#374151]">
-                Our Workshop Programs
-              </h2>
-              <p className="text-[#6B7280] text-lg">
-                Specialized support for different audiences
-              </p>
-            </div>
-
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-              {/* Corporate Teams */}
-              <div className="bg-gradient-to-br from-[#A5375C] to-[#C84862] rounded-xl p-6 text-white">
-                <h3 className="text-xl font-semibold mb-3">Corporate Teams</h3>
-                <p className="text-white/90 text-sm leading-relaxed">
-                  Focusing on mental fitness, resilience, and inclusive
-                  leadership to create healthier workplace environments.
-                </p>
-              </div>
-
-              {/* Schools */}
-              <div className="bg-gradient-to-br from-[#3C6A72] to-[#4A7A82] rounded-xl p-6 text-white">
-                <h3 className="text-xl font-semibold mb-3">Schools</h3>
-                <p className="text-white/90 text-sm leading-relaxed">
-                  Supporting young people&apos;s mental health and self-worth
-                  through age-appropriate programs and activities.
-                </p>
-              </div>
-
-              {/* Community Groups */}
-              <div className="bg-gradient-to-br from-[#DE5762] to-[#E66772] rounded-xl p-6 text-white">
-                <h3 className="text-xl font-semibold mb-3">Community Groups</h3>
-                <p className="text-white/90 text-sm leading-relaxed">
-                  Promoting healing, confidence, and connection within diverse
-                  community settings.
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
       {/* Mission & Focus Section */}
-      <section className="py-16 bg-gray-50">
+      <section className="py-16 bg-white">
         <div className="container mx-auto px-4">
           <div className="max-w-6xl mx-auto">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
@@ -305,7 +266,7 @@ export default function AboutPage() {
       </section>
 
       {/* Collaboration Section */}
-      <section className="py-16 bg-white">
+      <section className="py-16 bg-gray-50">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center">
             <h2 className="text-3xl font-bold mb-6 text-[#374151]">

@@ -1,5 +1,4 @@
 import { Newsletter } from "@/components/sections";
-import { Recruit } from "@/components/sections";
 import Image from "next/image";
 
 export default function ProgramsPage() {
@@ -286,7 +285,7 @@ export default function ProgramsPage() {
               overcome similar challenges.
             </p>
             <a
-              href="/get-involved/peer-counselling"
+              href="/get-help/peer-counselling"
               className="wmf-button-primary px-6 py-3 rounded-lg font-semibold inline-block"
             >
               Connect with a Peer
@@ -320,7 +319,7 @@ export default function ProgramsPage() {
               counselors.
             </p>
             <a
-              href="/get-involved/volunteer"
+              href="/get-involved"
               className="bg-[#DE5762] text-white px-6 py-3 rounded-lg hover:bg-[#E66772] transition-colors font-semibold inline-block"
             >
               Apply to Volunteer
@@ -503,11 +502,6 @@ export default function ProgramsPage() {
       </section>
 
       {/* Call to Action */}
-      <Recruit
-        title="Get Involved Today"
-        description="Join our community of supporters making a difference."
-        className="my-8"
-      />
       <Newsletter />
     </div>
   );

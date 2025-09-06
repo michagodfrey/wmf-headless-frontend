@@ -70,7 +70,7 @@ export default function HelpAndSupportPage() {
           </Link>
 
           <Link
-            href="/get-help/comprehensive-support"
+            href="/contact"
             className="bg-white rounded-xl shadow-lg p-8 border border-[#E5E7EB] hover:shadow-xl transition-all duration-300 cursor-pointer group"
           >
             <div className="w-16 h-16 bg-gradient-to-r from-[#3C6A72] to-[#4A7A82] rounded-lg flex items-center justify-center mb-6">
@@ -117,174 +117,176 @@ export default function HelpAndSupportPage() {
         </div>
       </section>
 
-      {/* Emergency Support */}
-      <section className="max-w-4xl mx-auto mb-16">
-        <div className="bg-red-50 border border-red-200 rounded-xl p-8">
-          <div className="my-6 p-4 bg-red-100 rounded-lg border border-red-200">
-            <p className="text-red-800 font-medium">
-              <strong>WMF is not a crisis service</strong>
-              <br />
-              If you or someone you know is in immediate danger, please one of
-              the contacts above. WMF provides mentoring and wellbeing workshops
-              but is not a crisis service.
-            </p>
-          </div>
-          <div className="flex items-start">
-            <div className="flex-shrink-0">
-              <div className="w-12 h-12 bg-red-100 rounded-lg flex items-center justify-center">
-                <svg
-                  className="h-6 w-6 text-red-600"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-2.5L13.732 4c-.77-.833-1.964-.833-2.732 0L3.732 16.5c-.77.833.192 2.5 1.732 2.5z"
-                  />
-                </svg>
+      {/* Emergency Support + How WMF Can Help (combined) */}
+      <section className="max-w-6xl mx-auto mb-16">
+        <div className="grid md:grid-cols-2 gap-8 items-start">
+          {/* Emergency Support */}
+          <div className="bg-red-50 border border-red-200 rounded-xl p-8">
+            <div className="my-6 p-4 bg-red-100 rounded-lg border border-red-200">
+              <p className="text-red-800 font-medium">
+                <strong>WMF is not a crisis service</strong>
+                <br />
+                If you or someone you know is in immediate danger, please one of
+                the contacts above. WMF provides mentoring and wellbeing
+                workshops but is not a crisis service.
+              </p>
+            </div>
+            <div className="flex items-start">
+              <div className="flex-shrink-0">
+                <div className="w-12 h-12 bg-red-100 rounded-lg flex items-center justify-center">
+                  <svg
+                    className="h-6 w-6 text-red-600"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-2.5L13.732 4c-.77-.833-1.964-.833-2.732 0L3.732 16.5c-.77.833.192 2.5 1.732 2.5z"
+                    />
+                  </svg>
+                </div>
+              </div>
+              <div className="ml-4">
+                <h3 className="text-xl font-semibold text-red-800 mb-3">
+                  🔴 Need Immediate Help?
+                </h3>
+                <div className="text-red-700">
+                  <p className="mb-3 font-medium">
+                    If you are in crisis or need immediate support:
+                  </p>
+                  <ul className="space-y-3">
+                    <li className="flex items-start">
+                      <span className="w-2 h-2 bg-red-600 rounded-full mt-2 mr-3 flex-shrink-0"></span>
+                      <div>
+                        <strong>
+                          Emergency Services (Police, Ambulance, Fire):
+                        </strong>
+                        <br />
+                        📞 <strong>000</strong> (available 24/7)
+                      </div>
+                    </li>
+                    <li className="flex items-start">
+                      <span className="w-2 h-2 bg-red-600 rounded-full mt-2 mr-3 flex-shrink-0"></span>
+                      <div>
+                        <strong>
+                          Lifeline Australia - Crisis Support and Suicide
+                          Prevention:
+                        </strong>
+                        <br />
+                        📞 <strong>13 11 14</strong>
+                        <br />
+                        🌐{" "}
+                        <a
+                          href="https://www.lifeline.org.au"
+                          className="underline hover:text-red-800"
+                        >
+                          www.lifeline.org.au
+                        </a>
+                        <br />
+                        💬 Text: <strong>0477 13 11 14</strong> (24/7)
+                      </div>
+                    </li>
+                    <li className="flex items-start">
+                      <span className="w-2 h-2 bg-red-600 rounded-full mt-2 mr-3 flex-shrink-0"></span>
+                      <div>
+                        <strong>
+                          13YARN - For Aboriginal and Torres Strait Islander
+                          people:
+                        </strong>
+                        <br />
+                        📞 <strong>13 92 76</strong> (24/7)
+                      </div>
+                    </li>
+                    <li className="flex items-start">
+                      <span className="w-2 h-2 bg-red-600 rounded-full mt-2 mr-3 flex-shrink-0"></span>
+                      <div>
+                        <strong>
+                          Suicide Call Back Service - Free 24/7 telephone &
+                          online counselling:
+                        </strong>
+                        <br />
+                        📞 <strong>1300 659 467</strong>
+                        <br />
+                        🌐{" "}
+                        <a
+                          href="https://www.suicidecallbackservice.org.au"
+                          className="underline hover:text-red-800"
+                        >
+                          www.suicidecallbackservice.org.au
+                        </a>
+                      </div>
+                    </li>
+                    <li className="flex items-start">
+                      <span className="w-2 h-2 bg-red-600 rounded-full mt-2 mr-3 flex-shrink-0"></span>
+                      <div>
+                        <strong>Beyond Blue - Mental health support:</strong>
+                        <br />
+                        📞 <strong>1300 22 4636</strong>
+                        <br />
+                        🌐{" "}
+                        <a
+                          href="https://www.beyondblue.org.au"
+                          className="underline hover:text-red-800"
+                        >
+                          www.beyondblue.org.au
+                        </a>
+                        <br />
+                        💬 Chat available online
+                      </div>
+                    </li>
+                  </ul>
+                </div>
               </div>
             </div>
-            <div className="ml-4">
-              <h3 className="text-xl font-semibold text-red-800 mb-3">
-                🔴 Need Immediate Help?
-              </h3>
-              <div className="text-red-700">
-                <p className="mb-3 font-medium">
-                  If you are in crisis or need immediate support:
-                </p>
-                <ul className="space-y-3">
-                  <li className="flex items-start">
-                    <span className="w-2 h-2 bg-red-600 rounded-full mt-2 mr-3 flex-shrink-0"></span>
-                    <div>
-                      <strong>
-                        Emergency Services (Police, Ambulance, Fire):
-                      </strong>
-                      <br />
-                      📞 <strong>000</strong> (available 24/7)
-                    </div>
-                  </li>
-                  <li className="flex items-start">
-                    <span className="w-2 h-2 bg-red-600 rounded-full mt-2 mr-3 flex-shrink-0"></span>
-                    <div>
-                      <strong>
-                        Lifeline Australia - Crisis Support and Suicide
-                        Prevention:
-                      </strong>
-                      <br />
-                      📞 <strong>13 11 14</strong>
-                      <br />
-                      🌐{" "}
-                      <a
-                        href="https://www.lifeline.org.au"
-                        className="underline hover:text-red-800"
-                      >
-                        www.lifeline.org.au
-                      </a>
-                      <br />
-                      💬 Text: <strong>0477 13 11 14</strong> (24/7)
-                    </div>
-                  </li>
-                  <li className="flex items-start">
-                    <span className="w-2 h-2 bg-red-600 rounded-full mt-2 mr-3 flex-shrink-0"></span>
-                    <div>
-                      <strong>
-                        13YARN - For Aboriginal and Torres Strait Islander
-                        people:
-                      </strong>
-                      <br />
-                      📞 <strong>13 92 76</strong> (24/7)
-                    </div>
-                  </li>
-                  <li className="flex items-start">
-                    <span className="w-2 h-2 bg-red-600 rounded-full mt-2 mr-3 flex-shrink-0"></span>
-                    <div>
-                      <strong>
-                        Suicide Call Back Service - Free 24/7 telephone & online
-                        counselling:
-                      </strong>
-                      <br />
-                      📞 <strong>1300 659 467</strong>
-                      <br />
-                      🌐{" "}
-                      <a
-                        href="https://www.suicidecallbackservice.org.au"
-                        className="underline hover:text-red-800"
-                      >
-                        www.suicidecallbackservice.org.au
-                      </a>
-                    </div>
-                  </li>
-                  <li className="flex items-start">
-                    <span className="w-2 h-2 bg-red-600 rounded-full mt-2 mr-3 flex-shrink-0"></span>
-                    <div>
-                      <strong>Beyond Blue - Mental health support:</strong>
-                      <br />
-                      📞 <strong>1300 22 4636</strong>
-                      <br />
-                      🌐{" "}
-                      <a
-                        href="https://www.beyondblue.org.au"
-                        className="underline hover:text-red-800"
-                      >
-                        www.beyondblue.org.au
-                      </a>
-                      <br />
-                      💬 Chat available online
-                    </div>
-                  </li>
-                </ul>
-              </div>
-            </div>
           </div>
-        </div>
-      </section>
 
-      {/* WMF Mission & Support */}
-      <section className="max-w-4xl mx-auto mb-16">
-        <div className="bg-gradient-to-r from-[#A5375C] to-[#C84862] rounded-xl p-8 text-white">
-          <h2 className="text-2xl font-bold mb-6">How WMF Can Help You</h2>
-          <div className="space-y-4 text-lg leading-relaxed">
-            <p>
-              WMF aims to empower women who are experiencing pain and/or grief
-              caused by:
-            </p>
-            <ul className="list-disc list-inside space-y-2 ml-4 mt-3">
-              <li className="font-semibold text-white">Various Abuses</li>
-              <li className="font-semibold text-white">Anger</li>
-              <li className="font-semibold text-white">Insecurity</li>
-              <li className="font-semibold text-white">Suicidal Thoughts</li>
-              <li className="font-semibold text-white">Depression</li>
-              <li className="font-semibold text-white">Stress</li>
-              <li className="font-semibold text-white">Gender Inequality</li>
-              <li className="font-semibold text-white">
-                Domestic, Sexual and Family Violence
-              </li>
-              <li className="font-semibold text-white">
-                Compromised Mental and Emotional Well-being
-              </li>
-              <li className="font-semibold text-white">
-                Lack of Safety and Stability in Their Lives
-              </li>
-            </ul>
-            <p>
-              WMF was founded to share the tools and resources of recovery, to
-              help you and other women who are on their own road to recovery,
-              but who may not have the skills and insights to complete the
-              journey on their own, or even who may not have access to the right
-              support services.
-            </p>
-            <p>
-              Our objective at WMF is for women of all ages, diverse cultures
-              and professions, to build up their ability and skills to become
-              self-confident, focused, healthy, and self-sustaining people that
-              are free from compromised mental, emotional and physical health
-              issues. To being proactive in their own self-leadership, to create
-              a better life in all areas of their day-to-day living, and to do
-              this from both a personal and a professional perspective.
-            </p>
+          {/* How WMF Can Help */}
+          <div className="bg-gradient-to-r from-[#A5375C] to-[#C84862] rounded-xl p-8 text-white">
+            <h2 className="text-2xl font-bold mb-6">How WMF Can Help You</h2>
+            <div className="space-y-4 text-lg leading-relaxed">
+              <p>
+                WMF aims to empower women who are experiencing pain and/or grief
+                caused by:
+              </p>
+              <ul className="list-disc list-inside space-y-2 ml-4 mt-3">
+                <li className="font-semibold text-white">Various Abuses</li>
+                <li className="font-semibold text-white">Anger</li>
+                <li className="font-semibold text-white">Insecurity</li>
+                <li className="font-semibold text-white">Suicidal Thoughts</li>
+                <li className="font-semibold text-white">Depression</li>
+                <li className="font-semibold text-white">Stress</li>
+                <li className="font-semibold text-white">Gender Inequality</li>
+                <li className="font-semibold text-white">
+                  Domestic, Sexual and Family Violence
+                </li>
+                <li className="font-semibold text-white">
+                  Compromised Mental and Emotional Well-being
+                </li>
+                <li className="font-semibold text-white">
+                  Lack of Safety and Stability in Their Lives
+                </li>
+              </ul>
+              <p>
+                WMF was founded to share the tools and resources of recovery, to
+                help you and other women who are on their own road to recovery,
+                but who may not have the skills and insights to complete the
+                journey on their own, or even who may not have access to the
+                right support services.
+              </p>
+              <p>
+                Our objective at WMF is for women of all ages, diverse cultures
+                and professions, to build up their ability and skills to become
+                self-confident, focused, healthy, and self-sustaining people
+                that are free from compromised mental, emotional and physical
+                health issues. To being proactive in their own self-leadership,
+                to create a better life in all areas of their day-to-day living,
+                and to do this from both a personal and a professional
+                perspective.
+              </p>
+            </div>
           </div>
         </div>
       </section>

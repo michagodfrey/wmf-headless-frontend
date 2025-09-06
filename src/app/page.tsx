@@ -37,21 +37,21 @@ export default function Home() {
 
   const awards = [
     {
-      title: "Certificate of Appreciation - International Women's Day 2023",
-      image: "awards/2023-WEL-International-Womens-Day-Cert-Appreciation.jpg",
+      title: "Queensland Government - Certificate of Appreciation 2025",
+      image: "awards/2025-Certificate-Appreciation.webp",
       description:
-        "Awarded to Pushpa Vaghela by the Women Empowerment & Leadership (WEL) organization. The certificate was presented on the occasion of International Women's Day, 8th March 2023, in recognition of her outstanding achievements over the past year.",
+        "Presented to the Women's Mentoring Foundation by the Queensland Government in acknowledgement of significant contribution to Queensland's multicultural community. Signed by The Hon David Crisafulli MP, Premier and Minister for Veterans, and The Hon Fiona Simpson MP, Minister for Women and Women's Economic Security.",
     },
     {
-      title: "2022 IABCA BusinessWoman of the Year - Finalist Certificate",
-      image: "awards/2022-IABCA-BusinessWoman-of-the-Year-Pushpa-Vaghela.jpg",
+      title: "Queensland Volunteering Impact Award - Nominated 2024",
+      image: "awards/2024-QLD-Volunteer-Awards.webp",
       description:
-        "Recognition of Pushpa Vaghela as a finalist for the 2022 IABCA (India Australia Business & Community Alliance) BusinessWoman of the Year award. She is acknowledged for her work with The Women's Mentoring Foundation Charity and the NuMe Movement.",
+        "Nominated to the Women's Mentoring Foundation Ltd by Volunteering Queensland in recognition of the positive, measurable and enduring impact made through its volunteer programs that demonstrate best practice in volunteering across the state.",
     },
     {
       title:
-        "Certificate of Appreciation - Mental Health Foundation Australia (2021)",
-      image: "awards/2021-mental-health-foundation-australia.jpg",
+        "Mental Health Foundation Australia - Certificate of Appreciation 2021",
+      image: "awards/2021-mental-health-foundation-australia.webp",
       description:
         "Awarded to The Women's Mentoring Foundation Ltd by the Mental Health Foundation Australia. It recognizes the foundation's generous sponsorship of the MHFA Queensland Gala Dinner during National Mental Health Month 2021.",
     },
@@ -147,7 +147,7 @@ export default function Home() {
       </section>
 
       {/* What's on Section */}
-      <section className="py-16 bg-gradient-to-br from-[#F9FAFB] to-[#F3F4F6]">
+      {/* <section className="py-16 bg-gradient-to-br from-[#F9FAFB] to-[#F3F4F6]">
         <div className="container mx-auto px-4">
           <div className="max-w-3xl mx-auto text-center mb-12">
             <h2 className="text-4xl font-bold mb-4 text-[#374151]">
@@ -155,7 +155,7 @@ export default function Home() {
             </h2>
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* Programs Section */}
       <section className="py-16 bg-gradient-to-br from-[#F9FAFB] to-[#F3F4F6]">
@@ -171,16 +171,24 @@ export default function Home() {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {/* Workplace Card */}
             <div className="bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 border border-[#E5E7EB] overflow-hidden">
               <div className="bg-gradient-to-r from-[#A5375C] to-[#C84862] p-6 text-white">
                 <h3 className="text-2xl font-bold mb-1">For Workplaces</h3>
-                <p className="text-[#DE5762] font-medium">
+                <p className="text-white font-medium">
                   Professional Development
                 </p>
               </div>
               <div className="p-6">
+                <div className="relative w-full aspect-[16/9] rounded-md overflow-hidden border border-[#E5E7EB] bg-[#F9FAFB] mb-6">
+                  <Image
+                    src="/programs/for-workplaces.webp"
+                    alt="Workplaces"
+                    fill
+                    className="object-cover"
+                  />
+                </div>
                 <ul className="space-y-3 mb-6">
                   <li className="flex items-start">
                     <span className="text-[#A5375C] mr-3 text-lg font-bold">
@@ -232,9 +240,17 @@ export default function Home() {
             <div className="bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 border border-[#E5E7EB] overflow-hidden">
               <div className="bg-gradient-to-r from-[#3C6A72] to-[#4A7A82] p-6 text-white">
                 <h3 className="text-2xl font-bold mb-1">For Communities</h3>
-                <p className="text-[#6B8A8F] font-medium">Community Building</p>
+                <p className="text-white font-medium">Community Building</p>
               </div>
               <div className="p-6">
+                <div className="relative w-full aspect-[16/9] rounded-md overflow-hidden border border-[#E5E7EB] bg-[#F9FAFB] mb-6">
+                  <Image
+                    src="/programs/programs-for-communities.jpg"
+                    alt="Communities"
+                    fill
+                    className="object-cover"
+                  />
+                </div>
                 <ul className="space-y-3 mb-6">
                   <li className="flex items-start">
                     <span className="text-[#3C6A72] mr-3 text-lg font-bold">
@@ -281,62 +297,6 @@ export default function Home() {
                 </div>
               </div>
             </div>
-
-            {/* Schools Card */}
-            <div className="bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 border border-[#E5E7EB] overflow-hidden">
-              <div className="bg-gradient-to-r from-[#DE5762] to-[#E66772] p-6 text-white">
-                <h3 className="text-2xl font-bold mb-1">For Schools</h3>
-                <p className="text-[#F27782] font-medium">
-                  Student Development
-                </p>
-              </div>
-              <div className="p-6">
-                <ul className="space-y-3 mb-6">
-                  <li className="flex items-start">
-                    <span className="text-[#DE5762] mr-3 text-lg font-bold">
-                      ✓
-                    </span>
-                    <span className="text-[#374151] font-medium">
-                      Enhance Self-Leadership Skills
-                    </span>
-                  </li>
-                  <li className="flex items-start">
-                    <span className="text-[#DE5762] mr-3 text-lg font-bold">
-                      ✓
-                    </span>
-                    <span className="text-[#374151] font-medium">
-                      Improve Well-being & Mental Health
-                    </span>
-                  </li>
-                  <li className="flex items-start">
-                    <span className="text-[#DE5762] mr-3 text-lg font-bold">
-                      ✓
-                    </span>
-                    <span className="text-[#374151] font-medium">
-                      Respond Effectively to Bullying
-                    </span>
-                  </li>
-                </ul>
-                <p className="text-[#6B7280] mb-6 italic">
-                  Enabling students to navigate challenges with confidence and
-                  focus.
-                </p>
-                <div className="flex flex-col space-y-3">
-                  <a
-                    href="/contact"
-                    className="bg-gradient-to-r from-[#DE5762] to-[#E66772] text-white px-6 py-3 rounded-lg hover:from-[#E66772] hover:to-[#F27782] transition-all duration-300 text-center font-semibold shadow-md hover:shadow-lg"
-                  >
-                    Make Enquiry
-                  </a>
-                  <a
-                    href="/programs/schools"
-                    className="bg-white text-[#DE5762] border-2 border-[#DE5762] px-6 py-3 rounded-lg hover:bg-[#DE5762] hover:text-white transition-all duration-300 text-center font-semibold"
-                  >
-                    Find out more
-                  </a>
-                </div>
-              </div>
-            </div>
           </div>
         </div>
       </section>
@@ -361,6 +321,16 @@ export default function Home() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
             {/* Left side - Mission & Focus */}
             <div className="space-y-8">
+              {/* Image (Left Column) */}
+              <div className="relative w-full aspect-[16/9] rounded-xl overflow-hidden border border-[#E5E7EB]">
+                <Image
+                  src="/about/who-are-we.jpg"
+                  alt="Who we are"
+                  fill
+                  className="object-cover"
+                  sizes="(max-width: 1024px) 100vw, 50vw"
+                />
+              </div>
               {/* Mission Card */}
               <div className="bg-white rounded-xl shadow-lg p-8 border border-[#E5E7EB] hover:shadow-xl transition-all duration-300">
                 <div className="flex items-center mb-6">
