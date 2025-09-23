@@ -103,7 +103,9 @@ export default function ContactPage() {
                 alert("Thanks! We’ll get back to you shortly.");
                 form.reset();
               } else {
-                const data = await res.json().catch(() => ({} as any));
+                const data = (await res.json().catch(() => ({}))) as {
+                  error?: string;
+                };
                 alert(data?.error || "Failed to send. Please try again.");
               }
             }}

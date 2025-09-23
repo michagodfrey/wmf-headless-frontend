@@ -49,8 +49,12 @@ export default function Newsletter({
 
       // Reset success message after 3 seconds
       setTimeout(() => setIsSubmitted(false), 3000);
-    } catch (err: any) {
-      setError(err.message || "Something went wrong. Please try again.");
+    } catch (err) {
+      const message =
+        err instanceof Error
+          ? err.message
+          : "Something went wrong. Please try again.";
+      setError(message);
     } finally {
       setIsSubmitting(false);
     }

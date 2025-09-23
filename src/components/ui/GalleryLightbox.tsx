@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useMemo, useState } from "react";
+import { useCallback, useEffect, useMemo, useState } from "react";
 import Image from "next/image";
 import { WPMedia } from "@/types/wordpress";
 
@@ -23,6 +23,14 @@ export default function GalleryLightbox({
     setCurrentIndex(startIndex);
   }, [startIndex]);
 
+  const next = useCallback(() => {
+    setCurrentIndex((idx) => (idx + 1) % mediaItems.length);
+  }, [mediaItems.length]);
+
+  const prev = useCallback(() => {
+    setCurrentIndex((idx) => (idx - 1 + mediaItems.length) % mediaItems.length);
+  }, [mediaItems.length]);
+
   useEffect(() => {
     if (!isOpen) return;
 
@@ -40,15 +48,7 @@ export default function GalleryLightbox({
       document.removeEventListener("keydown", onKey);
       document.body.style.overflow = previousOverflow;
     };
-  }, [isOpen]);
-
-  const next = () => {
-    setCurrentIndex((idx) => (idx + 1) % mediaItems.length);
-  };
-
-  const prev = () => {
-    setCurrentIndex((idx) => (idx - 1 + mediaItems.length) % mediaItems.length);
-  };
+  }, [isOpen, next, prev, onClose]);
 
   const current = mediaItems[currentIndex];
 
