@@ -16,6 +16,8 @@ interface ContactButtonProps {
     options?: string[];
     placeholder?: string;
   }>;
+  recipientKey?: string;
+  initialValues?: Record<string, string>;
 }
 
 export default function ContactButton({
@@ -25,6 +27,8 @@ export default function ContactButton({
   title,
   description,
   customFields,
+  recipientKey,
+  initialValues,
 }: ContactButtonProps) {
   const { isOpen, selectedInquiryType, openModal, closeModal } =
     useContactModal();
@@ -42,6 +46,8 @@ export default function ContactButton({
         title={title}
         description={description}
         customFields={customFields}
+        recipientKey={recipientKey}
+        initialValues={initialValues}
       />
     </>
   );

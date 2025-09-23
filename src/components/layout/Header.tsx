@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import Image from "next/image";
+import { useState } from "react";
 
 const navigation = [
   { name: "Home", href: "/" },
@@ -65,6 +66,15 @@ const socialMedia = [
 ];
 
 export default function Header() {
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [openMobileDropdowns, setOpenMobileDropdowns] = useState<
+    Record<string, boolean>
+  >({});
+
+  const toggleMobileDropdown = (name: string) => {
+    setOpenMobileDropdowns((prev) => ({ ...prev, [name]: !prev[name] }));
+  };
+
   const getSocialIcon = (icon: string) => {
     switch (icon) {
       case "facebook":
@@ -142,7 +152,7 @@ export default function Header() {
       </div>
 
       {/* Main Navigation */}
-      <div className="container mx-auto px-4 py-4">
+      <div className="container mx-auto px-4 py-3 lg:py-4">
         <div className="flex items-center justify-between">
           {/* Logo */}
           <div className="flex-shrink-0">
@@ -156,7 +166,7 @@ export default function Header() {
                 height={100}
               />
               <div className="flex flex-col">
-                <span className="text-lg text-[#6B7280] -mt-1">
+                <span className="hidden sm:block text-lg text-[#6B7280] -mt-1">
                   Women&apos;s Mentoring Foundation
                 </span>
               </div>
@@ -164,7 +174,7 @@ export default function Header() {
           </div>
 
           {/* Desktop Navigation - Centered */}
-          <div className="hidden lg:flex items-center space-x-8">
+          <div className="hidden xl:flex items-center xl:space-x-8">
             {navigation.map((item) => (
               <div key={item.name} className="relative group">
                 {item.dropdown ? (
@@ -172,7 +182,7 @@ export default function Header() {
                     <div className="flex items-center">
                       <Link
                         href={item.href}
-                        className="text-[#374151] hover:text-[#A5375C] transition-colors font-medium"
+                        className="text-[#374151] hover:text-[#A5375C] transition-colors font-medium text-sm xl:text-base"
                       >
                         {item.name}
                       </Link>
@@ -192,7 +202,7 @@ export default function Header() {
                     </div>
 
                     {/* Dropdown Menu */}
-                    <div className="absolute top-full left-0 mt-2 w-64 bg-white rounded-md shadow-lg border border-[#E5E7EB] z-50 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
+                    <div className="absolute top-full left-0 mt-2 w-56 xl:w-64 bg-white rounded-md shadow-lg border border-[#E5E7EB] z-50 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
                       <div className="py-2">
                         {item.dropdown.map((dropdownItem) => (
                           <Link
@@ -209,7 +219,7 @@ export default function Header() {
                 ) : (
                   <Link
                     href={item.href}
-                    className="text-[#374151] hover:text-[#A5375C] transition-colors font-medium"
+                    className="text-[#374151] hover:text-[#A5375C] transition-colors font-medium text-sm xl:text-base"
                   >
                     {item.name}
                   </Link>
@@ -219,43 +229,150 @@ export default function Header() {
           </div>
 
           {/* Call to Action Buttons */}
-          <div className="hidden lg:flex items-center space-x-4">
+          <div className="hidden xl:flex items-center space-x-3 xl:space-x-4">
             <Link
               href="/donate"
-              className="bg-[#A5375C] text-white px-4 py-2 rounded-md text-sm font-medium hover:bg-[#C84862] transition-colors"
+              className="bg-[#A5375C] text-white px-4 py-2 rounded-md text-sm xl:text-base font-medium hover:bg-[#C84862] transition-colors"
             >
               Donate
             </Link>
             <Link
               href="/contact"
-              className="bg-white text-[#A5375C] border-2 border-[#A5375C] px-4 py-2 rounded-md text-sm font-medium hover:bg-[#DE5762]/10 transition-colors"
+              className="bg-white text-[#A5375C] border-2 border-[#A5375C] px-4 py-2 rounded-md text-sm xl:text-base font-medium hover:bg-[#DE5762]/10 transition-colors"
             >
               Get in Touch
             </Link>
           </div>
 
           {/* Mobile menu button */}
-          <button className="lg:hidden p-2 text-[#6B7280] hover:text-[#A5375C] transition-colors">
+          <button
+            className="xl:hidden p-2 text-[#6B7280] hover:text-[#A5375C] transition-colors"
+            aria-label="Toggle menu"
+            aria-controls="mobile-menu"
+            onClick={() => setIsMobileMenuOpen((v) => !v)}
+          >
             <span className="sr-only">Open menu</span>
-            <svg
-              className="w-6 h-6"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={2}
-                d="M4 6h16M4 12h16M4 18h16"
-              />
-            </svg>
+            {isMobileMenuOpen ? (
+              <svg
+                className="w-6 h-6"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M6 18L18 6M6 6l12 12"
+                />
+              </svg>
+            ) : (
+              <svg
+                className="w-6 h-6"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M4 6h16M4 12h16M4 18h16"
+                />
+              </svg>
+            )}
           </button>
         </div>
       </div>
 
-      {/* Mobile Navigation (Hidden by default) */}
-      <div className="lg:hidden">{/* Mobile menu content would go here */}</div>
+      {/* Mobile Navigation */}
+      <div
+        id="mobile-menu"
+        className={`xl:hidden border-t border-[#E5E7EB] ${
+          isMobileMenuOpen ? "block" : "hidden"
+        }`}
+      >
+        <div className="container mx-auto px-4 py-3">
+          <nav className="space-y-1">
+            {navigation.map((item) => (
+              <div key={item.name}>
+                {item.dropdown ? (
+                  <div>
+                    <button
+                      className="w-full flex items-center justify-between py-3 text-[#374151] hover:text-[#A5375C] transition-colors"
+                      onClick={() => toggleMobileDropdown(item.name)}
+                      aria-controls={`mobile-submenu-${item.name}`}
+                    >
+                      <span className="font-medium">{item.name}</span>
+                      <svg
+                        className={`ml-2 h-4 w-4 text-[#6B7280] transition-transform ${
+                          openMobileDropdowns[item.name]
+                            ? "rotate-180"
+                            : "rotate-0"
+                        }`}
+                        fill="none"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth={2}
+                          d="M19 9l-7 7-7-7"
+                        />
+                      </svg>
+                    </button>
+                    <div
+                      id={`mobile-submenu-${item.name}`}
+                      className={`overflow-hidden transition-all ${
+                        openMobileDropdowns[item.name] ? "max-h-96" : "max-h-0"
+                      }`}
+                    >
+                      <div className="pl-4">
+                        {item.dropdown.map((dropdownItem) => (
+                          <Link
+                            key={dropdownItem.name}
+                            href={dropdownItem.href}
+                            className="block py-2 text-sm text-[#374151] hover:text-[#A5375C]"
+                            onClick={() => setIsMobileMenuOpen(false)}
+                          >
+                            {dropdownItem.name}
+                          </Link>
+                        ))}
+                      </div>
+                    </div>
+                  </div>
+                ) : (
+                  <Link
+                    href={item.href}
+                    className="block py-3 font-medium text-[#374151] hover:text-[#A5375C] transition-colors"
+                    onClick={() => setIsMobileMenuOpen(false)}
+                  >
+                    {item.name}
+                  </Link>
+                )}
+              </div>
+            ))}
+
+            <div className="pt-2 flex items-center space-x-3">
+              <Link
+                href="/donate"
+                className="flex-1 text-center bg-[#A5375C] text-white px-4 py-2 rounded-md text-sm font-medium hover:bg-[#C84862] transition-colors"
+                onClick={() => setIsMobileMenuOpen(false)}
+              >
+                Donate
+              </Link>
+              <Link
+                href="/contact"
+                className="flex-1 text-center bg-white text-[#A5375C] border-2 border-[#A5375C] px-4 py-2 rounded-md text-sm font-medium hover:bg-[#DE5762]/10 transition-colors"
+                onClick={() => setIsMobileMenuOpen(false)}
+              >
+                Get in Touch
+              </Link>
+            </div>
+          </nav>
+        </div>
+      </div>
     </header>
   );
 }

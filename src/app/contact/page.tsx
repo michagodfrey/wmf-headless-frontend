@@ -1,3 +1,4 @@
+"use client";
 import { Newsletter } from "@/components/sections";
 import Link from "next/link";
 
@@ -74,7 +75,39 @@ export default function ContactPage() {
           <h2 className="text-2xl font-bold mb-6 text-[#374151]">
             Send Us a Message
           </h2>
-          <form className="space-y-6">
+          <form
+            className="space-y-6"
+            onSubmit={async (e) => {
+              e.preventDefault();
+              const form = e.currentTarget as HTMLFormElement;
+              const formData = {
+                name: (form.elements.namedItem("name") as HTMLInputElement)
+                  ?.value,
+                email: (form.elements.namedItem("email") as HTMLInputElement)
+                  ?.value,
+                message: (
+                  form.elements.namedItem("message") as HTMLTextAreaElement
+                )?.value,
+              };
+              const res = await fetch("/api/contact", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({
+                  recipientKey: "general",
+                  inquiryType: "general",
+                  formData,
+                  meta: { source: "/contact" },
+                }),
+              });
+              if (res.ok) {
+                alert("Thanks! We’ll get back to you shortly.");
+                form.reset();
+              } else {
+                const data = await res.json().catch(() => ({} as any));
+                alert(data?.error || "Failed to send. Please try again.");
+              }
+            }}
+          >
             <div>
               <label
                 htmlFor="name"
@@ -84,9 +117,11 @@ export default function ContactPage() {
               </label>
               <input
                 type="text"
+                name="name"
                 id="name"
                 className="w-full px-4 py-3 rounded-lg border border-[#E5E7EB] focus:border-[#A5375C] focus:ring-2 focus:ring-[#A5375C] focus:ring-opacity-20 transition-all duration-200"
                 placeholder="Your full name"
+                required
               />
             </div>
             <div>
@@ -98,9 +133,11 @@ export default function ContactPage() {
               </label>
               <input
                 type="email"
+                name="email"
                 id="email"
                 className="w-full px-4 py-3 rounded-lg border border-[#E5E7EB] focus:border-[#A5375C] focus:ring-2 focus:ring-[#A5375C] focus:ring-opacity-20 transition-all duration-200"
                 placeholder="your.email@example.com"
+                required
               />
             </div>
             <div>
@@ -111,11 +148,13 @@ export default function ContactPage() {
                 Message
               </label>
               <textarea
+                name="message"
                 id="message"
                 rows={6}
                 className="w-full px-4 py-3 rounded-lg border border-[#E5E7EB] focus:border-[#A5375C] focus:ring-2 focus:ring-[#A5375C] focus:ring-opacity-20 transition-all duration-200"
                 placeholder="Tell us how we can help you..."
-              ></textarea>
+                required
+              />
             </div>
             <button
               type="submit"

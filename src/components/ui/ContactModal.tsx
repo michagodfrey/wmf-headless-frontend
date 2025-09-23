@@ -17,6 +17,7 @@ export interface ContactModalProps {
     placeholder?: string;
   }>;
   initialValues?: Record<string, string>;
+  recipientKey?: string;
 }
 
 interface InquiryConfig {
@@ -412,6 +413,7 @@ export default function ContactModal({
   description,
   customFields,
   initialValues,
+  recipientKey,
 }: ContactModalProps) {
   const [formData, setFormData] = useState<Record<string, string>>({});
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -448,15 +450,23 @@ export default function ContactModal({
     setIsSubmitting(true);
 
     try {
-      // Here you would typically send the form data to your backend
-      console.log("Form submitted:", { inquiryType, formData });
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          inquiryType,
+          recipientKey,
+          formData,
+          meta: {
+            source:
+              typeof window !== "undefined" ? window.location.pathname : "",
+          },
+        }),
+      });
 
-      // Simulate API call
-      await new Promise((resolve) => setTimeout(resolve, 1000));
+      if (!res.ok) throw new Error("Failed to send.");
 
-      // Show success message (you could add a toast notification here)
       alert("Thank you for your interest! We'll be in touch soon.");
-
       // Close modal and reset form
       onClose();
       setFormData({});

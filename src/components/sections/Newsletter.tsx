@@ -16,20 +16,44 @@ export default function Newsletter({
   const [email, setEmail] = useState("");
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const [error, setError] = useState<string | null>(null);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    setError(null);
+
+    // Basic client-side validation
+    if (!/^\S+@\S+\.\S+$/.test(email)) {
+      setError("Please enter a valid email address.");
+      return;
+    }
+
     setIsSubmitting(true);
+    try {
+      const res = await fetch("/api/newsletter", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ email }),
+      });
 
-    // Simulate API call - replace with actual newsletter signup logic
-    await new Promise((resolve) => setTimeout(resolve, 1000));
+      const data = await res.json().catch(() => ({}));
 
-    setIsSubmitting(false);
-    setIsSubmitted(true);
-    setEmail("");
+      if (!res.ok) {
+        throw new Error(
+          data?.error || "Subscription failed. Please try again."
+        );
+      }
 
-    // Reset success message after 3 seconds
-    setTimeout(() => setIsSubmitted(false), 3000);
+      setIsSubmitted(true);
+      setEmail("");
+
+      // Reset success message after 3 seconds
+      setTimeout(() => setIsSubmitted(false), 3000);
+    } catch (err: any) {
+      setError(err.message || "Something went wrong. Please try again.");
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -44,7 +68,7 @@ export default function Newsletter({
           {isSubmitted ? (
             <div className="bg-white/10 border border-white/20 rounded-lg p-4 mb-6">
               <p className="text-white font-medium">
-                Thank you for subscribing! You&apos;ll receive our updates soon.
+                Thank you for subscribing! Please check your email to confirm.
               </p>
             </div>
           ) : (
@@ -68,6 +92,12 @@ export default function Newsletter({
                 {isSubmitting ? "Subscribing..." : "Subscribe"}
               </button>
             </form>
+          )}
+
+          {error && (
+            <div className="bg-white/10 border border-red-300/40 rounded-lg p-3 mt-4">
+              <p className="text-red-100 text-sm">{error}</p>
+            </div>
           )}
 
           <p className="text-xs text-white/70 mt-4">

@@ -62,6 +62,13 @@ export default function OurBoardTeamPage() {
         "https://womensmentoringfoundation.com/wp-content/uploads/2025/08/leo-mucci.jpg",
       bio: "Leo Mucci is a dedicated executive and board director with over 15 years of leadership across healthcare, aged care, and community services. He has held senior roles including Group Chief Operating Officer at Centaurus Healthcare, overseeing five hospitals and two diagnostic businesses, and General Manager at Bolton Clarke, Australia's largest not-for-profit aged care provider. \n\n Leo excels in financial governance, strategic planning, and building high-performing organisations through collaboration and accountability. His experience spans large-scale mergers and acquisitions, commissioning new healthcare facilities, and leading national reforms in aged care and clinical governance. \n\n He currently serves as a Board Director with Churches of Christ, one of Australia's largest faith-based providers of aged care and community services where he contributes to governance, compliance, and long-term sustainability. \n\n Passionate about the mission of the Women's Mentoring Foundation, Leo brings a focus on transparency, financial stewardship, and organisational growth to support resilient, purpose-driven outcomes. He lives by the belief that a straight road never made skilful drivers.",
     },
+    {
+      name: "Chris Smedley",
+      role: "Director",
+      image:
+        "https://womensmentoringfoundation.com/wp-content/uploads/2025/09/Chris-Smedley-Professional-Photo.jpg",
+      bio: "Chris Smedley is a proven leader with over 20 years' experience as a Chief Executive and Managing Director in the health and human services sectors, including one of Australia's largest mental health providers, a disability care provider, Bupa, and Queensland Fertility Group's network of women's health clinics, day hospitals and IVF laboratories. \n\n Chris has been fortunate in his career to lead organisations and teams that have a clear purpose in delivering positive community outcomes.  This is a huge motivation for him.  His personal leadership philosophy is that building a strong, values-based organisational culture and a positively engaged workforce, helps in delivering high quality client experiences, leading to stronger organisational results, which in turn reinforces the culture and purpose. \n\n Chris' previous experience as a Chartered Accountant with PwC and in corporate strategy and M&A roles with major global companies, has given him a solid foundation in financial literacy, strategic planning and governance.",
+    },
   ];
 
   const ambassadors = [
