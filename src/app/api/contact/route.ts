@@ -1,5 +1,8 @@
 import nodemailer from "nodemailer";
 
+export const runtime = "nodejs";
+export const dynamic = "force-dynamic";
+
 type Payload = {
   inquiryType?: string;
   recipientKey?: string;
