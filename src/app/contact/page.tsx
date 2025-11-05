@@ -100,7 +100,7 @@ export default function ContactPage() {
                 }),
               });
               if (res.ok) {
-                alert("Thanks! We’ll get back to you shortly.");
+                alert("Thanks! We'll get back to you shortly.");
                 form.reset();
               } else {
                 const data = (await res.json().catch(() => ({}))) as {

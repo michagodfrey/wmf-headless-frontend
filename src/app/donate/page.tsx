@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { Newsletter } from "@/components/sections";
 import Image from "next/image";
 
@@ -10,6 +10,9 @@ export default function DonatePage() {
   const [donationAmount, setDonationAmount] = useState(50);
   const [customAmount, setCustomAmount] = useState("");
   const [showCustomInput, setShowCustomInput] = useState(false);
+  const paypalButtonsContainerRef = useRef<HTMLDivElement | null>(null);
+  const [paypalReady, setPaypalReady] = useState(false);
+  const [isMonthly, setIsMonthly] = useState(false);
 
   const testimonials = [
     {
@@ -88,6 +91,95 @@ export default function DonatePage() {
     });
   };
 
+  type PayPalButtonsOptions = {
+    createOrder: () => Promise<string>;
+    onApprove: (data: { orderID: string }) => Promise<void>;
+    onError: (err: unknown) => void;
+    style?: Record<string, unknown>;
+  };
+  type PayPalButtonsInstance = {
+    render: (el: HTMLElement) => Promise<void>;
+    close?: () => void;
+  };
+  type PayPalSDK = {
+    Buttons: (opts: PayPalButtonsOptions) => PayPalButtonsInstance;
+  };
+
+  // Load PayPal JS SDK for sandbox using client ID from env
+  useEffect(() => {
+    const clientId = process.env.NEXT_PUBLIC_PAYPAL_CLIENT_ID;
+    if (!clientId) return; // no script without client id
+
+    // If script already exists, mark ready
+    if (document.getElementById("paypal-sdk")) {
+      setPaypalReady(true);
+      return;
+    }
+
+    const script = document.createElement("script");
+    script.id = "paypal-sdk";
+    script.src = `https://www.paypal.com/sdk/js?client-id=${encodeURIComponent(
+      clientId
+    )}&currency=AUD&intent=capture`; // sandbox is implied by using a sandbox client id
+    script.async = true;
+    script.onload = () => setPaypalReady(true);
+    script.onerror = () => setPaypalReady(false);
+    document.body.appendChild(script);
+  }, []);
+
+  // Render PayPal Buttons once SDK is ready
+  useEffect(() => {
+    if (!paypalReady || !paypalButtonsContainerRef.current) return;
+    const paypal = (window as unknown as { paypal?: PayPalSDK }).paypal;
+    if (!paypal?.Buttons) return;
+
+    const amount =
+      showCustomInput && customAmount
+        ? parseFloat(customAmount)
+        : donationAmount;
+
+    const buttons: PayPalButtonsInstance = paypal.Buttons({
+      createOrder: async () => {
+        const res = await fetch("/api/paypal/create-order", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
+            amount: Number.isFinite(amount) ? amount.toFixed(2) : "50.00",
+            currency: "AUD",
+          }),
+        });
+        const data = await res.json();
+        if (!res.ok) throw new Error(data?.error || "Failed to create order");
+        return data.id as string;
+      },
+      onApprove: async (data: { orderID: string }) => {
+        const res = await fetch("/api/paypal/capture-order", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ orderID: data.orderID }),
+        });
+        const capture = await res.json();
+        if (!res.ok)
+          throw new Error(capture?.error || "Failed to capture order");
+        alert("Thank you! Your donation has been received.");
+      },
+      onError: (err: unknown) => {
+        console.error(err);
+        alert("We couldn't process the PayPal payment. Please try again.");
+      },
+      style: { layout: "vertical", shape: "pill", color: "gold" },
+    });
+    buttons.render(paypalButtonsContainerRef.current);
+
+    return () => {
+      try {
+        buttons?.close?.();
+      } catch {
+        // ignore
+      }
+    };
+  }, [paypalReady, donationAmount, customAmount, showCustomInput]);
+
   return (
     <div className="min-h-screen">
       {/* Hero Section - Full Width */}
@@ -143,59 +235,190 @@ export default function DonatePage() {
         </div>
       </section>
 
-      {/* Quick Donation Section */}
+      {/* Quick Donation Section (temporarily hidden) */}
+      {false && (
+        <section id="donation-section" className="py-20 bg-gray-50">
+          <div className="container mx-auto px-4">
+            <div className="max-w-2xl mx-auto">
+              <div className="bg-white rounded-2xl shadow-xl p-8 lg:p-12">
+                <div className="text-center mb-8">
+                  <h2 className="text-3xl lg:text-4xl font-bold mb-4 text-[#374151]">
+                    Make a Quick Donation
+                  </h2>
+                  <p className="text-[#6B7280] text-lg">
+                    Choose your donation frequency and amount to support our
+                    mission
+                  </p>
+                </div>
+
+                {/* Donation Frequency */}
+                <div className="mb-8">
+                  <label className="block text-sm font-semibold text-[#374151] mb-4">
+                    Donation Frequency
+                  </label>
+                  <div className="flex flex-wrap gap-3">
+                    {[
+                      { value: "one-time", label: "One-time" },
+                      { value: "weekly", label: "Weekly" },
+                      { value: "monthly", label: "Monthly" },
+                    ].map((option) => (
+                      <button
+                        key={option.value}
+                        onClick={() => setDonationFrequency(option.value)}
+                        className={`px-6 py-3 rounded-full font-semibold transition-all duration-300 ${
+                          donationFrequency === option.value
+                            ? "bg-[#A5375C] text-white shadow-lg"
+                            : "bg-gray-100 text-[#374151] hover:bg-gray-200"
+                        }`}
+                      >
+                        {option.label}
+                      </button>
+                    ))}
+                  </div>
+                </div>
+
+                {/* Donation Amount */}
+                <div className="mb-8">
+                  <label className="block text-sm font-semibold text-[#374151] mb-4">
+                    Donation Amount
+                  </label>
+                  <div className="grid grid-cols-2 lg:grid-cols-3 gap-3 mb-4">
+                    {[20, 50, 100, 200].map((amount) => (
+                      <button
+                        key={amount}
+                        onClick={() => handleAmountSelect(amount)}
+                        className={`p-4 rounded-lg font-semibold transition-all duration-300 ${
+                          donationAmount === amount && !showCustomInput
+                            ? "bg-[#A5375C] text-white shadow-lg"
+                            : "bg-gray-100 text-[#374151] hover:bg-gray-200"
+                        }`}
+                      >
+                        ${amount}
+                      </button>
+                    ))}
+                    <button
+                      onClick={handleCustomAmount}
+                      className={`p-4 rounded-lg font-semibold transition-all duration-300 ${
+                        showCustomInput
+                          ? "bg-[#A5375C] text-white shadow-lg"
+                          : "bg-gray-100 text-[#374151] hover:bg-gray-200"
+                      }`}
+                    >
+                      Other
+                    </button>
+                  </div>
+
+                  {/* Custom Amount Input */}
+                  {showCustomInput && (
+                    <div className="mb-4">
+                      <label className="block text-sm font-semibold text-[#374151] mb-2">
+                        Enter Amount
+                      </label>
+                      <div className="relative">
+                        <span className="absolute left-3 top-1/2 transform -translate-y-1/2 text-[#6B7280] font-semibold">
+                          $
+                        </span>
+                        <input
+                          type="number"
+                          value={customAmount}
+                          onChange={(e) => setCustomAmount(e.target.value)}
+                          placeholder="0.00"
+                          className="w-full pl-8 pr-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#A5375C] focus:border-transparent"
+                          min="1"
+                          step="0.01"
+                        />
+                      </div>
+                    </div>
+                  )}
+                </div>
+
+                {/* Donate Button */}
+                <button className="cursor-pointer w-full bg-gradient-to-r from-[#A5375C] to-[#C84862] text-white py-4 rounded-lg font-semibold text-lg hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1">
+                  {getDisplayAmount() > 0
+                    ? `Donate $${getDisplayAmount()} ${
+                        donationFrequency === "one-time"
+                          ? ""
+                          : donationFrequency
+                      }`
+                    : "Enter Amount to Continue"}
+                </button>
+
+                {/* Kids with Cancer Foundation Note */}
+                <div className="mt-6 flex flex-col sm:flex-row items-center sm:items-center justify-center sm:justify-start gap-3 sm:gap-4 text-center sm:text-left bg-white/10 backdrop-blur-sm rounded-lg px-4 py-3 w-full">
+                  <Image
+                    src="/donation/KWC-Logo.webp"
+                    alt="Kids with Cancer Foundation"
+                    width={240}
+                    height={144}
+                    className="w-32 sm:w-40 md:w-60 h-auto"
+                  />
+                  <p className="text-sm sm:text-base leading-relaxed">
+                    10% of all donations will go to Kids With Cancer Foundation.
+                  </p>
+                </div>
+
+                {/* DGR Notice */}
+                <div className="mt-6 p-4 bg-[#3C6A72] bg-opacity-10 border border-[#3C6A72] border-opacity-20 rounded-lg">
+                  <div className="flex items-start">
+                    <svg
+                      className="w-5 h-5 text-[#3C6A72] mt-0.5 mr-3 flex-shrink-0"
+                      fill="currentColor"
+                      viewBox="0 0 20 20"
+                    >
+                      <path
+                        fillRule="evenodd"
+                        d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z"
+                        clipRule="evenodd"
+                      />
+                    </svg>
+                    <div>
+                      <p className="text-sm font-semibold text-white mb-1">
+                        Tax Deductible Donations
+                      </p>
+                      <p className="text-sm text-white">
+                        Women&apos;s Mentoring Foundation is a registered
+                        Deductible Gift Recipient (DGR). Donations of $2 or more
+                        are tax deductible.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      )}
+
+      {/* PayPal Donation Section */}
       <section id="donation-section" className="py-20 bg-gray-50">
         <div className="container mx-auto px-4">
           <div className="max-w-2xl mx-auto">
             <div className="bg-white rounded-2xl shadow-xl p-8 lg:p-12">
               <div className="text-center mb-8">
                 <h2 className="text-3xl lg:text-4xl font-bold mb-4 text-[#374151]">
-                  Make a Quick Donation
+                  Donate via PayPal
                 </h2>
                 <p className="text-[#6B7280] text-lg">
-                  Choose your donation frequency and amount to support our
-                  mission
+                  Secure, quick donations using your PayPal account or card.
                 </p>
               </div>
 
-              {/* Donation Frequency */}
-              <div className="mb-8">
+              {/* Donation Amount (for PayPal) */}
+              <div className="mb-6">
                 <label className="block text-sm font-semibold text-[#374151] mb-4">
-                  Donation Frequency
+                  Donation Amount (AUD)
                 </label>
-                <div className="flex flex-wrap gap-3">
-                  {[
-                    { value: "one-time", label: "One-time" },
-                    { value: "weekly", label: "Weekly" },
-                    { value: "monthly", label: "Monthly" },
-                  ].map((option) => (
-                    <button
-                      key={option.value}
-                      onClick={() => setDonationFrequency(option.value)}
-                      className={`px-6 py-3 rounded-full font-semibold transition-all duration-300 ${
-                        donationFrequency === option.value
-                          ? "bg-[#A5375C] text-white shadow-lg"
-                          : "bg-gray-100 text-[#374151] hover:bg-gray-200"
-                      }`}
-                    >
-                      {option.label}
-                    </button>
-                  ))}
-                </div>
-              </div>
-
-              {/* Donation Amount */}
-              <div className="mb-8">
-                <label className="block text-sm font-semibold text-[#374151] mb-4">
-                  Donation Amount
-                </label>
-                <div className="grid grid-cols-2 lg:grid-cols-3 gap-3 mb-4">
-                  {[20, 50, 100, 200].map((amount) => (
+                <div className="flex flex-wrap gap-3 mb-3">
+                  {[20, 50, 100].map((amount) => (
                     <button
                       key={amount}
-                      onClick={() => handleAmountSelect(amount)}
-                      className={`p-4 rounded-lg font-semibold transition-all duration-300 ${
-                        donationAmount === amount && !showCustomInput
+                      onClick={() => {
+                        setDonationAmount(amount);
+                        setShowCustomInput(false);
+                        setCustomAmount("");
+                      }}
+                      className={`px-5 py-3 rounded-full font-semibold transition-all duration-300 ${
+                        !showCustomInput && donationAmount === amount
                           ? "bg-[#A5375C] text-white shadow-lg"
                           : "bg-gray-100 text-[#374151] hover:bg-gray-200"
                       }`}
@@ -204,8 +427,13 @@ export default function DonatePage() {
                     </button>
                   ))}
                   <button
-                    onClick={handleCustomAmount}
-                    className={`p-4 rounded-lg font-semibold transition-all duration-300 ${
+                    onClick={() => {
+                      setShowCustomInput(!showCustomInput);
+                      if (!showCustomInput && !customAmount) {
+                        setCustomAmount("");
+                      }
+                    }}
+                    className={`px-5 py-3 rounded-full font-semibold transition-all duration-300 ${
                       showCustomInput
                         ? "bg-[#A5375C] text-white shadow-lg"
                         : "bg-gray-100 text-[#374151] hover:bg-gray-200"
@@ -215,38 +443,102 @@ export default function DonatePage() {
                   </button>
                 </div>
 
-                {/* Custom Amount Input */}
                 {showCustomInput && (
-                  <div className="mb-4">
-                    <label className="block text-sm font-semibold text-[#374151] mb-2">
-                      Enter Amount
-                    </label>
+                  <div className="mt-2">
                     <div className="relative">
                       <span className="absolute left-3 top-1/2 transform -translate-y-1/2 text-[#6B7280] font-semibold">
                         $
                       </span>
                       <input
                         type="number"
+                        inputMode="decimal"
                         value={customAmount}
-                        onChange={(e) => setCustomAmount(e.target.value)}
-                        placeholder="0.00"
+                        onChange={(e) => {
+                          setCustomAmount(e.target.value);
+                        }}
+                        onBlur={() => {
+                          if (!customAmount || customAmount.trim() === "") {
+                            setShowCustomInput(false);
+                            setCustomAmount("");
+                          }
+                        }}
+                        placeholder={
+                          (Number.isFinite(donationAmount)
+                            ? donationAmount.toFixed(2)
+                            : String(donationAmount)) || "50.00"
+                        }
                         className="w-full pl-8 pr-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#A5375C] focus:border-transparent"
-                        min="1"
+                        min="0"
                         step="0.01"
                       />
                     </div>
+                    <p className="text-xs text-[#6B7280] mt-2">
+                      Enter your preferred donation amount, then use PayPal
+                      below.
+                    </p>
                   </div>
                 )}
               </div>
 
-              {/* Donate Button */}
-              <button className="cursor-pointer w-full bg-gradient-to-r from-[#A5375C] to-[#C84862] text-white py-4 rounded-lg font-semibold text-lg hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1">
-                {getDisplayAmount() > 0
-                  ? `Donate $${getDisplayAmount()} ${
-                      donationFrequency === "one-time" ? "" : donationFrequency
-                    }`
-                  : "Enter Amount to Continue"}
-              </button>
+              {/* Monthly Donation */}
+              <div className="mb-6 space-y-2">
+                <label className="flex items-start gap-3 cursor-pointer select-none">
+                  <input
+                    type="checkbox"
+                    checked={isMonthly}
+                    onChange={(e) => setIsMonthly(e.target.checked)}
+                    className="mt-1 h-4 w-4 rounded border-gray-300 text-[#A5375C] focus:ring-[#A5375C]"
+                  />
+                  <span className="text-sm text-[#374151]">
+                    Make this a monthly donation
+                  </span>
+                </label>
+                {isMonthly && (
+                  <div className="text-xs text-[#6B7280]">
+                    You authorise PayPal to pay Women&apos;s Mentoring
+                    Foundation Ltd $
+                    {(() => {
+                      const amt =
+                        showCustomInput && customAmount
+                          ? parseFloat(customAmount)
+                          : donationAmount;
+                      return Number.isFinite(amt) ? amt.toFixed(2) : "0.00";
+                    })()}{" "}
+                    around this day each month. You can change or cancel at any
+                    time in your PayPal account settings.
+                    <span className="block mt-1">
+                      Note: Recurring donations require a PayPal account. Card
+                      payments aren’t supported for monthly donations.
+                    </span>
+                  </div>
+                )}
+              </div>
+
+              {/* PayPal Buttons */}
+              {process.env.NEXT_PUBLIC_PAYPAL_CLIENT_ID ? (
+                <div className="space-y-4">
+                  <div ref={paypalButtonsContainerRef} />
+                  <p className="text-xs text-[#6B7280] text-center">
+                    Sandbox mode enabled.
+                  </p>
+                </div>
+              ) : (
+                <div className="text-sm text-[#6B7280]">
+                  Set{" "}
+                  <code className="px-1 py-0.5 bg-gray-100 rounded">
+                    NEXT_PUBLIC_PAYPAL_CLIENT_ID
+                  </code>{" "}
+                  (sandbox) and server env{" "}
+                  <code className="px-1 py-0.5 bg-gray-100 rounded">
+                    PAYPAL_CLIENT_ID
+                  </code>{" "}
+                  /{" "}
+                  <code className="px-1 py-0.5 bg-gray-100 rounded">
+                    PAYPAL_CLIENT_SECRET
+                  </code>{" "}
+                  to enable PayPal donations.
+                </div>
+              )}
 
               {/* Kids with Cancer Foundation Note */}
               <div className="mt-6 flex flex-col sm:flex-row items-center sm:items-center justify-center sm:justify-start gap-3 sm:gap-4 text-center sm:text-left bg-white/10 backdrop-blur-sm rounded-lg px-4 py-3 w-full">
