@@ -85,7 +85,7 @@ export default function CaseStudyPage() {
           href="/get-help"
           className="text-[#A5375C] hover:text-[#C84862] font-semibold inline-flex items-center transition-colors"
         >
-          ← Back to Get Help
+          ← Back
         </a>
       </section>
     </div>
