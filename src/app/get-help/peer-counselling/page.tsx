@@ -1,4 +1,4 @@
-import { Newsletter } from "@/components/sections";
+// import { Newsletter } from "@/components/sections";
 import Image from "next/image";
 
 export default function PeerCounselingPage() {
@@ -304,7 +304,7 @@ export default function PeerCounselingPage() {
       </section>
 
       {/* Call to Action */}
-      <Newsletter />
+      {/* <Newsletter /> */}
     </div>
   );
 }

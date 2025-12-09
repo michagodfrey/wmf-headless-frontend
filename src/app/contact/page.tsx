@@ -1,5 +1,5 @@
 "use client";
-import { Newsletter } from "@/components/sections";
+// import { Newsletter } from "@/components/sections";
 import Link from "next/link";
 
 export default function ContactPage() {
@@ -341,7 +341,7 @@ export default function ContactPage() {
       </section>
 
       {/* Newsletter Section */}
-      <Newsletter />
+      {/* <Newsletter /> */}
     </div>
   );
 }

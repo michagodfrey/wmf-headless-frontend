@@ -1,6 +1,6 @@
 "use client";
 
-import { Newsletter } from "@/components/sections";
+// import { Newsletter } from "@/components/sections";
 import { ContactModal, useContactModal } from "@/components/ui";
 
 export default function GetInvolvedPage() {
@@ -194,7 +194,7 @@ export default function GetInvolvedPage() {
         </div>
       </section>
 
-      <Newsletter />
+      {/* <Newsletter /> */}
 
       <ContactModal
         isOpen={isOpen}

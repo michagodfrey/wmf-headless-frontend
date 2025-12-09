@@ -1,6 +1,6 @@
 "use client";
 
-import { Newsletter } from "@/components/sections";
+// import { Newsletter } from "@/components/sections";
 import Image from "next/image";
 
 export default function CommunitiesPage() {
@@ -264,7 +264,7 @@ export default function CommunitiesPage() {
         </div>
       </section>
 
-      <Newsletter />
+      {/* <Newsletter /> */}
     </div>
   );
 }

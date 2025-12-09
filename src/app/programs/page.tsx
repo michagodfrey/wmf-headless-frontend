@@ -1,4 +1,4 @@
-import { Newsletter } from "@/components/sections";
+// import { Newsletter } from "@/components/sections";
 import Image from "next/image";
 
 export default function ProgramsPage() {
@@ -502,7 +502,7 @@ export default function ProgramsPage() {
       </section>
 
       {/* Call to Action */}
-      <Newsletter />
+      {/* <Newsletter /> */}
     </div>
   );
 }

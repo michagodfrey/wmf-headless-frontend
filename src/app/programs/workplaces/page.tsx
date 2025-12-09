@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { Newsletter } from "@/components/sections";
+// import { Newsletter } from "@/components/sections";
 import ContactModal from "@/components/ui/ContactModal";
 import Image from "next/image";
 
@@ -703,7 +703,7 @@ export default function WorkplacesPage() {
       </section>
 
       {/* Newsletter Section */}
-      <Newsletter />
+      {/* <Newsletter /> */}
 
       {/* Workshop Enquiry Modal */}
       <ContactModal

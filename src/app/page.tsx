@@ -1,6 +1,6 @@
 "use client";
 
-import Newsletter from "@/components/sections/Newsletter";
+// import Newsletter from "@/components/sections/Newsletter";
 import { PartnerCard } from "@/components/sections";
 import { getPosts } from "@/lib/wordpress";
 import Link from "next/link";
@@ -995,7 +995,7 @@ export default function Home() {
       </section>
 
       {/* Newsletter Section */}
-      <Newsletter />
+      {/* <Newsletter /> */}
 
       {/* Award Image Modal */}
       {selectedAward && (

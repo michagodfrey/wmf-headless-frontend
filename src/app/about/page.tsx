@@ -1,4 +1,4 @@
-import Newsletter from "@/components/sections/Newsletter";
+// import Newsletter from "@/components/sections/Newsletter";
 import { Recruit } from "@/components/sections";
 import Image from "next/image";
 
@@ -287,7 +287,7 @@ export default function AboutPage() {
       </section>
 
       {/* Newsletter and Recruitment Section */}
-      <Newsletter className="bg-gray-50 rounded-xl" />
+      {/* <Newsletter className="bg-gray-50 rounded-xl" /> */}
       <Recruit
         title="Get Involved Today"
         description="Join our community of supporters making a difference."
