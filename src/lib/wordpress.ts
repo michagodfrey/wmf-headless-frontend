@@ -9,11 +9,17 @@ import {
 const API_URL = process.env.NEXT_PUBLIC_WORDPRESS_API_URL;
 
 export async function getPosts(page = 1, perPage = 10): Promise<WPPost[]> {
-  const res = await fetch(
-    `${API_URL}/posts?page=${page}&per_page=${perPage}&_embed`,
-    { next: { revalidate: 60 } }
-  );
-  return res.json();
+  const isBrowser = typeof window !== "undefined";
+  const url = isBrowser
+    ? `/api/wp/posts?page=${page}&per_page=${perPage}`
+    : `${API_URL}/posts?page=${page}&per_page=${perPage}&_embed`;
+  try {
+    const res = await fetch(url, { next: { revalidate: 60 } });
+    const json = await res.json();
+    return json;
+  } catch (error) {
+    throw error;
+  }
 }
 
 export async function getPost(slug: string): Promise<WPPost> {
