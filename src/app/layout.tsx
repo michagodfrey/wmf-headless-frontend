@@ -4,6 +4,7 @@ import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import Script from "next/script";
 import GTMProvider from "../components/GTMProvider";
+import { Suspense } from "react";
 
 export const metadata: Metadata = {
   title: "Women's Mentoring Foundation",
@@ -61,7 +62,9 @@ export default function RootLayout({
         </noscript>
 
         <div className="flex flex-col min-h-screen">
-          <GTMProvider />
+          <Suspense fallback={null}>
+            <GTMProvider />
+          </Suspense>
           <Header />
           <main className="flex-grow">{children}</main>
           <Footer />
