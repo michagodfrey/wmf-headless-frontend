@@ -709,7 +709,7 @@ export default function WorkplacesPage() {
       <ContactModal
         isOpen={isModalOpen}
         onClose={closeModal}
-        inquiryType=""
+        inquiryType="workshops"
         title="Workshop Enquiry"
         description="Please fill out the form below to enquire about our workplace workshops. We'll get back to you within 24 hours to discuss your specific needs and requirements."
         customFields={getWorkshopEnquiryFields()}

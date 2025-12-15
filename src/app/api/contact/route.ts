@@ -8,33 +8,12 @@ type Payload = {
   meta?: Record<string, string>;
 };
 
-const RECIPIENTS: Record<string, string | undefined> = {
-  // Map by inquiryType or custom keys
-  volunteer: process.env.CONTACT_TO_VOLUNTEERS,
-  peerCounselor: process.env.CONTACT_TO_PEER_COUNSELOR,
-  partner: process.env.CONTACT_TO_PARTNERSHIPS,
-  fundraise: process.env.CONTACT_TO_FUNDRAISE,
-  awareness: process.env.CONTACT_TO_AWARENESS,
-  board: process.env.CONTACT_TO_BOARD,
-  workshops: process.env.CONTACT_TO_WORKSHOPS, // for Workshops page
-  general: process.env.CONTACT_TO_DEFAULT, // contact page default
-};
-
 // Token cache to avoid unnecessary token requests
 let tokenCache: { token: string; expiresAt: number } | null = null;
 
-function recipientFor({
-  inquiryType,
-  recipientKey,
-}: {
-  inquiryType?: string;
-  recipientKey?: string;
-}) {
-  return (
-    (recipientKey && RECIPIENTS[recipientKey]) ||
-    (inquiryType && RECIPIENTS[inquiryType]) ||
-    process.env.CONTACT_TO_DEFAULT
-  );
+function recipientFor(): string | undefined {
+  // All emails go to the default email address
+  return process.env.CONTACT_TO_DEFAULT;
 }
 
 /**
@@ -176,12 +155,11 @@ export async function POST(req: Request) {
   try {
     const {
       inquiryType,
-      recipientKey,
       formData = {},
       meta = {},
     } = (await req.json()) as Payload;
 
-    const to = recipientFor({ inquiryType, recipientKey });
+    const to = recipientFor();
     if (!to) {
       return new Response(
         JSON.stringify({ error: "No recipient configured." }),
@@ -194,12 +172,9 @@ export async function POST(req: Request) {
         ? formData.email
         : undefined;
 
-    const subject = `[WMF Contact] ${
-      inquiryType || recipientKey || "General Inquiry"
-    }`;
+    const subject = `[WMF Contact] ${inquiryType || "General Inquiry"}`;
     const lines = [
       `Inquiry Type: ${inquiryType || "(none)"}`,
-      `Recipient Key: ${recipientKey || "(none)"}`,
       `Source: ${meta.source || "(unknown)"}`,
       "",
       "Form Data:",

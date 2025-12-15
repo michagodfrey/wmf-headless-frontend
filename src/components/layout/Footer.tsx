@@ -198,7 +198,7 @@ export default function Footer() {
               </Link>
             </div>
 
-            <div className="text-center md:text-right">
+            {/* <div className="text-center md:text-right">
               <h4 className="font-semibold text-[#374151] mb-2">
                 Stay Updated
               </h4>
@@ -211,7 +211,7 @@ export default function Footer() {
               >
                 Subscribe →
               </Link>
-            </div>
+            </div> */}
           </div>
         </div>
 
