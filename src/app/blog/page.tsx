@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { getPosts } from "@/lib/wordpress";
 import Image from "next/image";
+import { sanitize } from "@/lib/sanitize";
 
 export default async function BlogPage() {
   // Fetch posts from WordPress API
@@ -62,12 +63,12 @@ export default async function BlogPage() {
                   <Link
                     href={`/blog/${post.slug}`}
                     className="hover:text-[#A5375C] transition-colors"
-                    dangerouslySetInnerHTML={{ __html: post.title.rendered }}
+                    dangerouslySetInnerHTML={{ __html: sanitize(post.title.rendered) }}
                   />
                 </h2>
                 <div
                   className="text-[#6B7280] mb-4 line-clamp-3"
-                  dangerouslySetInnerHTML={{ __html: post.excerpt.rendered }}
+                  dangerouslySetInnerHTML={{ __html: sanitize(post.excerpt.rendered) }}
                 />
                 <div className="text-sm text-[#6B7280] mb-4">
                   {new Date(post.date).toLocaleDateString("en-US", {

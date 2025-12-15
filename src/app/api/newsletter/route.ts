@@ -1,14 +1,22 @@
 import crypto from "crypto";
+import { z } from "zod";
+
+const newsletterSchema = z.object({
+  email: z.string().email(),
+});
 
 export async function POST(req: Request) {
   try {
-    const { email } = await req.json();
+    const json = await req.json();
+    const result = newsletterSchema.safeParse(json);
 
-    if (!email || typeof email !== "string") {
+    if (!result.success) {
       return new Response(JSON.stringify({ error: "Invalid email." }), {
         status: 400,
       });
     }
+
+    const { email } = result.data;
 
     const apiKey = process.env.MAILCHIMP_API_KEY;
     const audienceId = process.env.MAILCHIMP_AUDIENCE_ID;

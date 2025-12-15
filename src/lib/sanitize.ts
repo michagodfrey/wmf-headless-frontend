@@ -1,0 +1,45 @@
+import DOMPurify from "isomorphic-dompurify";
+
+export function sanitize(dirty: string): string {
+  return DOMPurify.sanitize(dirty, {
+    USE_PROFILES: { html: true },
+    ALLOWED_TAGS: [
+      "h1",
+      "h2",
+      "h3",
+      "h4",
+      "h5",
+      "h6",
+      "p",
+      "a",
+      "ul",
+      "ol",
+      "li",
+      "b",
+      "i",
+      "strong",
+      "em",
+      "blockquote",
+      "code",
+      "pre",
+      "br",
+      "div",
+      "span",
+      "img",
+      "figure",
+      "figcaption",
+    ],
+    ALLOWED_ATTR: [
+      "href",
+      "target",
+      "rel",
+      "src",
+      "alt",
+      "width",
+      "height",
+      "class",
+      "id",
+      "style",
+    ],
+  });
+}

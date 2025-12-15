@@ -3,6 +3,7 @@
 import Image from "next/image";
 import { useState } from "react";
 import { WPMedia } from "@/types/wordpress";
+import { sanitize } from "@/lib/sanitize";
 
 export default function WordPressImage({ media }: { media: WPMedia }) {
   const [imageError, setImageError] = useState(false);
@@ -86,7 +87,7 @@ export default function WordPressImage({ media }: { media: WPMedia }) {
           {hasCaption && (
             <div
               className="text-xs mt-1"
-              dangerouslySetInnerHTML={{ __html: captionContent }}
+              dangerouslySetInnerHTML={{ __html: sanitize(captionContent) }}
             />
           )}
           <button className="mt-2 bg-white text-black px-3 py-1 rounded text-xs hover:bg-gray-100 transition-colors">

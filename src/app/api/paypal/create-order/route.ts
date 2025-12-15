@@ -1,7 +1,17 @@
 import { NextRequest, NextResponse } from "next/server";
+import { z } from "zod";
 
-const PAYPAL_OAUTH_API = "https://api-m.sandbox.paypal.com/v1/oauth2/token";
-const PAYPAL_ORDERS_API = "https://api-m.sandbox.paypal.com/v2/checkout/orders";
+const PAYPAL_API_URL = process.env.PAYPAL_API_URL || "https://api-m.sandbox.paypal.com";
+const PAYPAL_OAUTH_API = `${PAYPAL_API_URL}/v1/oauth2/token`;
+const PAYPAL_ORDERS_API = `${PAYPAL_API_URL}/v2/checkout/orders`;
+
+// Validation schema
+const createOrderSchema = z.object({
+  amount: z.string().optional().refine((val) => !val || !isNaN(parseFloat(val)), {
+    message: "Amount must be a valid number",
+  }),
+  currency: z.string().length(3).optional(),
+});
 
 async function generateAccessToken() {
   const clientId = process.env.PAYPAL_CLIENT_ID;
@@ -30,12 +40,24 @@ async function generateAccessToken() {
 
 export async function POST(req: NextRequest) {
   try {
-    const { amount, currency } = (await req.json()) as {
-      amount?: string;
-      currency?: string;
-    };
+    const json = await req.json();
+    const result = createOrderSchema.safeParse(json);
+
+    if (!result.success) {
+       return NextResponse.json({ error: "Invalid input" }, { status: 400 });
+    }
+
+    const { amount, currency } = result.data;
     const total = amount || "50.00";
     const curr = currency || "AUD";
+
+    // Enforce minimum donation amount to prevent card testing
+    if (parseFloat(total) < 1.0) {
+      return NextResponse.json(
+        { error: "Minimum donation amount is $1.00" },
+        { status: 400 }
+      );
+    }
 
     const accessToken = await generateAccessToken();
 
@@ -56,6 +78,7 @@ export async function POST(req: NextRequest) {
         application_context: {
           shipping_preference: "NO_SHIPPING",
           user_action: "PAY_NOW",
+          brand_name: "Women's Mentoring Foundation",
         },
       }),
     });

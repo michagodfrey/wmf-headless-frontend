@@ -518,9 +518,11 @@ export default function DonatePage() {
               {process.env.NEXT_PUBLIC_PAYPAL_CLIENT_ID ? (
                 <div className="space-y-4">
                   <div ref={paypalButtonsContainerRef} />
-                  <p className="text-xs text-[#6B7280] text-center">
-                    Sandbox mode enabled.
-                  </p>
+                  {process.env.NODE_ENV !== "production" && (
+                    <p className="text-xs text-[#6B7280] text-center">
+                      Sandbox mode enabled.
+                    </p>
+                  )}
                 </div>
               ) : (
                 <div className="text-sm text-[#6B7280]">

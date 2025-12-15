@@ -7,6 +7,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { useState, useEffect } from "react";
 import { WPPost } from "@/types/wordpress";
+import { sanitize } from "@/lib/sanitize";
 
 export default function Home() {
   const partners = [
@@ -845,14 +846,14 @@ export default function Home() {
                         href={`/blog/${post.slug}`}
                         className="hover:text-[#A5375C] transition-colors"
                         dangerouslySetInnerHTML={{
-                          __html: post.title.rendered,
+                          __html: sanitize(post.title.rendered),
                         }}
                       />
                     </h3>
                     <div
                       className="text-[#6B7280] mb-4 line-clamp-3"
                       dangerouslySetInnerHTML={{
-                        __html: post.excerpt.rendered,
+                        __html: sanitize(post.excerpt.rendered),
                       }}
                     />
                     <div className="text-sm text-[#6B7280] mb-4">

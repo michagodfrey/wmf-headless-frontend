@@ -1,6 +1,7 @@
 import { notFound } from "next/navigation";
 import { getPost } from "@/lib/wordpress";
 import Image from "next/image";
+import { sanitize } from "@/lib/sanitize";
 
 export default async function BlogPostPage({
   params,
@@ -31,7 +32,7 @@ export default async function BlogPostPage({
 
       <h1
         className="text-4xl font-bold mb-6 text-[#374151]"
-        dangerouslySetInnerHTML={{ __html: post.title.rendered }}
+        dangerouslySetInnerHTML={{ __html: sanitize(post.title.rendered) }}
       />
 
       <div className="text-[#6B7280] mb-8">
@@ -44,7 +45,7 @@ export default async function BlogPostPage({
 
       <div
         className="prose prose-lg max-w-none prose-headings:text-[#374151] prose-p:text-[#6B7280] prose-strong:text-[#374151] prose-a:text-[#A5375C] prose-a:hover:text-[#C84862]"
-        dangerouslySetInnerHTML={{ __html: post.content.rendered }}
+        dangerouslySetInnerHTML={{ __html: sanitize(post.content.rendered) }}
       />
     </article>
   );

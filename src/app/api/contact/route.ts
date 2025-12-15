@@ -1,12 +1,17 @@
+import { z } from "zod";
+
 export const runtime = "nodejs";
 export const dynamic = "force-dynamic";
 
-type Payload = {
-  inquiryType?: string;
-  recipientKey?: string;
-  formData?: Record<string, string>;
-  meta?: Record<string, string>;
-};
+// Input validation schema
+const contactSchema = z.object({
+  inquiryType: z.string().optional(),
+  recipientKey: z.string().optional(),
+  formData: z.record(z.string(), z.string().max(1000)).optional(), // Limit field length
+  meta: z.object({
+    source: z.string().optional(),
+  }).optional().default({}),
+});
 
 // Token cache to avoid unnecessary token requests
 let tokenCache: { token: string; expiresAt: number } | null = null;
@@ -153,11 +158,20 @@ async function sendEmailViaGraph(
 
 export async function POST(req: Request) {
   try {
+    const json = await req.json();
+    const result = contactSchema.safeParse(json);
+
+    if (!result.success) {
+      return new Response(JSON.stringify({ error: "Invalid input data." }), {
+        status: 400,
+      });
+    }
+
     const {
       inquiryType,
       formData = {},
-      meta = {},
-    } = (await req.json()) as Payload;
+      meta = { source: "(unknown)" },
+    } = result.data;
 
     const to = recipientFor();
     if (!to) {
