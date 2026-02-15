@@ -38,6 +38,13 @@ export default function Home() {
 
   const awards = [
     {
+      title: "Most Inspirational Mental Health Leadership Advocate 2026",
+      image:
+        "awards/2026-most-inspirational-mental-health-leadership-advocate.jpg",
+      description:
+        "Awarded to Pushpa Vaghela by Global Health & Pharma. This recognition reflects her measurable impact in prevention-focused mental health education, leadership training, and community empowerment through innovation backed by evidence and purpose-driven advocacy.",
+    },
+    {
       title: "Queensland Government - Certificate of Appreciation 2025",
       image: "awards/2025-Certificate-Appreciation.webp",
       description:

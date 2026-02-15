@@ -508,7 +508,7 @@ export default function DonatePage() {
                     time in your PayPal account settings.
                     <span className="block mt-1">
                       Note: Recurring donations require a PayPal account. Card
-                      payments aren’t supported for monthly donations.
+                      payments aren&apos;t supported for monthly donations.
                     </span>
                   </div>
                 )}
