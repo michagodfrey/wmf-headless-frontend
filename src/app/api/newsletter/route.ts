@@ -39,9 +39,6 @@ export async function POST(req: Request) {
     const payload = {
       email_address: email,
       status_if_new: "pending",
-      status: "pending",
-      merge_fields: {},
-      // tags: ["Website"], // optional
     };
 
     const res = await fetch(url, {
@@ -58,6 +55,7 @@ export async function POST(req: Request) {
 
     if (!res.ok) {
       const err = await res.json().catch(() => ({}));
+      console.error("[Newsletter] Mailchimp error:", res.status, JSON.stringify(err));
       return new Response(
         JSON.stringify({ error: err.detail || "Subscription failed." }),
         {

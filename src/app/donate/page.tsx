@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
-// import { Newsletter } from "@/components/sections";
+import { Newsletter } from "@/components/sections";
 import Image from "next/image";
 
 export default function DonatePage() {
@@ -810,7 +810,7 @@ export default function DonatePage() {
       </section>
 
       {/* Newsletter Section */}
-      {/* <Newsletter /> */}
+      <Newsletter />
 
       {/* Final Call to Action */}
       <section className="py-20 bg-white">
