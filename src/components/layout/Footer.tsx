@@ -8,7 +8,7 @@ const footerNavigation = {
     { name: "Programs", href: "/programs" },
     { name: "Get Help & Support", href: "/get-help" },
     { name: "Get Involved", href: "/get-involved" },
-    { name: "Blog", href: "/blog" },
+    // { name: "Blog", href: "/blog" },
     { name: "Contact", href: "/contact" },
   ],
   programs: [

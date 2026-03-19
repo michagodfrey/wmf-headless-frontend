@@ -815,7 +815,7 @@ export default function Home() {
       </section>
 
       {/* Blog Section */}
-      <section className="py-16 bg-gray-50">
+      {/* <section className="py-16 bg-gray-50">
         <div className="container mx-auto px-4">
           <div className="max-w-3xl mx-auto text-center mb-12">
             <div className="inline-block bg-gradient-to-r from-[#3C6A72] to-[#4A7A82] text-white px-6 py-2 rounded-full text-sm font-semibold mb-4">
@@ -897,7 +897,7 @@ export default function Home() {
             </Link>
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* Get Involved section */}
       <section className="py-16">
