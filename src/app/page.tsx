@@ -3,11 +3,11 @@
 import Newsletter from "@/components/sections/Newsletter";
 import { PartnerCard } from "@/components/sections";
 import { getPosts } from "@/lib/wordpress";
-import Link from "next/link";
+// import Link from "next/link";
 import Image from "next/image";
 import { useState, useEffect } from "react";
 import { WPPost } from "@/types/wordpress";
-import { sanitize } from "@/lib/sanitize";
+// import { sanitize } from "@/lib/sanitize";
 
 export default function Home() {
   const partners = [
@@ -65,24 +65,24 @@ export default function Home() {
     },
   ];
 
-  const [featuredPosts, setFeaturedPosts] = useState<WPPost[]>([]);
+  // const [featuredPosts, setFeaturedPosts] = useState<WPPost[]>([]);
   const [selectedAward, setSelectedAward] = useState<(typeof awards)[0] | null>(
     null
   );
 
   // Fetch featured blog posts from WordPress
-  useEffect(() => {
-    const fetchPosts = async () => {
-      try {
-        const posts = await getPosts(1, 3); // Get first 3 posts
-        setFeaturedPosts(posts);
-      } catch (error) {
-        console.error("Error fetching posts:", error);
-        setFeaturedPosts([]);
-      }
-    };
-    fetchPosts();
-  }, []);
+  // useEffect(() => {
+  //   const fetchPosts = async () => {
+  //     try {
+  //       const posts = await getPosts(1, 3); // Get first 3 posts
+  //       setFeaturedPosts(posts);
+  //     } catch (error) {
+  //       console.error("Error fetching posts:", error);
+  //       setFeaturedPosts([]);
+  //     }
+  //   };
+  //   fetchPosts();
+  // }, []);
 
   const openAwardModal = (award: (typeof awards)[0]) => {
     setSelectedAward(award);
