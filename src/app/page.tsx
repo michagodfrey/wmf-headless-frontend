@@ -2,11 +2,12 @@
 
 import Newsletter from "@/components/sections/Newsletter";
 import { PartnerCard } from "@/components/sections";
-import { getPosts } from "@/lib/wordpress";
+// import { getPosts } from "@/lib/wordpress";
 // import Link from "next/link";
 import Image from "next/image";
-import { useState, useEffect } from "react";
-import { WPPost } from "@/types/wordpress";
+// add useEffect to the line below
+import { useState } from "react";
+// import { WPPost } from "@/types/wordpress";
 // import { sanitize } from "@/lib/sanitize";
 
 export default function Home() {
