@@ -34,6 +34,12 @@ const nextConfig: NextConfig = {
       },
       {
         protocol: "https",
+        hostname: "cms.womensmentoringfoundation.com",
+        port: "",
+        pathname: "/wp-content/uploads/**",
+      },
+      {
+        protocol: "https",
         hostname: "images.unsplash.com",
         port: "",
         pathname: "/**",

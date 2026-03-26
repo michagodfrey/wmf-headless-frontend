@@ -39,7 +39,7 @@ const navigation = [
     name: "Get Involved",
     href: "/get-involved",
   },
-  // { name: "Blog", href: "/blog" },
+  { name: "Blog", href: "/blog" },
 ];
 
 const socialMedia = [
