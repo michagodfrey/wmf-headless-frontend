@@ -46,6 +46,7 @@ const nextConfig: NextConfig = {
       },
     ],
   },
+  transpilePackages: ["isomorphic-dompurify"],
 };
 
 export default nextConfig;
