@@ -24,42 +24,42 @@ export default function OurBoardTeamPage() {
       name: "Samantha Tinsley",
       role: "Chair",
       image:
-        "https://womensmentoringfoundation.com/wp-content/uploads/elementor/thumbs/samantha-headshot-qr6zh8uxlq0bp4psct67imdh5eq7owkce4gwkuwz0g.jpg",
+        "https://cms.womensmentoringfoundation.com/wp-content/uploads/elementor/thumbs/samantha-headshot-qr6zh8uxlq0bp4psct67imdh5eq7owkce4gwkuwz0g.jpg",
       bio: "Samantha Tinsley is a seasoned leader with over 30 years of expertise in driving change for business owners and CEOs. She excels in building high-performance teams through empathy and curiosity and has held key leadership roles, including Head of Sales and Marketing at PE Foods Pty Ltd, Managing Director at Bare Bite Pty Ltd and Chair of The Food Connect Shed. \n\nDedicated to fostering innovation, Samantha simplifies complex ideas and guides teams through transformative journeys, especially in times of uncertainty. She aligns business goals with strategic objectives, creating cohesive, productive cultures. \n\nSamantha is skilled in developing comprehensive business strategies, optimising performance, and adopting new systems and processes. Committed to the mission of the Women's Mentoring Foundation (WMF), she excels in helping organisations achieve growth and resilience.",
     },
     {
       name: "Lynne Cawley",
       role: "Secretary",
       image:
-        "https://womensmentoringfoundation.com/wp-content/uploads/elementor/thumbs/Lynne-Cawley-qjs2xmue36kdlotkuubhrpabe3bedcbouen50tkv28.jpg",
+        "https://cms.womensmentoringfoundation.com/wp-content/uploads/elementor/thumbs/Lynne-Cawley-qjs2xmue36kdlotkuubhrpabe3bedcbouen50tkv28.jpg",
       bio: "Lynne Cawley is a successful, solution-focused HR and Operations professional and the Chief Operations Officer at Canstar. \n\nLynne is responsible for fostering the company's culture, as well as developing and leading the implementation of Canstar's operational strategy to drive business goals through quality research and technological advancements. \n\nWith a degree in psychology at QUT and having specialised in Organisational psychology, Lynne established the human resources function at Canstar. Lynne has expanded this role in recent years to now head up the entire operations function, leading the People & Culture, Research, Product Data, Data Platform Services and Infrastructure teams. \n\nLynne's leadership role sees her managing the back-end technology platforms that power many of Canstar's data initiatives including the company's Star Ratings research, product database and data feeds to the website. Her teams are also responsible for building resilience into the Canstar technology infrastructure and applications.",
     },
     {
       name: "Michelle Teis",
       role: "Director",
       image:
-        "https://womensmentoringfoundation.com/wp-content/uploads/2025/08/Michelle-Teis.jpg",
+        "https://cms.womensmentoringfoundation.com/wp-content/uploads/2025/08/Michelle-Teis.jpg",
       bio: "Michelle is an experienced executive and board director with a strong track record of governance in organisations dedicated to preventing domestic violence and advancing the safety and security of women in society. As Managing Partner of a national professional services firm, she brings deep expertise in data strategy, governance, and analytics, advising boards and C-suite leaders on unlocking value, managing risk, and enabling sustainable, data-driven and digital growth. \n\nNationally recognised as a Data Leader of the Year by Women in Digital, Michelle is a respected thought leader in strategic data and AI governance. She is also a proven people leader, known for fostering collaboration, accountability, and continuous learning—qualities she brings to her board contributions.",
     },
     {
       name: "Claudia Lordao",
       role: "Director",
       image:
-        "https://womensmentoringfoundation.com/wp-content/uploads/elementor/thumbs/IMG_7848-scaled-quj03owktbw306mvpvz5z0z5glt7kzajhr2g3mkx8g.jpg",
+        "https://cms.womensmentoringfoundation.com/wp-content/uploads/elementor/thumbs/IMG_7848-scaled-quj03owktbw306mvpvz5z0z5glt7kzajhr2g3mkx8g.jpg",
       bio: "Claudia Lordao is an accomplished marketing leader with over 25 years of experience driving growth and innovation across diverse industries. She is highly skilled in developing strategic marketing plans, both from the ground up and by adapting international strategies to local markets. Claudia's expertise spans online and offline communication, public relations, branding, digital marketing, and e-commerce, with a proven track record of delivering exceptional sales results and market share growth. \n\nRenowned for her leadership, Claudia has built and led high-performing teams, fostering a positive and growth-focused environment. She is adept at managing complex projects, coordinating cross-functional teams, and aligning key stakeholders to achieve strategic objectives. Her strong numerical acumen and ability to manage budgets, forecast sales, and analyse data ensure that her initiatives are both creative and financially sound. \n\nClaudia's global experience and cultural sensitivity have been instrumental in her success in diverse markets. Fluent in English and Portuguese, with knowledge of French and Spanish, she excels at navigating the intricacies of international business and trade. Her ability to challenge the status quo and think creatively has consistently driven results beyond expectations. \n\nIn addition to her professional pursuits, Claudia is deeply committed to mentoring and empowering women in business. She holds an MBA specialising in Marketing and a B.A. in Communications, majoring in Advertising.",
     },
     {
       name: "Leo Mucci",
       role: "Director",
       image:
-        "https://womensmentoringfoundation.com/wp-content/uploads/2025/08/leo-mucci.jpg",
+        "https://cms.womensmentoringfoundation.com/wp-content/uploads/2025/08/leo-mucci.jpg",
       bio: "Leo Mucci is a dedicated executive and board director with over 15 years of leadership across healthcare, aged care, and community services. He has held senior roles including Group Chief Operating Officer at Centaurus Healthcare, overseeing five hospitals and two diagnostic businesses, and General Manager at Bolton Clarke, Australia's largest not-for-profit aged care provider. \n\n Leo excels in financial governance, strategic planning, and building high-performing organisations through collaboration and accountability. His experience spans large-scale mergers and acquisitions, commissioning new healthcare facilities, and leading national reforms in aged care and clinical governance. \n\n He currently serves as a Board Director with Churches of Christ, one of Australia's largest faith-based providers of aged care and community services where he contributes to governance, compliance, and long-term sustainability. \n\n Passionate about the mission of the Women's Mentoring Foundation, Leo brings a focus on transparency, financial stewardship, and organisational growth to support resilient, purpose-driven outcomes. He lives by the belief that a straight road never made skilful drivers.",
     },
     {
       name: "Chris Smedley",
       role: "Treasurer",
       image:
-        "https://womensmentoringfoundation.com/wp-content/uploads/2025/09/Chris-Smedley-Professional-Photo.jpg",
+        "https://cms.womensmentoringfoundation.com/wp-content/uploads/2025/09/Chris-Smedley-Professional-Photo.jpg",
       bio: "Chris Smedley is a proven leader with over 20 years' experience as a Chief Executive and Managing Director in the health and human services sectors, including one of Australia's largest mental health providers, a disability care provider, Bupa, and Queensland Fertility Group's network of women's health clinics, day hospitals and IVF laboratories. \n\n Chris has been fortunate in his career to lead organisations and teams that have a clear purpose in delivering positive community outcomes.  This is a huge motivation for him.  His personal leadership philosophy is that building a strong, values-based organisational culture and a positively engaged workforce, helps in delivering high quality client experiences, leading to stronger organisational results, which in turn reinforces the culture and purpose. \n\n Chris' previous experience as a Chartered Accountant with PwC and in corporate strategy and M&A roles with major global companies, has given him a solid foundation in financial literacy, strategic planning and governance.",
     },
   ];
@@ -69,7 +69,7 @@ export default function OurBoardTeamPage() {
       name: "Rod George",
       role: "Ambassador & Patron",
       image:
-        "https://womensmentoringfoundation.com/wp-content/uploads/elementor/thumbs/rod-george-300x323-1-qjs2xlwjwcj3a2uy0bwv77iuspg15n7yi9znjjm98g.png",
+        "https://cms.womensmentoringfoundation.com/wp-content/uploads/elementor/thumbs/rod-george-300x323-1-qjs2xlwjwcj3a2uy0bwv77iuspg15n7yi9znjjm98g.png",
       bio: "Rod has joined WMF as the Web Host Manager. He is a talented artist, with mandala art as his main genre, his other interests are web design, graphic design, and photography. \n\nRod is also a skilled NLP Master Practitioner and Trainer. He is passionate about empowering people to become greater than they are. Rod also works full time a multi skilled tradesman in the building industry.",
     },
   ];
@@ -79,21 +79,14 @@ export default function OurBoardTeamPage() {
       name: "Pushpa Vaghela",
       role: "CEO & Peer Counsellor",
       image:
-        "https://womensmentoringfoundation.com/wp-content/uploads/elementor/thumbs/pushpa2-qjs2xmue36kdlotkuubhrpabe3bedcbouen50tkv28.jpeg",
+        "https://cms.womensmentoringfoundation.com/wp-content/uploads/elementor/thumbs/pushpa2-qjs2xmue36kdlotkuubhrpabe3bedcbouen50tkv28.jpeg",
       bio: "Pushpa Vaghela, Founder of The Women's Mentoring Foundation (WMF), is dedicated to empowering women to overcome trauma, challenges, and distressful situations, guiding them towards strength and their best selves. As a professional Leadership Consultant, Mentor, and Clinical Neuro Practitioner, Pushpa has positively impacted thousands of leaders globally, fostering transformation and developing exceptional leadership qualities. Her mission, fueled by a deep understanding of mental and emotional health challenges, led her to establish WMF as a Harm Prevention charity organisation, providing Workshops, Speaking Engagement and Peer Counselling to assist women on their empowering journey.",
-    },
-    {
-      name: "Michael Godfrey",
-      role: "Digital Manager",
-      image:
-        "https://womensmentoringfoundation.com/wp-content/uploads/elementor/thumbs/mugshot-qlq5rttlgraw2gin18grh1dfq0a7g64zqj25lilv7k.jpg",
-      bio: "Michael is a lively and varied individual from the Sunshine Coast in Queensland. He served in the Australian Army before becoming an English teacher abroad. Now, with a degree in agricultural science, he specialises in pest and disease management for farms and property owners. Beyond work, Michael enjoys fitness at the gym, riding motorcycles, and exploring the world. His passion for technology leads him to develop hobbies like coding projects and volunteer projects. He's particularly interested in using AI and other tech innovations to make a meaningful difference.",
     },
     {
       name: "Sharon Hawthorne",
       role: "Peer Counsellor",
       image:
-        "https://womensmentoringfoundation.com/wp-content/uploads/elementor/thumbs/Sharon-Hawthorne-headshot-qlupp28gi5n9y0n9z2qcivrkaduqj3ml2x9xm4sf28.webp",
+        "https://cms.womensmentoringfoundation.com/wp-content/uploads/elementor/thumbs/Sharon-Hawthorne-headshot-qlupp28gi5n9y0n9z2qcivrkaduqj3ml2x9xm4sf28.webp",
       bio: "Sharon Hawthorne, has traveled and survived numerous challenges, demonstrating her commitment to supporting women in their healing journeys. She is an author and writer with over two decades of experience working in various capacities within newspapers, magazines, and book publishers. This includes advertising, feature writing, marketing and communications, book editing, and author mentorship. Sharon also coaches and mentors authors and writers, aiding them in producing the most professional versions of their books and navigating the ever-evolving landscape of the self-publishing industry.",
     },
   ];
